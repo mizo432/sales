@@ -11,8 +11,8 @@ node {
       sh './gradlew --daemon :sales-core:build'
    }
 
-   stage ('salas-adapter :build'){
-      sh './gradlew --daemon :salas-adapter:build'
+   stage ('sales-adapter :build'){
+      sh './gradlew --daemon :sales-adapter:build'
    }
 
    stage ('sales-web :build'){
