@@ -1,0 +1,46 @@
+apply plugin: 'base'
+
+subprojects {
+    buildscript {
+        ext {
+            springBootVersion = '1.4.4.RELEASE'
+            encoding = 'UTF-8'
+            compatibility = 1.8
+        }
+        repositories {
+            mavenCentral()
+            jcenter()
+        }
+        dependencies {
+            classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+            classpath("com.github.ben-manes:gradle-versions-plugin:0.13.0")
+        }
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    sourceCompatibility = compatibility
+    targetCompatibility = compatibility
+
+    repositories {
+        mavenCentral()
+    }
+
+    jar {
+        baseName = 'venus-sales'
+        version = '0.0.1-SNAPSHOT'
+    }
+
+    dependencies {
+        compile group: "org.springframework.boot", name: "spring-boot-starter-jdbc", version: "${springBootVersion}"
+        compile group: "org.springframework.boot", name: "spring-boot-starter-cache", version: "${springBootVersion}"
+        compile group: "org.springframework.boot", name: "spring-boot-devtools", version: "${springBootVersion}"
+
+        runtime group: "mysql", name: "mysql-connector-java", version: "5.1.40"
+        compile group: "org.mybatis.spring.boot", name: "mybatis-spring-boot-starter", version: "1.2.0"
+        compile group: "org.mybatis", name: "mybatis-typehandlers-jsr310", version: "1.0.2"
+
+        testCompile group: "org.springframework.boot", name: "spring-boot-starter-test", version: "${springBootVersion}"
+    }
+}
