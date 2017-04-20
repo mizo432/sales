@@ -37,3 +37,8 @@ subprojects {
         testCompile group: 'junit', name: 'junit', version: '4.12'
     }
 }
+
+Task Wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+}
+
