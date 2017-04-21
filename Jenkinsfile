@@ -7,6 +7,10 @@ node {
       sh './gradlew --daemon clean'
    }
 
+   stage ('sales-externals :build'){
+      sh './gradlew --daemon :sales-externals:build'
+   }
+
    stage ('sales-core :build'){
       sh './gradlew --daemon :sales-core:build'
    }
