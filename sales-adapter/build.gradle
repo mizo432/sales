@@ -1,9 +1,14 @@
 apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
 
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+}
+
+bootRepackage {
+    enabled = false
 }
 
 dependencies {
@@ -15,4 +20,8 @@ dependencies {
     compile group: "org.springframework.boot", name: "spring-boot-devtools", version: "${springBootVersion}"
     testRuntime group: 'com.h2database', name: 'h2', version: '1.4.194'
     testCompile group: "org.springframework.boot", name: "spring-boot-starter-test", version: "${springBootVersion}"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
 }
