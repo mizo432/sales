@@ -2,3 +2,5 @@
 sales-core/build
 sales-adapter/build
 .gradle
+sales-externals/build
+sales-web/build
