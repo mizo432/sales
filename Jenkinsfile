@@ -17,7 +17,7 @@ node {
    }
 
    stage ('create reports'){
-      sh './gradlew --daemon jacoco'
+      sh './gradlew --daemon jacocoTestReport'
 
       sh './gradlew --daemon jdepend'
 
