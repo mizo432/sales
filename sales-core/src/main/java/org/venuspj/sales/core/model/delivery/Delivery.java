@@ -5,7 +5,7 @@ import org.venuspj.sales.core.fundamentals.urlValue.UrlValue;
 import org.venuspj.sales.core.model.guest.Name;
 import org.venuspj.sales.core.model.partnerManagement.store.StoreId;
 import org.venuspj.sales.core.model.product.ProductId;
-import org.venuspj.sales.core.sale.detail.SaleDetail;
+import org.venuspj.sales.core.model.sale.detail.SaleDetail;
 
 public interface Delivery {
     ProductId getProductId();

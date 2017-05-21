@@ -7,24 +7,13 @@ node {
       sh './gradlew --daemon clean'
    }
 
-   stage ('sales-externals :build'){
-      sh './gradlew --daemon :sales-externals:build'
-   }
-
-   stage ('sales-core :build'){
-      sh './gradlew --daemon :sales-core:build'
-   }
-
-   stage ('sales-adapter :build'){
-      sh './gradlew --daemon :sales-adapter:build'
-   }
-
-   stage ('sales-web :build'){
-      sh './gradlew --daemon :sales-web:build'
-   }
-
    stage ('build'){
-      sh './gradlew --daemon build'
+      sh './gradlew --daemon :sales-externals:build'
+      sh './gradlew --daemon :sales-core:build'
+      sh './gradlew --daemon :sales-datasource:build'
+      sh './gradlew --daemon :sales-report:build'
+      sh './gradlew --daemon :sales-application:build'
+      sh './gradlew --daemon :sales-web:build'
    }
 
 // JUnitテストレポートを保存
@@ -32,4 +21,17 @@ node {
       step([$class: 'JUnitResultArchiver', testResults: '**/build/test-results/*.xml'])
    }
 
+   stage ('create reports'){
+      sh './gradlew --daemon jacoco'
+
+      sh './gradlew --daemon jdepend'
+
+      sh './gradlew --daemon findbugsMain'
+
+      }
+   stage('assembles reports'){
+        jacoco exclusionPattern: '**/*Test*.class'
+        openTasks canComputeNew: false, defaultEncoding: '', excludePattern: '', healthy: '', high: 'FIXME', low: '', normal: 'TODO', pattern: '**/*.java', unHealthy: ''
+        findbugs canComputeNew: false, defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', pattern: '**/build/reports/findbugs/*.xml', unHealthy: ''
+   }
 }

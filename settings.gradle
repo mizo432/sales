@@ -1,5 +1,7 @@
 include 'sales-core'
 include 'sales-web'
-include 'sales-adapter'
 include 'sales-externals'
+include 'sales-application'
+include 'sales-datasource'
+include 'sales-report'
 

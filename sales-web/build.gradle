@@ -1,6 +1,15 @@
-apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
 
-sourceCompatibility = 1.8
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("com.github.ben-manes:gradle-versions-plugin:0.13.0")
+    }
+}
 
 repositories {
     mavenCentral()
@@ -8,10 +17,23 @@ repositories {
 
 dependencies {
     compile project(":sales-core")
-    compile project(":sales-adapter")
+    runtime project(":sales-datasource")
+    runtime project(":sales-report")
+    runtime project(":sales-application")
     runtime group: "mysql", name: "mysql-connector-java", version: "6.0.6"
     compile group: "org.springframework.boot", name: "spring-boot-starter-jdbc", version: "${springBootVersion}"
     compile group: "org.springframework.boot", name: "spring-boot-starter-cache", version: "${springBootVersion}"
     compile group: "org.springframework.boot", name: "spring-boot-devtools", version: "${springBootVersion}"
     testCompile group: "org.springframework.boot", name: "spring-boot-starter-test", version: "${springBootVersion}"
+    compile group: 'org.slf4j', name : 'slf4j-api', version: "${slf4jVersion}"
+    runtime group: 'ch.qos.logback', name : 'logback-classic', version: "${logbackVersion}"
+}
+
+jar {
+    baseName = 'venus-sales'
+    version = '0.0.1-SNAPSHOT'
+}
+
+springBoot {
+    mainClass = 'org.venuspj.sales.SalesApplication'
 }

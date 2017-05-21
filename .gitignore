@@ -1,6 +1,8 @@
-.idea
-sales-core/build
-sales-adapter/build
-.gradle
-sales-externals/build
-sales-web/build
+.idea/
+.gradle/
+sales-core/build/
+sales-externals/build/
+sales-report/build/
+sales-datasource/build/
+sales-application/build/
+sales-web/build/

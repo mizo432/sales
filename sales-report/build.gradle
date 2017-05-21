@@ -1,0 +1,25 @@
+apply plugin: 'org.springframework.boot'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":sales-core")
+    compile group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}"
+    testCompile group: "org.springframework.boot", name: "spring-boot-starter-test", version: "${springBootVersion}"
+
+}
+
+bootRepackage{
+    enabled = false
+}
