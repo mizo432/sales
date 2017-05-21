@@ -16,11 +16,6 @@ node {
       sh './gradlew --daemon :sales-web:build'
    }
 
-// JUnitテストレポートを保存
-   stage ('copy test report'){
-      step([$class: 'JUnitResultArchiver', testResults: '**/build/test-results/*.xml'])
-   }
-
    stage ('create reports'){
       sh './gradlew --daemon jacoco'
 
@@ -28,7 +23,13 @@ node {
 
       sh './gradlew --daemon findbugsMain'
 
-      }
+   }
+
+// JUnitテストレポートを保存
+   stage ('copy test report'){
+      step([$class: 'JUnitResultArchiver', testResults: '**/build/test-results/*.xml'])
+   }
+
    stage('assembles reports'){
         jacoco exclusionPattern: '**/*Test*.class'
         openTasks canComputeNew: false, defaultEncoding: '', excludePattern: '', healthy: '', high: 'FIXME', low: '', normal: 'TODO', pattern: '**/*.java', unHealthy: ''
