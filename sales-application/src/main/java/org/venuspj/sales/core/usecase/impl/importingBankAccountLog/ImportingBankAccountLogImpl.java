@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.venuspj.sales.core.model.bankBook.log.BankAccountLog;
 import org.venuspj.sales.core.model.bankBook.log.BankAccountLogRepository;
-import org.venuspj.sales.core.usecase.importingBankAccountLog.ImportingBankAccountLog;
+import org.venuspj.sales.core.usecase.reconciliatingManagement.importingBankAccountLog.ImportingBankAccountLog;
 
 /**
  */
