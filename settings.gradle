@@ -4,4 +4,5 @@ include 'sales-externals'
 include 'sales-application'
 include 'sales-datasource'
 include 'sales-report'
+include 'sales-usecases'
 

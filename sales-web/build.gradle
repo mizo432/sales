@@ -20,6 +20,7 @@ dependencies {
     runtime project(":sales-datasource")
     runtime project(":sales-report")
     runtime project(":sales-application")
+    runtime project(":sales-usecases")
     runtime group: "mysql", name: "mysql-connector-java", version: "6.0.6"
     compile group: "org.springframework.boot", name: "spring-boot-starter-jdbc", version: "${springBootVersion}"
     compile group: "org.springframework.boot", name: "spring-boot-starter-cache", version: "${springBootVersion}"
