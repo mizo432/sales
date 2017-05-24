@@ -2,15 +2,15 @@ apply plugin: 'base'
 
 allprojects {
     ext {
-        springBootVersion = '1.5.+'
+        springBootVersion = '1.5.3.RELEASE'
         guavaVersion = '21.+'
         mybatisBootVersion = '1.2+'
         mybatisTypeHandlerVersion = '1.0.+'
-        assertJVersion = '3.6.+'
-        h2dbVersion = '1.4.193+'
-        logbackVersion = '1.+'
-        slf4jVersion = '1.+'
-        junitVersion = "4.+"
+        assertJVersion = '3.6.2'
+        h2dbVersion = '1.4.195'
+        logbackVersion = '1.2.3'
+        slf4jVersion = '1.7.25'
+        junitVersion = "4.12"
     }
 
 }
@@ -43,7 +43,7 @@ subprojects {
     dependencies {
         testCompile group: 'org.assertj', name: 'assertj-core', version: "${assertJVersion}"
         testCompile group: 'junit', name: 'junit', version: "${junitVersion}"
-        testCompile group: 'com.google.code.findbugs', name: 'annotations', version: "3.+"
+        testCompile group: 'com.google.code.findbugs', name: 'annotations', version: "3.0.1"
     }
 
     task(jdepend, type: JDepend) {
