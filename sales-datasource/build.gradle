@@ -15,9 +15,15 @@ repositories {
 
 dependencies {
     compile project(":sales-core")
-    compile group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}"
-    testCompile group: "org.springframework.boot", name: "spring-boot-starter-test", version: "${springBootVersion}"
-
+    compile (group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}")
+    testCompile (group: "org.springframework.boot", name: "spring-boot-starter-test", version: "${springBootVersion}"){
+        exclude group: 'org.assertj'
+    }
+    runtime(group: "mysql", name: "mysql-connector-java", version: "6.0.+") {
+        exclude group: 'ch.qos.logback'
+    }
+    compile group: 'org.slf4j', name : 'slf4j-api', version: "${slf4jVersion}"
+    testRuntime group: 'ch.qos.logback', name : 'logback-classic', version: "${logbackVersion}"
 }
 
 bootRepackage{

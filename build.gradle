@@ -2,10 +2,10 @@ apply plugin: 'base'
 
 allprojects {
     ext {
-        springBootVersion = '1.5.3.RELEASE+'
+        springBootVersion = '1.5.+'
         guavaVersion = '21.0+'
         mybatisBootVersion = '1.2+'
-        mybatisTypeHandlerVersion = '1.0.2+'
+        mybatisTypeHandlerVersion = '1.0.+'
         assertJVersion = '3.6.2'
         h2dbVersion = '1.4.193+'
         logbackVersion = '1.+'
