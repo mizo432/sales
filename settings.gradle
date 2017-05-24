@@ -1,7 +1,7 @@
-include 'sales-core'
-include 'sales-web'
 include 'sales-externals'
-include 'sales-datasource'
-include 'sales-report'
-include 'sales-usecases'
+include 'sales-core'
+//include 'sales-datasource'
+//include 'sales-web'
+//include 'sales-report'
+//include 'sales-usecases'
 

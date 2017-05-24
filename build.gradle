@@ -3,15 +3,14 @@ apply plugin: 'base'
 allprojects {
     ext {
         springBootVersion = '1.5.+'
-        guavaVersion = '21.0+'
+        guavaVersion = '21.+'
         mybatisBootVersion = '1.2+'
         mybatisTypeHandlerVersion = '1.0.+'
-        assertJVersion = '3.6.2'
+        assertJVersion = '3.6.+'
         h2dbVersion = '1.4.193+'
         logbackVersion = '1.+'
         slf4jVersion = '1.+'
-        junitVersion = "4.12+"
-        assertJVersion = "3.6.2+"
+        junitVersion = "4.+"
     }
 
 }
@@ -44,7 +43,8 @@ subprojects {
     dependencies {
         testCompile group: 'org.assertj', name: 'assertj-core', version: "${assertJVersion}"
         testCompile group: 'junit', name: 'junit', version: "${junitVersion}"
-        testCompile group: 'com.google.code.findbugs', name: 'annotations', version: "2.0.+"    }
+        testCompile group: 'com.google.code.findbugs', name: 'annotations', version: "3.+"
+    }
 
     task(jdepend, type: JDepend) {
         classesDir = file('build/intermediates/classes/debug/')
