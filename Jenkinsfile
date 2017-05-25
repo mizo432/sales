@@ -12,7 +12,7 @@ node {
       sh './gradlew --daemon :sales-core:build'
       sh './gradlew --daemon :sales-datasource:build'
       sh './gradlew --daemon :sales-report:build'
-//      sh './gradlew --daemon :sales-usecases:build'
+      sh './gradlew --daemon :sales-usecases:build'
 //      sh './gradlew --daemon :sales-web:build'
    }
 
