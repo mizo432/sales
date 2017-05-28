@@ -11,7 +11,7 @@ public class RecordYearMonth {
 
     }
 
-    RecordYearMonth(YearMonth aYearMonth) {
+    public RecordYearMonth(YearMonth aYearMonth) {
         yearMonth = aYearMonth;
     }
 

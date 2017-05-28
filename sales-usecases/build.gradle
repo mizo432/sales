@@ -21,6 +21,8 @@ dependencies {
     testCompile(group: "org.springframework.boot", name: "spring-boot-starter-test", version: "${springBootVersion}"){
         exclude  group: 'org.assertj'
     }
+    testCompile project(":sales-core-mock")
+
 }
 
 bootRepackage{
