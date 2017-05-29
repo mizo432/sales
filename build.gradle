@@ -16,17 +16,22 @@ allprojects {
 }
 
 subprojects {
+
     buildscript {
         ext {
             encoding = 'UTF-8'
             compatibility = 1.8
         }
         repositories {
+            maven {
+                url 'http://venus-pj.org/artifactory/libs-release/'
+            }
             mavenCentral()
             jcenter()
         }
     }
 
+    apply plugin: 'maven'
     apply plugin: 'java'
     apply plugin: 'idea'
     apply plugin: 'jacoco'
@@ -47,6 +52,42 @@ subprojects {
         testCompile group: 'org.assertj', name: 'assertj-core', version: "${assertJVersion}"
         testCompile group: 'junit', name: 'junit', version: "${junitVersion}"
         testCompile group: 'com.google.code.findbugs', name: 'annotations', version: "3.0.1"
+    }
+
+    configurations {
+        deployerJars
+    }
+
+    task writeNewPom << {
+        pom {
+            project {
+                inceptionYear '2017'
+            }
+        }.writeTo("$buildDir/newpom.xml")
+    }
+
+    uploadArchives {
+        repositories.mavenDeployer {
+            configuration = configurations.deployerJars
+            repository(url: "http://venus-pj.org/artifactory/libs-release-local") {
+                authentication(userName: "deploy", password: "earthdawn")
+            }
+        }
+    }
+
+    task sourcesJar(type: Jar, dependsOn:classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+
+    task javadocJar(type: Jar, dependsOn:javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+
+    artifacts {
+        archives sourcesJar
+        archives javadocJar
     }
 
     task(jdepend, type: JDepend) {
@@ -79,7 +120,8 @@ subprojects {
         sourceSets = [sourceSets.main]
         reportsDir = file("$project.buildDir/reports/findbugs")
         effort = "max"
-    }}
+    }
+}
 
 
 task wrapper(type:Wrapper){

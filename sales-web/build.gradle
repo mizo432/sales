@@ -13,10 +13,10 @@ buildscript {
 }
 
 repositories {
-    mavenCentral()
     maven {
         url 'http://venus-pj.org/artifactory/libs-release/'
     }
+    mavenCentral()
 }
 
 dependencies {
