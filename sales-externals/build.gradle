@@ -1,15 +1,8 @@
 apply plugin: 'java'
+apply plugin: 'maven'
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'net.researchgate:gradle-release:2.4.0'
-    }
-}
-apply plugin: 'net.researchgate.release'
-apply plugin: 'com.jfrog.artifactory'
+
+archivesBaseName = 'sales-externals'
 
 repositories {
     mavenCentral()
@@ -21,24 +14,44 @@ dependencies {
     testRuntime group: 'ch.qos.logback', name: 'logback-classic', version: "${logbackVersion}"
 }
 
-release {
-    git {
-        requireBranch = '(master|\\d+\\.\\d+)'
-    }
+//release {
+//    git {
+//        requireBranch = '(master|\\d+\\.\\d+)'
+//    }
+//}
+configurations {
+    deployerJars
 }
 
-artifactory {
-    contextUrl = 'http://venus-pj.org/artifactory/'
-    publish {
-        repository {
-            repoKey = 'libs-release-local' //The Artifactory repository key to publish to
-            username = 'deploy'
-            password = 'earthdawn'
+task writeNewPom << {
+    pom {
+        project {
+            inceptionYear '2017'
+        }
+    }.writeTo("$buildDir/newpom.xml")
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        configuration = configurations.deployerJars
+        repository(url: "http://venus-pj.org/artifactory/libs-release-local") {
+            authentication(userName: "deploy", password: "earthdawn")
         }
     }
-    resolve {
-        repoKey = 'jcenter'
-    }
 }
 
-afterReleaseBuild.dependsOn bintrayUpload
+task sourcesJar(type: Jar, dependsOn:classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn:javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+

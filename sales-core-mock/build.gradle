@@ -1,11 +1,53 @@
 apply plugin: 'java'
+apply plugin: 'maven'
+
+archivesBaseName = 'sales-core-mock'
 
 repositories {
     mavenCentral()
+    maven {
+        url 'http://venus-pj.org/artifactory/libs-release/'
+    }
 }
 
 dependencies {
-    compile project(":sales-core")
+    compile group: 'org.venuspj.sales', name : 'sales-core', version: "${version}"
     compile group: 'org.slf4j', name : 'slf4j-api', version: "${slf4jVersion}"
     testRuntime group: 'ch.qos.logback', name : 'logback-classic', version: "${logbackVersion}"
+}
+
+configurations {
+    deployerJars
+}
+
+task writeNewPom << {
+    pom {
+        project {
+            inceptionYear '2017'
+        }
+    }.writeTo("$buildDir/newpom.xml")
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        configuration = configurations.deployerJars
+        repository(url: "http://venus-pj.org/artifactory/libs-release-local") {
+            authentication(userName: "deploy", password: "earthdawn")
+        }
+    }
+}
+
+task sourcesJar(type: Jar, dependsOn:classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn:javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
 }

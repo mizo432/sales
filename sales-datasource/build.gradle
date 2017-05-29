@@ -1,4 +1,7 @@
 apply plugin: 'org.springframework.boot'
+apply plugin: 'maven'
+
+archivesBaseName = 'sales-datasource'
 
 buildscript {
     repositories {
@@ -11,10 +14,13 @@ buildscript {
 
 repositories {
     mavenCentral()
+    maven {
+        url 'http://venus-pj.org/artifactory/libs-release/'
+    }
 }
 
 dependencies {
-    compile project(":sales-core")
+    compile group: 'org.venuspj.sales', name : 'sales-core', version: "${version}"
     compile (group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}"){
         exclude group: 'ch.qos.logback'
     }
@@ -36,4 +42,40 @@ dependencies {
 
 bootRepackage{
     enabled = false
+}
+
+configurations {
+    deployerJars
+}
+
+task writeNewPom << {
+    pom {
+        project {
+            inceptionYear '2017'
+        }
+    }.writeTo("$buildDir/newpom.xml")
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        configuration = configurations.deployerJars
+        repository(url: "http://venus-pj.org/artifactory/libs-release-local") {
+            authentication(userName: "deploy", password: "earthdawn")
+        }
+    }
+}
+
+task sourcesJar(type: Jar, dependsOn:classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn:javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
 }

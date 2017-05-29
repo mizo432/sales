@@ -36,6 +36,9 @@ subprojects {
     sourceCompatibility = compatibility
     targetCompatibility = compatibility
 
+    group = 'org.venuspj.sales'
+    version = '0.9.0'
+
     repositories {
         mavenCentral()
     }
