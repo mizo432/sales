@@ -1,5 +1,16 @@
 apply plugin: 'java'
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'net.researchgate:gradle-release:2.4.0'
+    }
+}
+apply plugin: 'net.researchgate.release'
+apply plugin: 'com.jfrog.artifactory'
+
 repositories {
     mavenCentral()
 }
@@ -9,3 +20,25 @@ dependencies {
     testRuntime group: 'ch.qos.logback', name: 'logback-core', version: "${logbackVersion}"
     testRuntime group: 'ch.qos.logback', name: 'logback-classic', version: "${logbackVersion}"
 }
+
+release {
+    git {
+        requireBranch = '(master|\\d+\\.\\d+)'
+    }
+}
+
+artifactory {
+    contextUrl = 'http://venus-pj.org/artifactory/'
+    publish {
+        repository {
+            repoKey = 'libs-release-local' //The Artifactory repository key to publish to
+            username = 'deploy'
+            password = 'earthdawn'
+        }
+    }
+    resolve {
+        repoKey = 'jcenter'
+    }
+}
+
+afterReleaseBuild.dependsOn bintrayUpload
