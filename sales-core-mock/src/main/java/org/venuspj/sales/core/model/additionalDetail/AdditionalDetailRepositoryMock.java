@@ -5,6 +5,7 @@ import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTimeProvider
 import org.venuspj.sales.core.model.additionalDetail.status.AdditionalDetailStatus;
 import org.venuspj.sales.core.model.additionalDetail.status.Status;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupRepositoryMock;
+import org.venuspj.sales.core.model.user.UserIdProvider;
 import org.venuspj.sales.externals.Maps2;
 import org.venuspj.sales.externals.Objects2;
 
@@ -37,7 +38,7 @@ public class AdditionalDetailRepositoryMock implements AdditionalDetailRepositor
     private static Map<AdditionalDetailId, AdditionalDetail> createTestAdditionalDetailMap() {
         Map<AdditionalDetailId, AdditionalDetail> result = Maps2.newHashMap();
         AdditionalDetailId additionalDetailId = DEFAULT_ADDITIONAL_DETAIL_ID;
-        Event event = new Event(RecordDateTimeProvider.currentDateTime());
+        Event event = new Event(RecordDateTimeProvider.currentDateTime(), UserIdProvider.currentUserId());
         result.put(additionalDetailId, new AdditionalDetail(additionalDetailId, event, ChargeGroupRepositoryMock.DEFAULT_CHARGE_GROUP_ID, new AdditionalDetailStatus(event, Status.APPROVED)));
         return result;
 
