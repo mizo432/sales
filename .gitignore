@@ -7,3 +7,4 @@ sales-datasource/build/
 sales-application/build/
 sales-web/build/
 /sales-usecases/build/
+/sales-core-mock/build/

@@ -1,6 +1,5 @@
 include 'sales-externals'
 include 'sales-core'
-include 'sales-core_test'
 include 'sales-datasource'
 include 'sales-report'
 include 'sales-usecases'
