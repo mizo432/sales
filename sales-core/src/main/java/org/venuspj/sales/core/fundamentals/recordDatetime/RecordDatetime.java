@@ -1,6 +1,7 @@
 package org.venuspj.sales.core.fundamentals.recordDatetime;
 
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
+import org.venuspj.sales.externals.Objects2;
 
 import java.time.LocalDateTime;
 import java.time.Month;
@@ -14,7 +15,7 @@ public class RecordDatetime {
 
     }
 
-    RecordDatetime(LocalDateTime aValue) {
+    public RecordDatetime(LocalDateTime aValue) {
         value = aValue;
     }
 
@@ -25,6 +26,13 @@ public class RecordDatetime {
     public RecordYearMonth recordYearMonth() {
         int year = value.getYear();
         Month month = value.getMonth();
-        return new RecordYearMonth(YearMonth.of(year,month));
+        return new RecordYearMonth(YearMonth.of(year, month));
+    }
+
+    @Override
+    public String toString() {
+        return Objects2.toStringHelper(this)
+                .addValue(value)
+                .toString();
     }
 }

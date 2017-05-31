@@ -3,10 +3,10 @@ apply plugin: 'java'
 archivesBaseName = 'sales-core-mock'
 
 repositories {
-    mavenCentral()
     maven {
-        url 'http://venus-pj.org/artifactory/libs-release/'
+        url "${artifactRepoBase}/libs-${project.version.endsWith('-SNAPSHOT') ? 'snapshot' : 'release'}-local"
     }
+    mavenCentral()
 }
 
 dependencies {

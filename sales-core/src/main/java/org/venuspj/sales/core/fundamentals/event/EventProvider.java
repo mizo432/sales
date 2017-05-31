@@ -12,7 +12,7 @@ public class EventProvider {
 
     public static Event newEvent() {
         UserId userId = UserIdProvider.currentUserId();
-        RecordDatetime recordDatetime = RecordDateTimeProvider.currentDateTime();
+        RecordDatetime recordDatetime = RecordDateTimeProvider.currentRecordDateTime();
         return new Event(recordDatetime, userId);
 
     }

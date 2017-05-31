@@ -17,14 +17,18 @@ allprojects {
 
 subprojects {
 
+    group = 'org.venuspj.sales'
+    version = '0.9.2'
+
     buildscript {
         ext {
             encoding = 'UTF-8'
             compatibility = 1.8
+            artifactRepoBase = 'http://venus-pj.org/artifactory'
         }
         repositories {
             maven {
-                url 'http://venus-pj.org/artifactory/libs-release/'
+                url "${artifactRepoBase}/libs-${project.version.endsWith('-SNAPSHOT') ? 'snapshot' : 'release'}-local"
             }
             mavenCentral()
             jcenter()
@@ -41,8 +45,6 @@ subprojects {
     sourceCompatibility = compatibility
     targetCompatibility = compatibility
 
-    group = 'org.venuspj.sales'
-    version = '0.9.0'
 
     repositories {
         mavenCentral()
@@ -65,22 +67,22 @@ subprojects {
             }
         }.writeTo("$buildDir/newpom.xml")
     }
-
     uploadArchives {
         repositories.mavenDeployer {
             configuration = configurations.deployerJars
-            repository(url: "http://venus-pj.org/artifactory/libs-release-local") {
+            repository(url: "${artifactRepoBase}/libs-${project.version.endsWith('-SNAPSHOT') ? 'snapshot' : 'release'}-local") {
                 authentication(userName: "deploy", password: "earthdawn")
+
             }
         }
     }
 
-    task sourcesJar(type: Jar, dependsOn:classes) {
+    task sourcesJar(type: Jar, dependsOn: classes) {
         classifier = 'sources'
         from sourceSets.main.allSource
     }
 
-    task javadocJar(type: Jar, dependsOn:javadoc) {
+    task javadocJar(type: Jar, dependsOn: javadoc) {
         classifier = 'javadoc'
         from javadoc.destinationDir
     }
@@ -124,7 +126,7 @@ subprojects {
 }
 
 
-task wrapper(type:Wrapper){
+task wrapper(type: Wrapper) {
     gradleVersion = '3.5'
 }
 

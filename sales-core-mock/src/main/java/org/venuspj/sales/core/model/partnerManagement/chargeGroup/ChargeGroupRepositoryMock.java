@@ -1,12 +1,10 @@
 package org.venuspj.sales.core.model.partnerManagement.chargeGroup;
 
-import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailId;
 import org.venuspj.sales.externals.Maps2;
 
 import java.util.Map;
 
 /**
- * Created by mizoguchi on 2017/05/28.
  */
 public class ChargeGroupRepositoryMock implements ChargeGroupRepository {
     public static final ChargeGroupId DEFAULT_CHARGE_GROUP_ID = new ChargeGroupId(1);

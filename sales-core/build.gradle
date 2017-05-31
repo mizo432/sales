@@ -4,7 +4,7 @@ archivesBaseName = 'sales-core'
 
 repositories {
     maven {
-        url 'http://venus-pj.org/artifactory/libs-release/'
+        url "${artifactRepoBase}/libs-${project.version.endsWith('-SNAPSHOT') ? 'snapshot' : 'release'}-local"
     }
     mavenCentral()
 }

@@ -12,6 +12,9 @@ buildscript {
 }
 
 repositories {
+    maven {
+        url "${artifactRepoBase}/libs-${project.version.endsWith('-SNAPSHOT') ? 'snapshot' : 'release'}-local"
+    }
     mavenCentral()
 }
 
