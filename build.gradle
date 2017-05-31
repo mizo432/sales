@@ -53,7 +53,7 @@ subprojects {
     dependencies {
         testCompile group: 'org.assertj', name: 'assertj-core', version: "${assertJVersion}"
         testCompile group: 'junit', name: 'junit', version: "${junitVersion}"
-        testCompile group: 'com.google.code.findbugs', name: 'annotations', version: "3.0.1"
+        compile group: 'com.google.code.findbugs', name: 'annotations', version: "3.0.1"
     }
 
     configurations {

@@ -6,7 +6,6 @@ import org.venuspj.sales.core.model.user.UserId;
 import org.venuspj.sales.core.model.user.UserIdProvider;
 
 /**
- * Created by mizoguchi on 2017/05/28.
  */
 public class EventProvider {
 

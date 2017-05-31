@@ -3,6 +3,7 @@ package org.venuspj.sales.core.fundamentals.event;
 import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDatetime;
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
 import org.venuspj.sales.core.model.user.UserId;
+import org.venuspj.sales.externals.Objects2;
 
 /**
  */
@@ -13,8 +14,9 @@ public class Event {
     Event() {
     }
 
-    public Event(RecordDatetime aRecordDatetime, UserId userId) {
+    public Event(RecordDatetime aRecordDatetime, UserId anUserId) {
         recordDatetime = aRecordDatetime;
+        userId = anUserId;
     }
 
     public RecordDatetime recordDatetime() {
@@ -24,5 +26,15 @@ public class Event {
     public RecordYearMonth recordYearMonth() {
         return recordDatetime.recordYearMonth();
 
+    }
+
+    @Override
+    public String toString() {
+        return Objects2
+                .toStringHelper(this)
+                .add("recordDatetime", recordDatetime)
+                .add("userId", userId)
+                .omitNullValues()
+                .toString();
     }
 }

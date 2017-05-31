@@ -35,4 +35,8 @@ public class RecordDatetime {
                 .addValue(value)
                 .toString();
     }
+
+    public boolean isPresent() {
+        return Objects2.nonNull(value);
+    }
 }
