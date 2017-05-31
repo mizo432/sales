@@ -2,6 +2,7 @@ package org.venuspj.sales.core.fundamentals.recordDatetime;
 
 
 import org.junit.Test;
+import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
 
 import java.time.LocalDateTime;
 
@@ -33,6 +34,24 @@ public class RecordDatetimeTest {
         assertThat(target.isPresent())
                 .isNotNull()
                 .isTrue();
+    }
+
+    @Test
+    public void RecordYearMonth01() throws Exception {
+        RecordDatetime target = new RecordDatetime(LocalDateTime.of(2017, 4, 1, 2, 3, 4, 5));
+        RecordYearMonth actual = target.recordYearMonth();
+        assertThat(actual.isPresent())
+                .isNotNull()
+                .isTrue();
+    }
+
+    @Test
+    public void RecordYearMonth02() throws Exception {
+        RecordDatetime target = new RecordDatetime();
+        RecordYearMonth actual = target.recordYearMonth();
+        assertThat(actual.isPresent())
+                .isNotNull()
+                .isFalse();
     }
 
 }

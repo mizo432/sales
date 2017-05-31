@@ -24,6 +24,9 @@ public class RecordDatetime {
     }
 
     public RecordYearMonth recordYearMonth() {
+        if (!isPresent()) {
+            return new RecordYearMonth(null);
+        }
         int year = value.getYear();
         Month month = value.getMonth();
         return new RecordYearMonth(YearMonth.of(year, month));
