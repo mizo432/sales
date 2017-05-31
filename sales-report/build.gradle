@@ -16,6 +16,9 @@ repositories {
         url "${artifactRepoBase}/libs-${project.version.endsWith('-SNAPSHOT') ? 'snapshot' : 'release'}-local"
     }
     mavenCentral()
+    maven {
+        url 'http://venus-pj.org/artifactory/libs-release/'
+    }
 }
 
 dependencies {
