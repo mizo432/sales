@@ -8,3 +8,4 @@ sales-application/build/
 sales-web/build/
 /sales-usecases/build/
 /sales-core-mock/build/
+sales-utils/build
