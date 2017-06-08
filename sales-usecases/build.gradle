@@ -19,14 +19,14 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.venuspj.sales', name : 'sales-core', version: "${version}"
+    compile project(":sales-core")
     compile group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}"
     compile group: 'org.slf4j', name : 'slf4j-api', version: "${slf4jVersion}"
     testRuntime group: 'ch.qos.logback', name : 'logback-classic', version: "${logbackVersion}"
     testCompile(group: "org.springframework.boot", name: "spring-boot-starter-test", version: "${springBootVersion}"){
         exclude  group: 'org.assertj'
     }
-    testCompile group: 'org.venuspj.sales', name : 'sales-core-mock', version: "${version}"
+    testCompile project(":sales-core-mock")
 
 }
 

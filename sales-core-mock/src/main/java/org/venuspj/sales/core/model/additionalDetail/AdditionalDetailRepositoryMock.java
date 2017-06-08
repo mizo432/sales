@@ -6,8 +6,8 @@ import org.venuspj.sales.core.model.additionalDetail.status.AdditionalDetailStat
 import org.venuspj.sales.core.model.additionalDetail.status.Status;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupRepositoryMock;
 import org.venuspj.sales.core.model.user.UserIdProvider;
-import org.venuspj.sales.externals.Maps2;
-import org.venuspj.sales.externals.Objects2;
+import org.venuspj.sales.utils.Maps2;
+import org.venuspj.sales.utils.Objects2;
 
 import java.util.Map;
 

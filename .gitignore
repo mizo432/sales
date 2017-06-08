@@ -1,10 +1,10 @@
 .idea/
 .gradle/
 sales-core/build/
-sales-externals/build/
 sales-report/build/
 sales-datasource/build/
 sales-application/build/
 sales-web/build/
 /sales-usecases/build/
 /sales-core-mock/build/
+/sales-utils/build/

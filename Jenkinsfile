@@ -8,8 +8,9 @@ node {
    }
 
    stage ('build'){
-      sh './gradlew --daemon :sales-externals:build'
+      sh './gradlew --daemon :sales-utils:build'
       sh './gradlew --daemon :sales-core:build'
+      sh './gradlew --daemon :sales-core-mock:build'
       sh './gradlew --daemon :sales-datasource:build'
       sh './gradlew --daemon :sales-report:build'
       sh './gradlew --daemon :sales-usecases:build'

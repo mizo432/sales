@@ -3,17 +3,11 @@ package org.venuspj.sales.usecase.addtionalDetailManagement.approving;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.venuspj.sales.core.fundamentals.event.Event;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetail;
-import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailId;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailRepository;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailRepositoryMock;
-import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupId;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupRepository;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupRepositoryMock;
-import org.venuspj.sales.externals.Maps2;
-
-import java.util.Map;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 

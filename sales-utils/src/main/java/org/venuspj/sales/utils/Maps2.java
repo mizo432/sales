@@ -1,4 +1,4 @@
-package org.venuspj.sales.externals;
+package org.venuspj.sales.utils;
 
 import java.util.HashMap;
 import java.util.Map;

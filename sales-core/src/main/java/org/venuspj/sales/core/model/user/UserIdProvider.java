@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.model.user;
 
-import org.venuspj.sales.externals.Objects2;
+import org.venuspj.sales.utils.Objects2;
 
 public class UserIdProvider {
     private static UserId userId;

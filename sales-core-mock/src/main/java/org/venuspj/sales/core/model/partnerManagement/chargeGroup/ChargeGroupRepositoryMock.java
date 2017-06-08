@@ -1,6 +1,7 @@
 package org.venuspj.sales.core.model.partnerManagement.chargeGroup;
 
-import org.venuspj.sales.externals.Maps2;
+
+import org.venuspj.sales.utils.Maps2;
 
 import java.util.Map;
 

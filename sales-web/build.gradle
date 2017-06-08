@@ -20,10 +20,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.venuspj.sales', name : 'sales-core', version: "${version}"
-    runtime group: 'org.venuspj.sales', name : 'sales-datasource', version: "${version}"
-    runtime group: 'org.venuspj.sales', name : 'sales-report', version: "${version}"
-    runtime group: 'org.venuspj.sales', name : 'sales-usecases', version: "${version}"
+    compile project(":sales-core")
     compile group: "org.springframework.boot", name: "spring-boot-starter-jdbc", version: "${springBootVersion}"
     compile group: "org.springframework.boot", name: "spring-boot-starter-cache", version: "${springBootVersion}"
     compile group: "org.springframework.boot", name: "spring-boot-devtools", version: "${springBootVersion}"

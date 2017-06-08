@@ -3,7 +3,7 @@ package org.venuspj.sales.core.fundamentals.event;
 import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDatetime;
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
 import org.venuspj.sales.core.model.user.UserId;
-import org.venuspj.sales.externals.Objects2;
+import org.venuspj.sales.utils.Objects2;
 
 /**
  */

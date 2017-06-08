@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.venuspj.sales', name : 'sales-core', version: "${version}"
+    compile project(":sales-core")
     compile (group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}"){
         exclude group: 'ch.qos.logback'
     }

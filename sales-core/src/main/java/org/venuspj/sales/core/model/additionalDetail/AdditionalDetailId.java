@@ -1,6 +1,5 @@
 package org.venuspj.sales.core.model.additionalDetail;
 
-import org.venuspj.sales.externals.Objects2;
 
 /**
  */
