@@ -3,7 +3,7 @@ apply plugin: 'base'
 allprojects {
     ext {
         springBootVersion = '1.5.3.RELEASE'
-        guavaVersion = '21.+'
+        guavaVersion = '22.0'
         mybatisBootVersion = '1.2+'
         mybatisTypeHandlerVersion = '1.0.+'
         assertJVersion = '3.6.2'
@@ -51,7 +51,7 @@ subprojects {
     }
 
     dependencies {
-        testCompile group: 'org.assertj', name: 'assertj-core', version: "${assertJVersion}"
+        testCompile group: 'org.assertj', name: 'assertj-core', version: '3.8.0'
         testCompile group: 'junit', name: 'junit', version: "${junitVersion}"
         compile group: 'com.google.code.findbugs', name: 'annotations', version: "3.0.1"
     }

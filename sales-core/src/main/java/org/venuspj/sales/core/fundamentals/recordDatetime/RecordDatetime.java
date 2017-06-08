@@ -1,7 +1,7 @@
 package org.venuspj.sales.core.fundamentals.recordDatetime;
 
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
-import org.venuspj.sales.externals.Objects2;
+import org.venuspj.sales.utils.Objects2;
 
 import java.time.LocalDateTime;
 import java.time.Month;

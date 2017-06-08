@@ -1,4 +1,4 @@
-package org.venuspj.sales.externals;
+package org.venuspj.sales.utils;
 
 import com.google.common.base.MoreObjects;
 
@@ -21,8 +21,12 @@ public class Objects2 {
 
     }
 
-    public static MoreObjects.ToStringHelper toStringHelper(Object obj){
+    public static MoreObjects.ToStringHelper toStringHelper(Object obj) {
         return MoreObjects.toStringHelper(obj);
 
+    }
+
+    public static int hash(Object... objects) {
+        return Objects.hash(objects);
     }
 }
