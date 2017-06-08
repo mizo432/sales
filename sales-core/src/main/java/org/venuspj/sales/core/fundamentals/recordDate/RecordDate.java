@@ -1,5 +1,7 @@
 package org.venuspj.sales.core.fundamentals.recordDate;
 
+import org.venuspj.sales.utils.Objects2;
+
 import java.time.LocalDate;
 
 public class RecordDate {
@@ -22,5 +24,18 @@ public class RecordDate {
 
     public boolean isBefore(RecordDate other) {
         return value.isBefore(other.value);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof RecordDate))
+            return false;
+        RecordDate that = (RecordDate) obj;
+        return Objects2.equal(value, that.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects2.hash(value);
     }
 }
