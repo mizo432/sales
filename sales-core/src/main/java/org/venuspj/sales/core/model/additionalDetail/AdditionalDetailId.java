@@ -16,4 +16,8 @@ public class AdditionalDetailId {
     public boolean isPresent() {
         return !Integer.valueOf(-1).equals(value);
     }
+
+    public static AdditionalDetailId empty() {
+        return new AdditionalDetailId();
+    }
 }

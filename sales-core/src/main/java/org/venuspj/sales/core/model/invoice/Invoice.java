@@ -3,6 +3,7 @@ package org.venuspj.sales.core.model.invoice;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.recordDate.RecordDate;
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
+import org.venuspj.sales.core.model.invoice.details.InvoiceDetails;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroup;
 import org.venuspj.sales.utils.Objects2;
 

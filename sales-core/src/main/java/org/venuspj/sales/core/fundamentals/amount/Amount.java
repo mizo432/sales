@@ -23,6 +23,10 @@ public class Amount {
         return new Amount(value + amount.value);
     }
 
+    public Amount minus(Amount amount) {
+        return new Amount(value - amount.value);
+    }
+
     public boolean isMoreThan(Amount other) {
         return value > other.value;
     }
@@ -38,4 +42,5 @@ public class Amount {
                 .addValue(value)
                 .toString();
     }
+
 }
