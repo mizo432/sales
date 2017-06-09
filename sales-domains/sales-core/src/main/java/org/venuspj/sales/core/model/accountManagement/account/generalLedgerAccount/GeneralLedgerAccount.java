@@ -1,9 +1,6 @@
 package org.venuspj.sales.core.model.accountManagement.account.generalLedgerAccount;
 
-import org.venuspj.sales.core.model.accountManagement.account.AbstractAccount;
-import org.venuspj.sales.core.model.accountManagement.account.Account;
-import org.venuspj.sales.core.model.accountManagement.account.AccountNumber;
-import org.venuspj.sales.core.model.accountManagement.account.Balance;
+import org.venuspj.sales.core.model.accountManagement.account.*;
 
 public class GeneralLedgerAccount extends AbstractAccount {
 
@@ -11,7 +8,7 @@ public class GeneralLedgerAccount extends AbstractAccount {
         super();
     }
 
-    public GeneralLedgerAccount(AccountNumber aNumber, Balance aBalance) {
-        super(aNumber, aBalance);
+    public GeneralLedgerAccount(AccountNumber aNumber, Balance aBalance, AccountsTitle anAccountsTitle) {
+        super(aNumber, aBalance,anAccountsTitle);
     }
 }

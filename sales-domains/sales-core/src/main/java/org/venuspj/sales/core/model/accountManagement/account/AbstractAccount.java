@@ -8,15 +8,17 @@ import org.venuspj.sales.utils.Objects2;
 public abstract class AbstractAccount implements Account {
     AccountNumber number;
     Balance balance;
+    AccountsTitle accountsTitle;
 
     protected AbstractAccount() {
 
     }
 
     public AbstractAccount(AccountNumber aNumber,
-                           Balance aBalance) {
+                           Balance aBalance, AccountsTitle anAccountsTitle) {
         number = aNumber;
         balance = aBalance;
+        accountsTitle = anAccountsTitle;
 
     }
 
@@ -24,7 +26,8 @@ public abstract class AbstractAccount implements Account {
         return Objects2
                 .toStringHelper(this)
                 .add("number", number)
-                .add("balance", balance);
+                .add("balance", balance)
+                .add("accountsTitle", accountsTitle);
     }
 
 }
