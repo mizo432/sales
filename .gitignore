@@ -8,3 +8,9 @@ sales-web/build/
 /sales-usecases/build/
 /sales-core-mock/build/
 /sales-utils/build/
+/sales-adapters/sales-datasources/build/
+/sales-adapters/sales-presentations/build/
+/sales-adapters/sales-reports/build/
+/sales-applications/sales-usecases/build/
+/sales-domains/sales-core/build/
+/sales-domains/sales-core-mocks/build/
