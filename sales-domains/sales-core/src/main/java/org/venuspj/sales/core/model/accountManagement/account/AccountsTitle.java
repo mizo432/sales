@@ -1,5 +1,5 @@
 package org.venuspj.sales.core.model.accountManagement.account;
 
 public enum AccountsTitle {
-    DEPOSIT, ADVANCE, ASSET
+    DEPOSIT, ADVANCE, LIABILITIES, ASSET
 }
