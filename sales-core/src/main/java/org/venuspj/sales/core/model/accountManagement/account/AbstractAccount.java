@@ -1,7 +1,9 @@
 package org.venuspj.sales.core.model.accountManagement.account;
 
+import com.google.common.base.MoreObjects;
+import org.venuspj.sales.utils.Objects2;
+
 /**
- * Created by mizoguchi on 2017/05/21.
  */
 public abstract class AbstractAccount implements Account {
     AccountNumber number;
@@ -12,9 +14,17 @@ public abstract class AbstractAccount implements Account {
     }
 
     public AbstractAccount(AccountNumber aNumber,
-                   Balance aBalance) {
+                           Balance aBalance) {
         number = aNumber;
         balance = aBalance;
 
     }
+
+    protected MoreObjects.ToStringHelper string() {
+        return Objects2
+                .toStringHelper(this)
+                .add("number", number)
+                .add("balance", balance);
+    }
+
 }

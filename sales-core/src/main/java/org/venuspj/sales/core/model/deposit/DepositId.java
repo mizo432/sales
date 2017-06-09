@@ -1,7 +1,8 @@
 package org.venuspj.sales.core.model.deposit;
 
+import org.venuspj.sales.utils.Objects2;
+
 /**
- * Created by mizoguchi on 2017/05/21.
  */
 public class DepositId {
     Integer value;
@@ -12,5 +13,13 @@ public class DepositId {
 
     public DepositId(Integer aValue) {
         value = aValue;
+    }
+
+    @Override
+    public String toString() {
+        return Objects2
+                .toStringHelper(this)
+                .addValue(value)
+                .toString();
     }
 }
