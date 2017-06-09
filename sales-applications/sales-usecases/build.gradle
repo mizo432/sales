@@ -1,6 +1,6 @@
 apply plugin: 'org.springframework.boot'
 
-archivesBaseName = 'sales-report'
+archivesBaseName = 'sales-usecases'
 
 buildscript {
     repositories {
@@ -16,17 +16,17 @@ repositories {
         url "${artifactRepoBase}/libs-${project.version.endsWith('-SNAPSHOT') ? 'snapshot' : 'release'}-local"
     }
     mavenCentral()
-    maven {
-        url 'http://venus-pj.org/artifactory/libs-release/'
-    }
 }
 
 dependencies {
     compile project(":sales-core")
     compile group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}"
-    testCompile group: "org.springframework.boot", name: "spring-boot-starter-test", version: "${springBootVersion}"
     compile group: 'org.slf4j', name : 'slf4j-api', version: "${slf4jVersion}"
     testRuntime group: 'ch.qos.logback', name : 'logback-classic', version: "${logbackVersion}"
+    testCompile(group: "org.springframework.boot", name: "spring-boot-starter-test", version: "${springBootVersion}"){
+        exclude  group: 'org.assertj'
+    }
+    testCompile project(":sales-core-mocks")
 
 }
 

@@ -1,6 +1,6 @@
 apply plugin: 'org.springframework.boot'
 
-archivesBaseName = 'sales-datasource'
+archivesBaseName = 'sales-datasources'
 
 buildscript {
     repositories {

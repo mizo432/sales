@@ -10,10 +10,11 @@ node {
    stage ('build'){
       sh './gradlew --daemon :sales-utils:build'
       sh './gradlew --daemon :sales-core:build'
-      sh './gradlew --daemon :sales-core-mock:build'
-      sh './gradlew --daemon :sales-datasource:build'
-      sh './gradlew --daemon :sales-report:build'
+      sh './gradlew --daemon :sales-core-mocks:build'
+      sh './gradlew --daemon :sales-datasources:build'
+      sh './gradlew --daemon :sales-reports:build'
       sh './gradlew --daemon :sales-usecases:build'
+      sh './gradlew --daemon :sales-presentations:build'
       sh './gradlew --daemon :sales-web:build'
    }
 

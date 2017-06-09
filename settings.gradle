@@ -1,8 +1,16 @@
 include 'sales-utils'
 include 'sales-core'
-include 'sales-datasource'
-include 'sales-report'
+project(':sales-core').projectDir = file('./sales-domains/sales-core')
 include 'sales-usecases'
+project(':sales-usecases').projectDir = file('./sales-applications/sales-usecases')
 include 'sales-web'
-include 'sales-core-mock'
+include 'sales-core-mocks'
+project(':sales-core-mocks').projectDir = file('./sales-domains/sales-core-mocks')
+include 'sales-datasources'
+project(':sales-datasources').projectDir = file('./sales-adapters/sales-datasources')
+include 'sales-reports'
+project(':sales-reports').projectDir = file('./sales-adapters/sales-reports')
+include 'sales-presentations'
+project(':sales-presentations').projectDir = file('./sales-adapters/sales-presentations')
+
 

@@ -21,6 +21,10 @@ repositories {
 
 dependencies {
     compile project(":sales-core")
+    compile project(":sales-datasources")
+    compile project(":sales-reports")
+    compile project(":sales-usecases")
+    compile project(":sales-presentations")
     compile group: "org.springframework.boot", name: "spring-boot-starter-jdbc", version: "${springBootVersion}"
     compile group: "org.springframework.boot", name: "spring-boot-starter-cache", version: "${springBootVersion}"
     compile group: "org.springframework.boot", name: "spring-boot-devtools", version: "${springBootVersion}"
