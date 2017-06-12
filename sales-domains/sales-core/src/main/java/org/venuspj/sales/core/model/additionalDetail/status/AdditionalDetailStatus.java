@@ -30,4 +30,6 @@ public class AdditionalDetailStatus {
                 .omitNullValues()
                 .toString();
     }
+
+    public enum INITIAL_STATUS {}
 }

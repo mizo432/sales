@@ -2,6 +2,7 @@ package org.venuspj.sales.usecase.addtionalDetailManagement.approving;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetail;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailRepository;
@@ -34,6 +35,7 @@ public class ApprovingTest {
     }
 
     @Test
+    @Ignore
     public void start() throws Exception {
         AdditionalDetail actual = targetUseCase.start(AdditionalDetailRepositoryMock.DEFAULT_ADDITIONAL_DETAIL_ID);
         assertThat(actual)
