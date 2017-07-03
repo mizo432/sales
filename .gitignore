@@ -25,3 +25,4 @@ sales-web/build/
 /adapters/datasources/build/
 /applications/usecases/build/
 /models/core-mocks/build/
+/externals/utils/build/
