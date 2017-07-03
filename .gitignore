@@ -26,3 +26,4 @@ sales-web/build/
 /applications/usecases/build/
 /models/core-mocks/build/
 /externals/utils/build/
+/models/contracts/build/
