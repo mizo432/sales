@@ -1,0 +1,41 @@
+apply plugin: 'org.springframework.boot'
+
+archivesBaseName = 'sales-presentations'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":sales-core")
+    compile (group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}"){
+        exclude group: 'ch.qos.logback'
+    }
+    testCompile (group: "org.springframework.boot", name: "spring-boot-starter-test", version: "${springBootVersion}"){
+        exclude group: 'org.assertj'
+        exclude group: 'ch.qos.logback'
+    }
+    runtime(group: "mysql", name: "mysql-connector-java", version: "6.0.6") {
+        exclude group: 'ch.qos.logback'
+    }
+    compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.3.0'
+    compile group: 'org.slf4j', name : 'slf4j-api', version: "${slf4jVersion}"
+    testRuntime group: 'ch.qos.logback', name : 'logback-core', version: "${logbackVersion}"
+    testRuntime group: 'ch.qos.logback', name : 'logback-classic', version: "${logbackVersion}"
+    compile group: 'org.mybatis', name: 'mybatis-typehandlers-jsr310', version: '1.0.2'
+    testRuntime group: 'com.h2database', name: 'h2', version: "${h2dbVersion}"
+
+}
+
+bootRepackage{
+    enabled = false
+}
