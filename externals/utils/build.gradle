@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+archivesBaseName = 'sales-utils'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.slf4j', name: 'slf4j-api', version: "${slf4jVersion}"
+    compile group: 'com.google.guava', name: 'guava', version: "${guavaVersion}"
+    testRuntime group: 'ch.qos.logback', name: 'logback-core', version: "${logbackVersion}"
+    testRuntime group: 'ch.qos.logback', name: 'logback-classic', version: "${logbackVersion}"
+}
