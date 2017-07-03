@@ -2,7 +2,6 @@ package org.venuspj.sales.core.model.accountManagement.account;
 
 import com.google.common.base.MoreObjects;
 import org.venuspj.sales.utils.Objects2;
-
 /**
  */
 public abstract class AbstractAccount implements Account {
