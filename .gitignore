@@ -15,3 +15,5 @@ sales-web/build/
 /sales-domains/sales-core/build/
 /sales-domains/sales-core-mocks/build/
 /models/core/build/
+/models/asoview/build/
+/models/ticket/build/
