@@ -1,0 +1,33 @@
+apply plugin: 'org.springframework.boot'
+
+archivesBaseName = 'sales-usecases'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":sales-core")
+    compile project(":sales-contracts")
+    compile group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}"
+    compile group: 'org.slf4j', name : 'slf4j-api', version: "${slf4jVersion}"
+    testRuntime group: 'ch.qos.logback', name : 'logback-classic', version: "${logbackVersion}"
+    testCompile(group: "org.springframework.boot", name: "spring-boot-starter-test", version: "${springBootVersion}"){
+        exclude  group: 'org.assertj'
+    }
+    testCompile project(":sales-core-mocks")
+
+}
+
+bootRepackage{
+    enabled = false
+}
