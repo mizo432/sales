@@ -17,3 +17,9 @@ sales-web/build/
 /models/core/build/
 /models/asoview/build/
 /models/ticket/build/
+/adapters/asoview-datasources/build/
+/adapters/controllers/build/
+/adapters/ticket-datasources/build/
+/adapters/reports/build/
+/adapters/presentations/build/
+/adapters/datasources/build/
