@@ -18,4 +18,7 @@ public class ChargeGroupId {
                 .toString();
     }
 
+    public boolean isPresent() {
+        return Objects2.nonNull(value);
+    }
 }

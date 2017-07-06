@@ -8,4 +8,6 @@ public interface AdditionalDetailRepository {
     AdditionalDetail findOne(AdditionalDetailId anAdditionalDetailId);
 
     void storeAdditionalDetailStatus(AdditionalDetailId anAdditionalDetailId, AdditionalDetailStatus aAdditionalDetailStatus);
+
+    void store(AdditionalDetail additionalDetail);
 }

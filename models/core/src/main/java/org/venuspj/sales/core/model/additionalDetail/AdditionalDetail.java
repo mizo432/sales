@@ -6,7 +6,6 @@ import org.venuspj.sales.core.model.additionalDetail.status.AdditionalDetailStat
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupId;
 
 /**
- * Created by mizoguchi on 2017/05/28.
  */
 public class AdditionalDetail {
     public static final AdditionalDetail DEFAULT = new AdditionalDetail();
@@ -21,6 +20,12 @@ public class AdditionalDetail {
         chargeGroupId = aChargeGroupId;
         additionalDetailStatus = anAdditionalDetailStatus;
 
+    }
+    public AdditionalDetail(AdditionalDetailId anAdditionalDetailId, Event anEvent, ChargeGroupId aChargeGroupId) {
+        additionalDetailId = anAdditionalDetailId;
+        event = anEvent;
+        chargeGroupId = aChargeGroupId;
+        additionalDetailStatus = AdditionalDetailStatus.initialState(anEvent);
     }
 
     AdditionalDetail() {
