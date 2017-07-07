@@ -2,7 +2,6 @@ package org.venuspj.sales.core.model.additionalDetail;
 
 import org.venuspj.sales.core.fundamentals.event.Event;
 import org.venuspj.sales.core.fundamentals.event.EventProvider;
-import org.venuspj.sales.core.model.additionalDetail.status.AdditionalDetailStatus;
 import org.venuspj.sales.core.model.additionalDetail.status.Status;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupId;
 import org.venuspj.sales.utils.Objects2;
@@ -14,9 +13,7 @@ public class AdditionalDetail {
     AdditionalDetailId additionalDetailId = new AdditionalDetailId(-1);
     private ChargeGroupId chargeGroupId = new ChargeGroupId(-1);
     Event event = EventProvider.newEvent();
-    Status additionalDetailStatus = Status.INITIAL_STATUS;
-    ApprovedStatus approvedStatus = ApprovedStatus.INITIAL_STATUS;
-    private AdditionalHistories additionalHistories = AdditionalHistories.emptyAdditionalHistories();
+    ApprovedStatus approvedStatus = ApprovedStatus.NON_APPROVED;
 
     @Override
     public String toString() {
@@ -25,26 +22,20 @@ public class AdditionalDetail {
                 .add("additionalDetailId",additionalDetailId)
                 .add("chargeGroupId",chargeGroupId)
                 .add("event",event)
-                .add("additionalDetailStatus",additionalDetailStatus)
-                .add("approvedStatus",approvedStatus)
-                .add("additionalHistories",additionalHistories)
                 .add("approvedStatus",approvedStatus)
                 .omitNullValues()
                 .toString();
     }
 
-    public AdditionalDetail(AdditionalDetailId anAdditionalDetailId, Event anEvent, ChargeGroupId aChargeGroupId, Status anAdditionalDetailStatus,AdditionalHistories anAdditionalHistories) {
+    public AdditionalDetail(AdditionalDetailId anAdditionalDetailId, Event anEvent, ChargeGroupId aChargeGroupId, Status anAdditionalDetailStatus) {
         additionalDetailId = anAdditionalDetailId;
         event = anEvent;
         chargeGroupId = aChargeGroupId;
-        additionalDetailStatus = anAdditionalDetailStatus;
-        additionalHistories = anAdditionalHistories;
     }
     public AdditionalDetail(AdditionalDetailId anAdditionalDetailId, Event anEvent, ChargeGroupId aChargeGroupId) {
         additionalDetailId = anAdditionalDetailId;
         event = anEvent;
         chargeGroupId = aChargeGroupId;
-        additionalDetailStatus = AdditionalDetailStatus.initialState(anEvent);
     }
 
     AdditionalDetail() {
@@ -67,30 +58,8 @@ public class AdditionalDetail {
     public AdditionalDetailId additionalDetailId() {
         return additionalDetailId;
     }
-    public AdditionalHistories additionalHistories() {
-        return additionalHistories;
-    }
-
-    /**
-     * 案件が削除されているかを返却する
-     *
-     * @return 案件が削除されている場合trueを返却する
-     */
-    public boolean getIsDroped() {
-        return additionalDetailStatus == Status.IS_DROPED;
-    }
-
-    public AdditionalDetailHistory getLastHistory() {
-        return additionalHistories.getLastAdditionalDetailHistory();
-
-    }
-
-    public Status additionalDetailStatus() {
-        return additionalDetailStatus;
-    }
 
     public boolean isApproved() {
-        return additionalHistories.isAllApproved();
+        return approvedStatus.isApploved();
     }
-
 }

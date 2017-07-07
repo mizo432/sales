@@ -21,6 +21,7 @@ dependencies {
     compile project(":sales-datasources")
     compile project(":sales-reports")
     compile project(":sales-usecases")
+    compile project(":sales-contracts")
     compile project(":sales-presentations")
     compile group: "org.springframework.boot", name: "spring-boot-starter-jdbc", version: "${springBootVersion}"
     compile group: "org.springframework.boot", name: "spring-boot-starter-cache", version: "${springBootVersion}"
@@ -31,7 +32,7 @@ dependencies {
 }
 
 jar {
-    baseName = 'venus-sales'
+    baseName = 'venus-conttollers'
     version = '0.0.1-SNAPSHOT'
 }
 

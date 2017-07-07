@@ -18,6 +18,7 @@ import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailRepository;
 public class PostingAdditionalDetailUseCase implements PostingAdditionalDetail {
     AdditionalDetailRepository additionalDetailRepository;
     InputPort inputPort;
+    PostingAdditionalDetailOutputPort outputPort;
     EventBus eventBus;
     ClosingService closingService;
     @Autowired
@@ -33,11 +34,17 @@ public class PostingAdditionalDetailUseCase implements PostingAdditionalDetail {
     }
 
     @Override
-    public PostingAdditionalDetailOutputPort start() {
+    public PostingAdditionalDetail withOutputPort(PostingAdditionalDetailOutputPort anOutputPort) {
+        outputPort = anOutputPort;
+        return this;
+    }
+
+    @Override
+    public void start() {
         closingService.reopenIfClosed(inputPort.chargeGroupId(),inputPort.moment());
         AdditionalDetail additionalDetail = new AdditionalDetail(AdditionalDetailId.empty(),new Event(RecordDateTimeProvider.currentRecordDateTime(),inputPort.operationUserId()),inputPort.chargeGroupId());
         additionalDetailRepository.store(additionalDetail);
         eventBus.post(PostedAddtionalDetail.of(additionalDetail.additionalDetailId(),inputPort.moment()));
-        return new PostingAdditionalDetailOutputPort(additionalDetail);
+        outputPort.setAdditionalDetail(additionalDetail);
     }
 }

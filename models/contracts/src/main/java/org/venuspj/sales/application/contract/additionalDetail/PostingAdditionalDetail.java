@@ -1,10 +1,15 @@
 package org.venuspj.sales.application.contract.additionalDetail;
 
+import org.venuspj.sales.cleanArchtecture.annotation.UseCaseContract;
+
 /**
  */
-public interface PostingAdditionalDetail  {
+@UseCaseContract
+public interface PostingAdditionalDetail {
     PostingAdditionalDetail withInputPort(InputPort anInputPort);
 
-    PostingAdditionalDetailOutputPort start();
+    PostingAdditionalDetail withOutputPort(PostingAdditionalDetailOutputPort anOutputPort);
+
+    void start();
 
 }
