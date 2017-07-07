@@ -11,7 +11,7 @@ import org.venuspj.sales.core.model.additionalDetail.AdditionalDetail;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailId;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailRepository;
 import org.venuspj.sales.core.model.additionalDetail.status.AdditionalDetailStatus;
-import org.venuspj.sales.core.model.additionalDetail.status.Status;
+import org.venuspj.sales.core.model.additionalDetail.status.ApploveStatus;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroup;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupRepository;
 import org.venuspj.sales.core.usecase.addtionalDetailManagement.approvingAdditionDetail.ApprovingAdditionDetail;
@@ -52,7 +52,7 @@ public class Approving implements ApprovingAdditionDetail {
             throw new ChargeGroupIsAlreadyClosedException("請求先グループは既に請求締めされているため承認できません");
 
         Event event = EventProvider.newEvent();
-        AdditionalDetailStatus aAdditionalDetailStatus = new AdditionalDetailStatus(event, Status.APPROVED);
+        AdditionalDetailStatus aAdditionalDetailStatus = new AdditionalDetailStatus(event, ApploveStatus.APPROVED);
         additionalDetailRepository.storeAdditionalDetailStatus(anAdditionalDetailId, aAdditionalDetailStatus);
         return additionalDetailRepository.findOne(anAdditionalDetailId);
 

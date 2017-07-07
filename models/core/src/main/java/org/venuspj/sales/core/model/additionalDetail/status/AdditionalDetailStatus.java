@@ -7,14 +7,18 @@ import org.venuspj.sales.utils.Objects2;
  */
 public class AdditionalDetailStatus {
     Event event;
-    Status status;
+    ApploveStatus status = ApploveStatus.INITIAL;
 
     AdditionalDetailStatus() {
     }
 
-    public AdditionalDetailStatus(Event anEvent, Status aStatus) {
+    public AdditionalDetailStatus(Event anEvent, ApploveStatus aStatus) {
         status = aStatus;
         event = anEvent;
+    }
+
+    public AdditionalDetailStatus(Event aMoment) {
+        event = aMoment;
     }
 
     public boolean isApproved() {
@@ -31,5 +35,7 @@ public class AdditionalDetailStatus {
                 .toString();
     }
 
-    public enum INITIAL_STATUS {}
+    public static AdditionalDetailStatus initialState(Event aMoment) {
+        return new AdditionalDetailStatus(aMoment);
+    }
 }

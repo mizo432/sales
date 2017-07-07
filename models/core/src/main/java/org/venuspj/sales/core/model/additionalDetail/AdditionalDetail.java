@@ -8,7 +8,6 @@ import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupId;
 import org.venuspj.sales.utils.Objects2;
 
 /**
- * Created by mizoguchi on 2017/05/28.
  */
 public class AdditionalDetail {
     public static final AdditionalDetail DEFAULT = new AdditionalDetail();
@@ -40,6 +39,12 @@ public class AdditionalDetail {
         chargeGroupId = aChargeGroupId;
         additionalDetailStatus = anAdditionalDetailStatus;
         additionalHistories = anAdditionalHistories;
+    }
+    public AdditionalDetail(AdditionalDetailId anAdditionalDetailId, Event anEvent, ChargeGroupId aChargeGroupId) {
+        additionalDetailId = anAdditionalDetailId;
+        event = anEvent;
+        chargeGroupId = aChargeGroupId;
+        additionalDetailStatus = AdditionalDetailStatus.initialState(anEvent);
     }
 
     AdditionalDetail() {
