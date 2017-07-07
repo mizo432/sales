@@ -22,17 +22,17 @@ public class PostingAdditionalDetailInputPortMock implements PostingAdditionalDe
 
     @Override
     public UserId operationUserId() {
-        return null;
+        return operationUserId;
     }
 
     @Override
     public ChargeGroupId chargeGroupId() {
-        return null;
+        return chargeGroupId;
     }
 
     @Override
     public Event moment() {
-        return null;
+        return moment;
     }
 
     @Override
