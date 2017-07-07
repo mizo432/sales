@@ -3,7 +3,7 @@ package org.venuspj.sales.usecase.addtionalDetailManagement;
 import com.google.common.eventbus.EventBus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.venuspj.sales.application.contract.additionalDetail.InputPort;
+import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetailInputPort;
 import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetail;
 import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetailOutputPort;
 import org.venuspj.sales.core.fundamentals.event.Event;
@@ -17,7 +17,7 @@ import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailRepository;
 @Service
 public class PostingAdditionalDetailUseCase implements PostingAdditionalDetail {
     AdditionalDetailRepository additionalDetailRepository;
-    InputPort inputPort;
+    PostingAdditionalDetailInputPort inputPort;
     PostingAdditionalDetailOutputPort outputPort;
     EventBus eventBus;
     ClosingService closingService;
@@ -28,7 +28,7 @@ public class PostingAdditionalDetailUseCase implements PostingAdditionalDetail {
         closingService = aClosingService;
     }
     @Override
-    public PostingAdditionalDetail withInputPort(InputPort anInputPort) {
+    public PostingAdditionalDetail withInputPort(PostingAdditionalDetailInputPort anInputPort) {
         inputPort = anInputPort;
         return this;
     }

@@ -6,7 +6,7 @@ import org.venuspj.sales.core.model.user.UserId;
 
 /**
  */
-public interface InputPort {
+public interface PostingAdditionalDetailInputPort {
 
     UserId operationUserId();
 

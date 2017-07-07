@@ -3,7 +3,7 @@ package org.venuspj.sales.addapters.controller.additionalDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-import org.venuspj.sales.application.contract.additionalDetail.InputPort;
+import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetailInputPort;
 import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetail;
 import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetailOutputPort;
 import org.venuspj.sales.core.fundamentals.event.Event;
@@ -13,7 +13,7 @@ import org.venuspj.sales.core.model.user.UserId;
 
 @Controller
 @Scope("prototype")
-public class PostingAdditionalDetailController implements InputPort {
+public class PostingAdditionalDetailController implements PostingAdditionalDetailInputPort {
     PostingAdditionalDetail postingAdditionalDetail;
 
     @Autowired
