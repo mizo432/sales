@@ -17,30 +17,19 @@ import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailRepository;
 @Service
 public class PostingAdditionalDetailUseCase implements PostingAdditionalDetail {
     AdditionalDetailRepository additionalDetailRepository;
-    PostingAdditionalDetailInputPort inputPort;
-    PostingAdditionalDetailOutputPort outputPort;
     EventBus eventBus;
     ClosingService closingService;
+
     @Autowired
-    public PostingAdditionalDetailUseCase(AdditionalDetailRepository anAdditionalDetailRepository,EventBus anEventBus,ClosingService aClosingService){
+    public PostingAdditionalDetailUseCase(AdditionalDetailRepository anAdditionalDetailRepository, EventBus anEventBus,ClosingService aClosingService){
         additionalDetailRepository = anAdditionalDetailRepository;
         eventBus = anEventBus;
         closingService = aClosingService;
     }
-    @Override
-    public PostingAdditionalDetail withInputPort(PostingAdditionalDetailInputPort anInputPort) {
-        inputPort = anInputPort;
-        return this;
-    }
 
     @Override
-    public PostingAdditionalDetail withOutputPort(PostingAdditionalDetailOutputPort anOutputPort) {
-        outputPort = anOutputPort;
-        return this;
-    }
-
-    @Override
-    public void start() {
+    public void start(    PostingAdditionalDetailInputPort inputPort,
+            PostingAdditionalDetailOutputPort outputPort) {
         closingService.reopenIfClosed(inputPort.chargeGroupId(),inputPort.moment());
         AdditionalDetail additionalDetail = new AdditionalDetail(AdditionalDetailId.empty(),new Event(RecordDateTimeProvider.currentRecordDateTime(),inputPort.operationUserId()),inputPort.chargeGroupId());
         additionalDetailRepository.store(additionalDetail);

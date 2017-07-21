@@ -5,8 +5,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.venuspj.sales.application.contract.additionalDetail.*;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetail;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailId;
@@ -19,7 +17,6 @@ import org.venuspj.sales.usecase.addtionalDetailManagement.ClosingService;
 import org.venuspj.sales.usecase.addtionalDetailManagement.PostingAdditionalDetailUseCase;
 
 public class PostingAdditionalDetailUseCaseTest {
-    private final static Logger LOGGER = LoggerFactory.getLogger(PostingAdditionalDetailUseCaseTest.class);
 
     PostingAdditionalDetail postingAdditionalDetail;
     AdditionalDetailRepository additionalDetailRepository;
@@ -74,9 +71,7 @@ public class PostingAdditionalDetailUseCaseTest {
         PostingAdditionalDetailInputPort inputport = PostingAdditionalDetailInputPortMock.createMock();
         PostingAdditionalDetailOutputPort outputPort = new PostingAdditionalDetailOutputPortMock();
         postingAdditionalDetail
-                .withInputPort(inputport)
-                .withOutputPort(outputPort)
-                .start();
-        LOGGER.debug("outputPort" + outputPort);
+                .start(inputport, outputPort);
+        System.out.println("outputPort" + outputPort);
     }
 }

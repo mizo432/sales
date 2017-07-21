@@ -46,9 +46,6 @@ public class PostingAdditionalDetailController implements PostingAdditionalDetai
                 additionalDetail = anAdditionalDetail;
             }
         };
-        postingAdditionalDetail
-                .withInputPort(this)
-                .withOutputPort(presenter)
-                .start();
+        postingAdditionalDetail.start(this, presenter);
     }
 }
