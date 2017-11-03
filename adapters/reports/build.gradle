@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compile project(":sales-core")
+    compile project(":core")
     compile group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}"
     testCompile group: "org.springframework.boot", name: "spring-boot-starter-test", version: "${springBootVersion}"
     compile group: 'org.slf4j', name : 'slf4j-api', version: "${slf4jVersion}"

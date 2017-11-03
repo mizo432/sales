@@ -16,8 +16,8 @@ repositories {
 }
 
 dependencies {
-    compile project(":sales-core")
-    compile project(":sales-contracts")
+    compile project(":core")
+    compile project(":contracts")
     compile(group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}") {
         exclude group: 'ch.qos.logback'
     }

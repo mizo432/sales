@@ -5,6 +5,8 @@ import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
 import org.venuspj.sales.core.model.user.UserId;
 import org.venuspj.sales.utils.Objects2;
 
+import static org.venuspj.sales.utils.Objects2.toStringHelper;
+
 /**
  */
 public class Event {
@@ -30,8 +32,7 @@ public class Event {
 
     @Override
     public String toString() {
-        return Objects2
-                .toStringHelper(this)
+        return toStringHelper(this)
                 .add("recordDatetime", recordDatetime)
                 .add("userId", userId)
                 .omitNullValues()

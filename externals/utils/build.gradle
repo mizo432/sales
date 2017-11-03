@@ -1,6 +1,6 @@
 apply plugin: 'java'
 
-archivesBaseName = 'sales-utils'
+archivesBaseName = 'utils'
 
 repositories {
     mavenCentral()
