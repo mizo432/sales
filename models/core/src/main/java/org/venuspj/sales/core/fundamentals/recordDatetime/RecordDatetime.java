@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 public class RecordDatetime {
     private LocalDateTime value;
 
-    RecordDatetime() {
+    public RecordDatetime() {
 
     }
 

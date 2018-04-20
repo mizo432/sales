@@ -3,10 +3,6 @@ include 'sales-utils'
 project(':sales-utils').projectDir = file('./externals/utils')
 include 'sales-core'
 project(':sales-core').projectDir = file('./models/core')
-include 'sales-asoview'
-project(':sales-asoview').projectDir = file('./models/asoview')
-include 'sales-ticket'
-project(':sales-ticket').projectDir = file('./models/ticket')
 include 'sales-usecases'
 project(':sales-usecases').projectDir = file('./applications/usecases')
 include 'sales-contracts'
@@ -15,10 +11,6 @@ include 'sales-core-mocks'
 project(':sales-core-mocks').projectDir = file('./models/core-mocks')
 include 'sales-datasources'
 project(':sales-datasources').projectDir = file('./adapters/datasources')
-include 'sales-ticket-datasources'
-project(':sales-ticket-datasources').projectDir = file('./adapters/ticket-datasources')
-include 'sales-asoview-datasources'
-project(':sales-asoview-datasources').projectDir = file('./adapters/asoview-datasources')
 include 'sales-reports'
 project(':sales-reports').projectDir = file('./adapters/reports')
 include 'sales-presentations'
