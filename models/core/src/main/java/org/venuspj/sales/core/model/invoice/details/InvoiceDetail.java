@@ -69,6 +69,6 @@ public class InvoiceDetail {
     }
 
     public Amount getTotalAmount() {
-        return Amount.zero().plus(bullingAmount).plus(tax).minus(deposit);
+        return Amount.yenZero().plus(bullingAmount).plus(tax).minus(deposit);
     }
 }

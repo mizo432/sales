@@ -114,7 +114,7 @@ public class Invoices  {
     }
 
     public Amount getTaxTotalAmount() {
-        Amount resultAmount = Amount.zero();
+        Amount resultAmount = Amount.yenZero();
         for (Invoice invoice : list) {
             resultAmount = resultAmount.plus(invoice.taxTotalAmount());
         }
@@ -122,7 +122,7 @@ public class Invoices  {
     }
 
     public Amount getTotalAmount() {
-        Amount resultAmount = Amount.zero();
+        Amount resultAmount = Amount.yenZero();
         for (Invoice invoice : list) {
             resultAmount = resultAmount.plus(invoice.totalAmount());
         }

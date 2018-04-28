@@ -10,7 +10,7 @@ public class AccountingEntry {
     private final EventType type;
 
     public AccountingEntry(){
-        this.amount = Amount.zero();
+        this.amount = Amount.yenZero();
         this.whenNoticed = new RecordDatetime();
         this.type = EventType.UNKNOWN;
 
