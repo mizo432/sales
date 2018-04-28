@@ -1,4 +1,4 @@
-package org.venuspj.sales.utils;
+package org.venuspj.sales.utils.collect;
 
 import java.util.ArrayList;
 import java.util.List;

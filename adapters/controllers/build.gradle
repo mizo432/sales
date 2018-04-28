@@ -36,6 +36,6 @@ jar {
     version = '0.0.1-SNAPSHOT'
 }
 
-springBoot {
-    mainClass = 'org.venuspj.sales.SalesApplication'
-}
+//springBoot {
+//    mainClass = 'org.venuspj.sales.SalesApplication'
+//}

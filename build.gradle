@@ -2,7 +2,7 @@ import java.util.regex.Pattern
 
 buildscript {
     ext {
-        springBootVersion = '1.5.3.RELEASE+'
+        springBootVersion = '2.0.1.RELEASE+'
     }
     repositories {
         maven {
@@ -15,11 +15,13 @@ buildscript {
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.4.13"
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.11.3'
     }
 }
 
 apply plugin: 'base'
 apply plugin: 'idea'
+apply plugin: 'com.github.ben-manes.versions'
 
 repositories {
     mavenCentral()
@@ -39,15 +41,15 @@ subprojects {
 
     ext {
         //Library versions
-        springBootVersion = '1.5.3.RELEASE+'
+        springBootVersion = '2.0.1.RELEASE'
         springSecurityOauth2Version = '2.1.0.RELEASE+'
-        guavaVersion = '21.0+'
+        guavaVersion = '24.1-jre'
         mybatisTypeHandlerVersion = '1.0.2'
         mybatisBootVersion = '1.2.0'
         assertJVersion = '3.6.2'
         h2dbVersion = '1.4.193+'
         springStateMachineCoreVersion = '1.2.1.RELEASE'
-        logbackVersion = '1.1.9'
+        logbackVersion = '1.1.11'
         slf4jVersion = '1.7.22'
         junitDevVersion = "4.11"
         junitVersion = "4.12"
@@ -158,17 +160,13 @@ subprojects {
         }
     }
 
-    task wrapper(type: Wrapper) {
-        gradleVersion = '4.0'
-    }
-
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '4.0'
+    gradleVersion = '4.7'
 }
 
-task incrementVersionCode << {
+task('incrementVersionCode') << {
     println(":incrementVersionCode - Incrementing Version Code...")
     def buildGradleFile = file("build.gradle")
     def patternVersionCode = Pattern.compile("versionCode (\\d+)")
@@ -182,4 +180,3 @@ task incrementVersionCode << {
     println(":incrementVersionCode - next versionCode=" + mNextVersionCode);
     buildGradleFile.write(manifestContent)
 }
-

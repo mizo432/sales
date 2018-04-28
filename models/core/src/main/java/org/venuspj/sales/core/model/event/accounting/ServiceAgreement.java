@@ -9,8 +9,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import static org.venuspj.sales.utils.Lists2.newArrayList;
-import static org.venuspj.sales.utils.Maps2.newHashMap;
+import static org.venuspj.sales.utils.collect.Lists2.newArrayList;
+import static org.venuspj.sales.utils.collect.Maps2.newHashMap;
 
 public class ServiceAgreement {
     private double rate;

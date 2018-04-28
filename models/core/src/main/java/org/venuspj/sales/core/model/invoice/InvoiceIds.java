@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.model.invoice;
 
-import org.venuspj.sales.utils.Lists2;
+import org.venuspj.sales.utils.collect.Lists2;
 
 import java.util.List;
 

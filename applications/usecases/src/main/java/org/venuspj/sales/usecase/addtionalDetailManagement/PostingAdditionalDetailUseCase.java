@@ -21,19 +21,25 @@ public class PostingAdditionalDetailUseCase implements PostingAdditionalDetail {
     ClosingService closingService;
 
     @Autowired
-    public PostingAdditionalDetailUseCase(AdditionalDetailRepository anAdditionalDetailRepository, EventBus anEventBus,ClosingService aClosingService){
-        additionalDetailRepository = anAdditionalDetailRepository;
-        eventBus = anEventBus;
-        closingService = aClosingService;
+    public PostingAdditionalDetailUseCase(AdditionalDetailRepository additionalDetailRepository, EventBus eventBus, ClosingService closingService) {
+        this.additionalDetailRepository = additionalDetailRepository;
+        this.eventBus = eventBus;
+        this.closingService = closingService;
     }
 
     @Override
-    public void start(    PostingAdditionalDetailInputPort inputPort,
-            PostingAdditionalDetailOutputPort outputPort) {
-        closingService.reopenIfClosed(inputPort.chargeGroupId(),inputPort.moment());
-        AdditionalDetail additionalDetail = new AdditionalDetail(AdditionalDetailId.empty(),new Event(RecordDateTimeProvider.currentRecordDateTime(),inputPort.operationUserId()),inputPort.chargeGroupId());
+    public void start(PostingAdditionalDetailInputPort inputPort,
+                      PostingAdditionalDetailOutputPort outputPort) {
+
+        closingService.reopenIfClosed(inputPort.chargeGroupId(), inputPort.moment());
+
+        AdditionalDetail additionalDetail = new AdditionalDetail(AdditionalDetailId.empty(), new Event(RecordDateTimeProvider.currentRecordDateTime(), inputPort.operationUserId()), inputPort.chargeGroupId());
+
         additionalDetailRepository.store(additionalDetail);
-        eventBus.post(PostedAddtionalDetail.of(additionalDetail.additionalDetailId(),inputPort.moment()));
         outputPort.setAdditionalDetail(additionalDetail);
+
+        eventBus.post(PostedAddtionalDetail.of(additionalDetail.additionalDetailId(), inputPort.moment()));
+
     }
+
 }

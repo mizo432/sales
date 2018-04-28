@@ -1,4 +1,5 @@
 rootProject.name = 'sales'
+
 include 'sales-utils'
 project(':sales-utils').projectDir = file('./externals/utils')
 include 'sales-core'
