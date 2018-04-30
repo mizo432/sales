@@ -2,39 +2,39 @@ package org.venuspj.sales.core.model.invoice.details;
 
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.recordDate.RecordDate;
-import org.venuspj.sales.core.model.invoice.InvoiceId;
+import org.venuspj.sales.core.model.event.postingSale.Tax;
+import org.venuspj.sales.core.model.invoice.InvoiceIdentifier;
 import org.venuspj.sales.core.model.invoice.details.saleDetails.InvoiceDetailFromSaleDetails;
-import org.venuspj.sales.utils.Objects2;
 
 public class InvoiceDetail {
-    InvoiceId invoiceId;
+    InvoiceIdentifier invoiceIdentifier;
     DetailSource detailSource;
     Summary summary;
     Amount bullingAmount;
     RecordDate recordDate;
     Amount deposit;
-    Amount tax;
+    Tax tax;
     InvoiceDetailFromSaleDetails invoiceDetailFromSaleDetails = InvoiceDetailFromSaleDetails.empty();
 
     InvoiceDetail() {
 
     }
 
-    public InvoiceDetail(InvoiceId anInvoiceId,
+    public InvoiceDetail(InvoiceIdentifier anInvoiceIdentifier,
                          DetailSource aDetailSource,
                          Summary aSummary,
                          Amount aBullingAmount,
                          RecordDate aRecordDate,
                          Amount anDeposit,
-                         Amount aTax,
+                         Tax tax,
                          InvoiceDetailFromSaleDetails anInvoiceDetailFromSaleDetails) {
-        invoiceId = anInvoiceId;
+        invoiceIdentifier = anInvoiceIdentifier;
         detailSource = aDetailSource;
         summary = aSummary;
         bullingAmount = aBullingAmount;
         recordDate = aRecordDate;
         deposit = anDeposit;
-        tax = aTax;
+        tax = tax;
         invoiceDetailFromSaleDetails = anInvoiceDetailFromSaleDetails;
 
     }
@@ -52,23 +52,11 @@ public class InvoiceDetail {
 
     }
 
-    @Override
-    public String toString() {
-        return Objects2
-                .toStringHelper(this)
-                .add("invoiceId", invoiceId)
-                .add("detailSource", detailSource)
-                .add("summary", summary)
-                .add("bullingAmount", bullingAmount)
-                .add("recordDate", recordDate)
-                .add("deposit", deposit)
-                .add("tax", tax)
-                .add("invoiceDetailFromSaleDetails", invoiceDetailFromSaleDetails)
-                .omitNullValues()
-                .toString();
-    }
-
     public Amount getTotalAmount() {
         return Amount.yenZero().plus(bullingAmount).plus(tax).minus(deposit);
+    }
+
+    public Tax getTax() {
+        return tax;
     }
 }

@@ -2,20 +2,16 @@ package org.venuspj.sales.core.model.partnerManagement.chargeGroup;
 
 import org.venuspj.sales.utils.Objects2;
 
-public class ChargeGroupId {
+public class ChargeGroupIdentifier {
     private Integer value;
 
-    public ChargeGroupId(Integer aValue) {
+    public ChargeGroupIdentifier(Integer aValue) {
         value = aValue;
 
     }
 
-    @Override
-    public String toString() {
-        return Objects2
-                .toStringHelper(this)
-                .addValue(value)
-                .toString();
+    public ChargeGroupIdentifier() {
+
     }
 
     public boolean isPresent() {

@@ -1,5 +1,8 @@
 package org.venuspj.sales.core.model.sale.detail;
 
-public class SaleDetail {
+/**
+ * 体験がここに相当する
+ */
+public interface SaleDetail {
 
 }

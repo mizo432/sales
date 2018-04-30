@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.fundamentals.amount;
 
-import org.venuspj.sales.utils.Objects2;
+import static org.venuspj.sales.utils.Objects2.isNull;
 
 /**
  * 金額を扱うバリューオブジェクト.
@@ -26,6 +26,11 @@ public class Amount {
 
     }
 
+    public Amount plus(AmountValue amount) {
+        return new Amount(value + amount.asAmount().asInteger());
+
+    }
+
     public Amount plus(Amount amount) {
         return new Amount(value + amount.value);
 
@@ -47,6 +52,7 @@ public class Amount {
     }
 
     public Integer asInteger() {
+        if (isNull(value)) return 0;
         return value;
     }
 }

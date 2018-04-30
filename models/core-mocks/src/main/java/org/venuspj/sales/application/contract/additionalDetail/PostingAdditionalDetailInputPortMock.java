@@ -2,20 +2,20 @@ package org.venuspj.sales.application.contract.additionalDetail;
 
 import org.venuspj.sales.core.fundamentals.event.Event;
 import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTimeProvider;
-import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupId;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupIdMock;
+import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupIdentifier;
 import org.venuspj.sales.core.model.user.UserId;
 import org.venuspj.sales.core.model.user.UserIdMock;
 import org.venuspj.sales.utils.Objects2;
 
 public class PostingAdditionalDetailInputPortMock implements PostingAdditionalDetailInputPort {
     UserId operationUserId;
-    ChargeGroupId chargeGroupId;
+    ChargeGroupIdentifier chargeGroupIdentifier;
     Event moment;
 
-    public PostingAdditionalDetailInputPortMock(UserId anOperationUserId, ChargeGroupId aChargeGroupId, Event aMoment) {
+    public PostingAdditionalDetailInputPortMock(UserId anOperationUserId, ChargeGroupIdentifier aChargeGroupIdentifier, Event aMoment) {
         operationUserId = anOperationUserId;
-        chargeGroupId = aChargeGroupId;
+        chargeGroupIdentifier = aChargeGroupIdentifier;
         moment = aMoment;
 
     }
@@ -26,8 +26,8 @@ public class PostingAdditionalDetailInputPortMock implements PostingAdditionalDe
     }
 
     @Override
-    public ChargeGroupId chargeGroupId() {
-        return chargeGroupId;
+    public ChargeGroupIdentifier chargeGroupId() {
+        return chargeGroupIdentifier;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class PostingAdditionalDetailInputPortMock implements PostingAdditionalDe
         return Objects2
                 .toStringHelper(this)
                 .add("operationUserId", operationUserId)
-                .add("chargeGroupId", chargeGroupId)
+                .add("chargeGroupIdentifier", chargeGroupIdentifier)
                 .add("moment", moment)
                 .omitNullValues()
                 .toString();
@@ -48,9 +48,9 @@ public class PostingAdditionalDetailInputPortMock implements PostingAdditionalDe
 
     public static PostingAdditionalDetailInputPort createMock() {
         UserId userId = UserIdMock.DEFAULT_USER_ID;
-        ChargeGroupId chargeGroupId = ChargeGroupIdMock.DEFAULT_CHARGE_GROUP_ID;
+        ChargeGroupIdentifier chargeGroupIdentifier = ChargeGroupIdMock.DEFAULT_CHARGE_GROUP_ID;
         Event moment = new Event(RecordDateTimeProvider.currentRecordDateTime(), userId);
-        return new PostingAdditionalDetailInputPortMock(userId, chargeGroupId, moment);
+        return new PostingAdditionalDetailInputPortMock(userId, chargeGroupIdentifier, moment);
 
     }
 }

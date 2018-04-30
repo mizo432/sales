@@ -16,18 +16,18 @@ public class RecordDateTimeProviderTest {
     @Test
     public void currentRecordDateTime() {
         StaticRecordDateTimeProvider.initialize(LocalDateTime.of(2017, 1, 12, 3, 4, 5, 6));
-        RecordDatetime actual = RecordDateTimeProvider.currentRecordDateTime();
+        RecordDateTime actual = RecordDateTimeProvider.currentRecordDateTime();
         assertThat(actual)
                 .isNotNull();
         LOGGER.debug("actual:" + actual);
         assertThat(actual.toString())
                 .isNotNull()
-                .isEqualTo("RecordDatetime{2017-01-12T03:04:05.000000006}");
+                .isEqualTo("RecordDateTime{2017-01-12T03:04:05.000000006}");
     }
 
     @Test
     public void defaultCurrentRecordDateTime() {
-        RecordDatetime actual = RecordDateTimeProvider.currentRecordDateTime();
+        RecordDateTime actual = RecordDateTimeProvider.currentRecordDateTime();
         assertThat(actual)
                 .isNotNull();
         LOGGER.debug("actual:" + actual);

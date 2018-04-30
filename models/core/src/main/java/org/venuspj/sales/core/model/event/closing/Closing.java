@@ -1,7 +1,7 @@
 package org.venuspj.sales.core.model.event.closing;
 
 import org.venuspj.sales.core.fundamentals.event.Event;
-import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupId;
+import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupIdentifier;
 
 /**
  */
@@ -10,9 +10,9 @@ public class Closing {
     Event moment;
     ClosingStatus closingStatus;
 
-    Closing(ChargeGroupId aChargeGroupId, Event aMoment, ClosingStatus aClosingStatus) {
-        closingId = new ClosingId(aChargeGroupId, aMoment.recordDatetime().recordYearMonth());
-        moment = aMoment;
+    Closing(ChargeGroupIdentifier chargeGroupIdentifier, Event moment, ClosingStatus aClosingStatus) {
+        this.closingId = new ClosingId(chargeGroupIdentifier, moment.whenOccurred().asRecordDateTime().recordYearMonth());
+        this.moment = moment;
         closingStatus = aClosingStatus;
     }
 
@@ -36,6 +36,6 @@ public class Closing {
     }
 
     public Closing reopen() {
-        return new Closing(closingId, moment, ClosingStatus.OPEND);
+        return new Closing(closingId, moment, ClosingStatus.OPENED);
     }
 }

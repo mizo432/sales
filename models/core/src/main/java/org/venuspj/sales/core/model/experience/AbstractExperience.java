@@ -1,9 +1,10 @@
 package org.venuspj.sales.core.model.experience;
 
-import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupId;
+import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupIdentifier;
 
 public abstract class AbstractExperience implements Experience {
-    private ChargeGroupId chargeGroupId;
+
+    private ChargeGroupIdentifier chargeGroupIdentifier;
     private ApplicationDate applicationDate;
     private ExperienceDate experienceDate;
 //    private BaseId baseId;
@@ -12,17 +13,20 @@ public abstract class AbstractExperience implements Experience {
 
     }
 
-    protected AbstractExperience(ChargeGroupId chargeGroupId,
+    protected AbstractExperience(ChargeGroupIdentifier chargeGroupIdentifier,
                                  ApplicationDate applicationDate,
                                  ExperienceDate experienceDate) {
-        this.chargeGroupId = chargeGroupId;
-
+        this.chargeGroupIdentifier = chargeGroupIdentifier;
+        this.applicationDate = applicationDate;
+        this.experienceDate = experienceDate;
 
     }
 
     @Override
-    public ChargeGroupId getChargeGroupId() {
-        return chargeGroupId;
+    public ChargeGroupIdentifier getChargeGroupIdentifier() {
+        return chargeGroupIdentifier;
 
     }
+
+
 }

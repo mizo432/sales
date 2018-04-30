@@ -1,40 +1,37 @@
 package org.venuspj.sales.core.fundamentals.event;
 
-import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDatetime;
+import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTime;
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
 import org.venuspj.sales.core.model.user.UserId;
-import org.venuspj.sales.utils.Objects2;
 
 /**
  */
 public class Event {
-    RecordDatetime recordDatetime;
-    UserId userId;
+    private final WhenOccurred whenOccurred;
+    private final UserId userId;
 
     Event() {
-    }
-
-    public Event(RecordDatetime aRecordDatetime, UserId anUserId) {
-        recordDatetime = aRecordDatetime;
-        userId = anUserId;
-    }
-
-    public RecordDatetime recordDatetime() {
-        return recordDatetime;
-    }
-
-    public RecordYearMonth recordYearMonth() {
-        return recordDatetime.recordYearMonth();
+        this.whenOccurred = new WhenOccurred();
+        this.userId = new UserId();
 
     }
 
-    @Override
-    public String toString() {
-        return Objects2
-                .toStringHelper(this)
-                .add("recordDatetime", recordDatetime)
-                .add("userId", userId)
-                .omitNullValues()
-                .toString();
+    public Event(WhenOccurred whenOccurred, UserId userId) {
+        this.whenOccurred = whenOccurred;
+        this.userId = userId;
+    }
+
+    public Event(RecordDateTime whenOccurred, UserId userId) {
+        this.whenOccurred = new WhenOccurred(whenOccurred);
+        this.userId = userId;
+    }
+
+    public WhenOccurred whenOccurred() {
+        return whenOccurred;
+
+    }
+
+    public RecordYearMonth whenOccurredYearMonth() {
+        return whenOccurred.asRecordDateTime().recordYearMonth();
     }
 }

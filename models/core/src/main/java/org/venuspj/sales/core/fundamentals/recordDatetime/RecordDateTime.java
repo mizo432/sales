@@ -1,5 +1,6 @@
 package org.venuspj.sales.core.fundamentals.recordDatetime;
 
+import com.google.common.collect.ComparisonChain;
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
 import org.venuspj.sales.utils.Objects2;
 
@@ -8,14 +9,16 @@ import java.time.Month;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 
-public class RecordDatetime {
+import static org.venuspj.sales.utils.Objects2.isNull;
+
+public class RecordDateTime implements Comparable<RecordDateTime> {
     private LocalDateTime value;
 
-    public RecordDatetime() {
+    public RecordDateTime() {
 
     }
 
-    public RecordDatetime(LocalDateTime aValue) {
+    public RecordDateTime(LocalDateTime aValue) {
         value = aValue;
     }
 
@@ -32,14 +35,22 @@ public class RecordDatetime {
         return new RecordYearMonth(YearMonth.of(year, month));
     }
 
-    @Override
-    public String toString() {
-        return Objects2.toStringHelper(this)
-                .addValue(value)
-                .toString();
-    }
-
     public boolean isPresent() {
         return Objects2.nonNull(value);
+    }
+
+    public LocalDateTime asLocalDateTime() {
+        return value;
+
+    }
+
+    @Override
+    public int compareTo(RecordDateTime o) {
+        if(isNull(o)) return -1;
+        return ComparisonChain
+                .start()
+                .compare(value,o.asLocalDateTime())
+                .result();
+
     }
 }

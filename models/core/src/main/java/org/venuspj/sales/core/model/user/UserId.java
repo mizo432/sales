@@ -4,7 +4,7 @@ import org.venuspj.sales.utils.Objects2;
 
 public class UserId {
     Integer value;
-    UserId(){
+    public UserId(){
 
     }
     public UserId(Integer aValue){

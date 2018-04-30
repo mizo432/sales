@@ -2,7 +2,7 @@ package org.venuspj.sales.core.model.event.accounting;
 
 import com.google.common.collect.Range;
 import org.venuspj.sales.core.fundamentals.recordDate.DateValue;
-import org.venuspj.sales.core.fundamentals.recordDatetime.DateTimeValue;
+import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTimeValue;
 import org.venuspj.sales.utils.assertion.Assert;
 
 import java.util.Collection;
@@ -53,9 +53,9 @@ public class ServiceAgreement {
 
     public static class PostingRulePostingRule {
 
-        private Range<DateTimeValue> range;
+        private Range<RecordDateTimeValue> range;
         private PostingRule postingRule;
-        PostingRulePostingRule(Range<DateTimeValue> range, PostingRule postingRule){
+        PostingRulePostingRule(Range<RecordDateTimeValue> range, PostingRule postingRule){
             this.range = range;
             this.postingRule = postingRule;
 
