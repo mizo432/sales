@@ -46,10 +46,8 @@ subprojects {
         mybatisBootVersion = '1.2.0'
         assertJVersion = '3.6.2'
         h2dbVersion = '1.4.193+'
-        springStateMachineCoreVersion = '1.2.1.RELEASE'
         logbackVersion = '1.1.9'
         slf4jVersion = '1.7.22'
-        junitDevVersion = "4.11"
         junitVersion = "4.12"
         thymeleafExtrasVersion = '3.0.2.RELEASE+'
         thymeleafExtrasJava8timeVersion = '3.0.0.RELEASE+'
@@ -156,10 +154,6 @@ subprojects {
                 fileTree(dir: it, exclude: ['**/*Test.class'])
             })
         }
-    }
-
-    task wrapper(type: Wrapper) {
-        gradleVersion = '4.0'
     }
 
 }
