@@ -7,8 +7,8 @@ repositories {
 }
 
 dependencies {
-    compile project(":sales-core")
-    compile project(":sales-contracts")
+    compile project(":core")
+    compile project(":contracts")
     compile group: 'org.slf4j', name : 'slf4j-api', version: "${slf4jVersion}"
     testRuntime group: 'ch.qos.logback', name : 'logback-classic', version: "${logbackVersion}"
 }

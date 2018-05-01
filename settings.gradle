@@ -1,19 +1,19 @@
 rootProject.name = 'sales'
-include 'sales-utils'
-project(':sales-utils').projectDir = file('./externals/utils')
-include 'sales-core'
-project(':sales-core').projectDir = file('./models/core')
-include 'sales-usecases'
-project(':sales-usecases').projectDir = file('./applications/usecases')
-include 'sales-contracts'
-project(':sales-contracts').projectDir = file('./models/contracts')
-include 'sales-core-mocks'
-project(':sales-core-mocks').projectDir = file('./models/core-mocks')
-include 'sales-datasources'
-project(':sales-datasources').projectDir = file('./adapters/datasources')
-include 'sales-reports'
-project(':sales-reports').projectDir = file('./adapters/reports')
-include 'sales-presentations'
-project(':sales-presentations').projectDir = file('./adapters/presentations')
+include 'venus-utils'
+project(':venus-utils').projectDir = file('./externals/utils')
+include 'core'
+project(':core').projectDir = file('./models/core')
+include 'useCases'
+project(':useCases').projectDir = file('./applications/usecases')
+include 'contracts'
+project(':contracts').projectDir = file('./models/contracts')
+include 'core-mocks'
+project(':core-mocks').projectDir = file('./models/core-mocks')
+include 'dataSources'
+project(':dataSources').projectDir = file('./adapters/datasources')
+include 'reports'
+project(':reports').projectDir = file('./adapters/reports')
+include 'presentations'
+project(':presentations').projectDir = file('./adapters/presentations')
 include 'sales-controllers'
 project(':sales-controllers').projectDir = file('./adapters/controllers')
