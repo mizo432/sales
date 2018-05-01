@@ -1,8 +1,8 @@
 package org.venuspj.sales.core.model.invoice.details;
 
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailId;
-import org.venuspj.sales.core.model.sale.SaleCategory;
-import org.venuspj.sales.core.model.sale.SaleId;
+import org.venuspj.sales.core.model.event.sale.SaleCategory;
+import org.venuspj.sales.core.model.event.sale.SaleId;
 import org.venuspj.sales.utils.Objects2;
 
 public class DetailSource {
