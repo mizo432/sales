@@ -28,6 +28,9 @@ dependencies {
 
 }
 
-bootRepackage{
-    enabled = false
+jar {
+    enabled = true
+}
+bootJar {
+    classifier = 'boot'
 }

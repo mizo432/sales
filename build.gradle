@@ -2,7 +2,7 @@ import java.util.regex.Pattern
 
 buildscript {
     ext {
-        springBootVersion = '1.5.3.RELEASE+'
+        springBootVersion = '2.0.1.RELEASE'
     }
     repositories {
         maven {
@@ -88,6 +88,13 @@ subprojects {
         compile group: 'com.google.code.findbugs', name: 'annotations', version: "${findbugsAnnotationsVersion}"
         testCompile group: 'org.assertj', name: 'assertj-core', version: "${assertJVersion}"
         testCompile(group: 'junit', name: 'junit', version: "${junitVersion}")
+    }
+
+    idea {
+        module {
+            inheritOutputDirs = false
+            outputDir = file("$buildDir/classes/main/")
+        }
     }
 
     findbugs {
