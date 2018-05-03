@@ -1,13 +1,17 @@
 package org.venuspj.sales.core.model.partnerManagement.chargeGroup;
 
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
-import org.venuspj.sales.utils.Objects2;
+import org.venuspj.sales.core.model.partnerManagement.partner.PartnerIdentifier;
 
 public class ChargeGroup {
-    ChargeGroupId chargeGroupId;
+    private ChargeGroupIdentifier chargeGroupIdentifier;
 
-    public ChargeGroup(ChargeGroupId aChargeGroupId) {
-        chargeGroupId = aChargeGroupId;
+    private PartnerIdentifier partnerIdentifier;
+
+    public ChargeGroup(ChargeGroupIdentifier chargeGroupIdentifier, PartnerIdentifier partnerIdentifier) {
+        this.chargeGroupIdentifier = chargeGroupIdentifier;
+        this.partnerIdentifier = partnerIdentifier;
+
     }
 
     public boolean hadClosedInvoice(RecordYearMonth recordYearMonth) {
@@ -17,14 +21,16 @@ public class ChargeGroup {
 
     public boolean hadClosedFutureInvoice(RecordYearMonth recordYearMonth) {
         return false;
+
     }
 
-    @Override
-    public String toString() {
-        return Objects2
-                .toStringHelper(this)
-                .add("chargeGroupId", chargeGroupId)
-                .omitNullValues()
-                .toString();
+    public PartnerIdentifier getPartnerIdentifier() {
+        return partnerIdentifier;
+
+    }
+
+    public ChargeGroupIdentifier getChargeGroupIdentifier() {
+        return chargeGroupIdentifier;
+
     }
 }

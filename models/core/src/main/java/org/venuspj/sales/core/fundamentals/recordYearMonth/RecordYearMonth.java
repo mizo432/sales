@@ -1,8 +1,8 @@
 package org.venuspj.sales.core.fundamentals.recordYearMonth;
 
-import org.venuspj.sales.utils.Objects2;
-
 import java.time.YearMonth;
+
+import static org.venuspj.sales.utils.Objects2.nonNull;
 
 /**
  */
@@ -13,11 +13,18 @@ public class RecordYearMonth {
 
     }
 
-    public RecordYearMonth(YearMonth aYearMonth) {
-        yearMonth = aYearMonth;
+    public RecordYearMonth(YearMonth yearMonth) {
+        this.yearMonth = yearMonth;
+
+    }
+
+    public static RecordYearMonth empty() {
+        return new RecordYearMonth();
+
     }
 
     public boolean isPresent() {
-        return Objects2.nonNull(yearMonth);
+        return nonNull(yearMonth);
+
     }
 }

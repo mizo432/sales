@@ -1,9 +1,13 @@
 package org.venuspj.sales.core.model.experience;
 
-import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupId;
+import org.venuspj.sales.core.fundamentals.recordDate.RecordDate;
+import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupIdentifier;
 
 public interface Experience {
 
-    ChargeGroupId getChargeGroupId();
+    ChargeGroupIdentifier getChargeGroupIdentifier();
+    RecordDate getRecordDate();
+
+    Fee getFee();
 
 }

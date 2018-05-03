@@ -11,12 +11,14 @@ public class RecordDateTimeProvider {
 
     }
 
-    public static RecordDatetime currentRecordDateTime() {
-        return new RecordDatetime(recordDateTimeProvider.currentDateTime());
+    public static RecordDateTime currentRecordDateTime() {
+        return new RecordDateTime(recordDateTimeProvider.currentDateTime());
+
     }
 
     protected LocalDateTime currentDateTime() {
         return LocalDateTime.now();
+
     }
 
 }

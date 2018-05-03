@@ -1,9 +1,9 @@
 package org.venuspj.sales.core.model.delivery;
 
-import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDatetime;
+import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTime;
 import org.venuspj.sales.core.fundamentals.urlValue.UrlValue;
 import org.venuspj.sales.core.model.guest.Name;
-import org.venuspj.sales.core.model.partnerManagement.store.StoreId;
+import org.venuspj.sales.core.model.partnerManagement.store.StoreIdentifier;
 import org.venuspj.sales.core.model.product.ProductId;
 import org.venuspj.sales.core.model.event.sale.detail.SaleDetail;
 
@@ -12,7 +12,7 @@ public interface Delivery {
 
     Name getGuestName();
 
-    RecordDatetime getDeliveryDate();
+    RecordDateTime getDeliveryDate();
 
     PaymentMethod getPaymentMethod();
 
@@ -20,5 +20,5 @@ public interface Delivery {
 
     UrlValue getManagerUrl(UrlValue baseUrl);
 
-    StoreId getBaseId();
+    StoreIdentifier getBaseId();
 }

@@ -24,9 +24,5 @@ dependencies {
 
 }
 
-jar {
-    enabled = true
-}
-bootJar {
-    classifier = 'boot'
-}
+bootJar { enabled = false }
+jar {enabled = true}

@@ -10,11 +10,11 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 
 /**
  */
-public class RecordDatetimeTest {
+public class RecordDateTimeTest {
 
     @Test
     public void asText() throws Exception {
-        RecordDatetime target = new RecordDatetime(LocalDateTime.of(2017, 4, 1, 2, 3, 4, 5));
+        RecordDateTime target = new RecordDateTime(LocalDateTime.of(2017, 4, 1, 2, 3, 4, 5));
         assertThat(target.asText())
                 .isNotNull()
                 .isEqualTo("2017/04/01 02:03:04.000");
@@ -22,7 +22,7 @@ public class RecordDatetimeTest {
 
     @Test
     public void isPresent01() throws Exception {
-        RecordDatetime target = new RecordDatetime();
+        RecordDateTime target = new RecordDateTime();
         assertThat(target.isPresent())
                 .isNotNull()
                 .isFalse();
@@ -30,7 +30,7 @@ public class RecordDatetimeTest {
 
     @Test
     public void isPresent02() throws Exception {
-        RecordDatetime target = new RecordDatetime(LocalDateTime.of(2017, 4, 1, 2, 3, 4, 5));
+        RecordDateTime target = new RecordDateTime(LocalDateTime.of(2017, 4, 1, 2, 3, 4, 5));
         assertThat(target.isPresent())
                 .isNotNull()
                 .isTrue();
@@ -38,7 +38,7 @@ public class RecordDatetimeTest {
 
     @Test
     public void RecordYearMonth01() throws Exception {
-        RecordDatetime target = new RecordDatetime(LocalDateTime.of(2017, 4, 1, 2, 3, 4, 5));
+        RecordDateTime target = new RecordDateTime(LocalDateTime.of(2017, 4, 1, 2, 3, 4, 5));
         RecordYearMonth actual = target.recordYearMonth();
         assertThat(actual.isPresent())
                 .isNotNull()
@@ -47,7 +47,7 @@ public class RecordDatetimeTest {
 
     @Test
     public void RecordYearMonth02() throws Exception {
-        RecordDatetime target = new RecordDatetime();
+        RecordDateTime target = new RecordDateTime();
         RecordYearMonth actual = target.recordYearMonth();
         assertThat(actual.isPresent())
                 .isNotNull()

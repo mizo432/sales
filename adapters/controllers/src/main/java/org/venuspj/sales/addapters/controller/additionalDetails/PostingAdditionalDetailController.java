@@ -3,12 +3,12 @@ package org.venuspj.sales.addapters.controller.additionalDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetailInputPort;
 import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetail;
+import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetailInputPort;
 import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetailOutputPort;
 import org.venuspj.sales.core.fundamentals.event.Event;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetail;
-import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupId;
+import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupIdentifier;
 import org.venuspj.sales.core.model.user.UserId;
 
 @Controller
@@ -28,7 +28,7 @@ public class PostingAdditionalDetailController implements PostingAdditionalDetai
     }
 
     @Override
-    public ChargeGroupId chargeGroupId() {
+    public ChargeGroupIdentifier chargeGroupId() {
         return null;
     }
 

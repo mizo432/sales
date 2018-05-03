@@ -2,14 +2,14 @@ package org.venuspj.sales.core.model.invoice;
 
 import org.venuspj.sales.utils.Objects2;
 
-public class InvoiceId {
+public class InvoiceIdentifier {
     private Integer value;
 
-    public InvoiceId(Integer value) {
+    public InvoiceIdentifier(Integer value) {
         this.value = value;
     }
 
-    InvoiceId() {
+    InvoiceIdentifier() {
     }
 
     public Integer getValue() {
@@ -24,12 +24,12 @@ public class InvoiceId {
                 .toString();
     }
 
-    public static InvoiceId of(String value) {
+    public static InvoiceIdentifier of(String value) {
         return of(Integer.valueOf(value));
     }
 
-    public static InvoiceId of(Integer value) {
-        return new InvoiceId(value);
+    public static InvoiceIdentifier of(Integer value) {
+        return new InvoiceIdentifier(value);
     }
 
     @Override
@@ -37,9 +37,9 @@ public class InvoiceId {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        InvoiceId invoiceId = (InvoiceId) o;
+        InvoiceIdentifier invoiceIdentifier = (InvoiceIdentifier) o;
 
-        return value != null ? value.equals(invoiceId.value) : invoiceId.value == null;
+        return value != null ? value.equals(invoiceIdentifier.value) : invoiceIdentifier.value == null;
 
     }
 
