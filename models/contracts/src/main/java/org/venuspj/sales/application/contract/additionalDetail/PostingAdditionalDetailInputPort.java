@@ -11,7 +11,7 @@ public interface PostingAdditionalDetailInputPort extends UseCaseInputPort {
 
     UserId operationUserId();
 
-    ChargeGroupIdentifier chargeGroupId();
+    ChargeGroupIdentifier chargeGroupIdentifier();
 
     Event moment();
 }

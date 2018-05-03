@@ -1,9 +1,5 @@
 package org.venuspj.sales.core.fundamentals.amount;
 
-import org.venuspj.sales.utils.Objects2;
-
-import static org.venuspj.sales.utils.Objects2.toStringHelper;
-
 /**
  */
 public class Amount {
@@ -17,16 +13,23 @@ public class Amount {
         value = aValue;
     }
 
-    public static Amount zero() {
+    public static Amount yenZero() {
         return new Amount(0);
+    }
+
+    public static Amount yen(int value) {
+        return new Amount(value);
+
     }
 
     public Amount plus(Amount amount) {
         return new Amount(value + amount.value);
+
     }
 
     public Amount minus(Amount amount) {
         return new Amount(value - amount.value);
+
     }
 
     public boolean isMoreThan(Amount other) {
@@ -39,13 +42,7 @@ public class Amount {
 
     public Integer asInteger() {
         return value;
-    }
 
-    @Override
-    public String toString() {
-        return toStringHelper(this)
-                .addValue(value)
-                .toString();
     }
 
 }

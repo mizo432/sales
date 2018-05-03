@@ -28,14 +28,5 @@ dependencies {
 
 }
 
-<<<<<<< HEAD
-jar {
-    enabled = true
-}
-bootJar {
-    classifier = 'boot'
-}
-=======
 bootJar { enabled = false }
 jar {enabled = true}
->>>>>>> develop

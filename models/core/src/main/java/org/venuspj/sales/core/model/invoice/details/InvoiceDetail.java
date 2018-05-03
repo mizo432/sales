@@ -45,6 +45,7 @@ public class InvoiceDetail {
      * <pre>
      *     (税込) 正の値の場合請求 負の値の場合支払
      * </pre>
+     *
      * @return 請求金額
      */
     public Amount bullingAmount() {
@@ -53,7 +54,7 @@ public class InvoiceDetail {
     }
 
     public Amount getTotalAmount() {
-        return Amount.yenZero().plus(bullingAmount).plus(tax).minus(deposit);
+        return Amount.yenZero().plus(bullingAmount).plus(tax.asAmount()).minus(deposit);
     }
 
     public Tax getTax() {

@@ -28,7 +28,7 @@ public class PostingAdditionalDetailController implements PostingAdditionalDetai
     }
 
     @Override
-    public ChargeGroupIdentifier chargeGroupId() {
+    public ChargeGroupIdentifier chargeGroupIdentifier() {
         return null;
     }
 

@@ -1,11 +1,11 @@
 package org.venuspj.sales.core.usecase.salesManagement.approvingSale;
 
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
-import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupId;
+import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupIdentifier;
 
 /**
  * 複数件の売上を承認する
  */
 public interface ApprovingSales {
-    void doIt(ChargeGroupId aChargeGroupId, RecordYearMonth aRecordYearMonth);
+    void doIt(ChargeGroupIdentifier chargeGroupIdentifier, RecordYearMonth recordYearMonth);
 }

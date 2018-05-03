@@ -36,18 +36,5 @@ dependencies {
 
 }
 
-<<<<<<< HEAD
-jar {
-    enabled = true
-}
-bootJar {
-    classifier = 'boot'
-}
-=======
-//bootRepackage{
-//    enabled = false
-//}
-
 bootJar { enabled = false }
 jar {enabled = true}
->>>>>>> develop
