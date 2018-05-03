@@ -1,6 +1,6 @@
 apply plugin: 'org.springframework.boot'
 
-archivesBaseName = 'sales-datasources'
+archivesBaseName = 'dataSources'
 
 buildscript {
     repositories {
@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compile project(":sales-core")
+    compile project(":core")
     compile (group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}"){
         exclude group: 'ch.qos.logback'
     }

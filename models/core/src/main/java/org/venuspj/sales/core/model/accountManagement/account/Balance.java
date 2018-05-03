@@ -12,6 +12,7 @@ public class Balance {
         value = aValue;
 
     }
+
     @Override
     public String toString() {
         return Objects2

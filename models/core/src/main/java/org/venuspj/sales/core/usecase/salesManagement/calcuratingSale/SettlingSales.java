@@ -1,7 +1,7 @@
 package org.venuspj.sales.core.usecase.salesManagement.calcuratingSale;
 
 /**
- * Created by mizoguchi on 2017/05/21.
+ * 複数件の売上を計算する
  */
-public interface CalcuratingSale {
+public interface SettlingSales {
 }
