@@ -89,12 +89,12 @@ subprojects {
         testCompile(group: 'junit', name: 'junit', version: "${junitVersion}")
     }
 
-    idea {
-        module {
-            inheritOutputDirs = false
-            outputDir = file("$buildDir/classes/main/")
-        }
-    }
+//    idea {
+//        module {
+//            inheritOutputDirs = false
+//            outputDir = file("$buildDir/classes/main/")
+//        }
+//    }
 
     findbugs {
         // 失敗しても後続の処理を継続させる

@@ -1,23 +1,23 @@
 package org.venuspj.sales.core.model.accountManagement.account;
 
-import org.venuspj.sales.utils.Objects2;
+import org.venuspj.sales.core.fundamentals.amount.Amount;
+import org.venuspj.sales.core.fundamentals.amount.AmountValue;
 
-public class Balance {
+public class Balance implements AmountValue {
     private Integer value;
 
-    Balance(){
+    Balance() {
 
     }
-    public Balance(Integer aValue){
-        value = aValue;
+
+    public Balance(Integer value) {
+        this.value = value;
 
     }
+
 
     @Override
-    public String toString() {
-        return Objects2
-                .toStringHelper(this)
-                .addValue(value)
-                .toString();
+    public Amount asAmount() {
+        return Amount.yen(value);
     }
 }

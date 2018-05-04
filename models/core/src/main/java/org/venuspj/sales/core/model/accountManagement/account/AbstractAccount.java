@@ -1,9 +1,7 @@
 package org.venuspj.sales.core.model.accountManagement.account;
 
-import com.google.common.base.MoreObjects;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.model.accountManagement.TaxClassification;
-import org.venuspj.sales.utils.Objects2;
 
 /**
  */
@@ -30,22 +28,6 @@ public abstract class AbstractAccount implements Account {
         accountsSubTitle = anAccountsSubTitle;
         tax = aTax;
         taxClassification = aTaxClassification;
-
-    }
-
-    @Override
-    public String toString() {
-        return Objects2
-                .toStringHelper(this)
-                .add("number", number)
-                .add("accountsPart", accountsPart)
-                .add("accountsTitle", accountsTitle)
-                .add("accountsSubTitle", accountsSubTitle)
-                .add("amount", amount)
-                .add("tax", tax)
-                .add("taxClassification", taxClassification)
-                .omitNullValues()
-                .toString();
 
     }
 

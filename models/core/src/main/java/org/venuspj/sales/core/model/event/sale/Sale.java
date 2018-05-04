@@ -3,7 +3,8 @@ package org.venuspj.sales.core.model.event.sale;
 import org.venuspj.sales.core.fundamentals.event.Event;
 import org.venuspj.sales.core.model.accountManagement.account.Account;
 
-import static org.venuspj.sales.utils.Objects2.*;
+import static org.venuspj.sales.utils.Objects2.equal;
+import static org.venuspj.sales.utils.Objects2.hash;
 
 public class Sale implements Account {
 
@@ -24,8 +25,8 @@ public class Sale implements Account {
 
     }
 
-    public boolean sameIdentifireAs(SaleId aSaleId){
-        return equal(saleId,aSaleId);
+    public boolean sameIdentifireAs(SaleId aSaleId) {
+        return equal(saleId, aSaleId);
     }
 
     @Override
@@ -33,13 +34,4 @@ public class Sale implements Account {
         return hash(saleId);
     }
 
-    @Override
-    public String toString() {
-        return toStringHelper(this)
-                .add("saleId",saleId)
-                .add("event",event)
-                .add("saleDetails",saleDetails)
-                .omitNullValues()
-                .toString();
-    }
 }

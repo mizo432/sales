@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
+import static org.venuspj.sales.utils.Objects2.toStringHelper;
 
 /**
  */
@@ -20,9 +21,9 @@ public class RecordDateTimeProviderTest {
         assertThat(actual)
                 .isNotNull();
         LOGGER.debug("actual:" + actual);
-        assertThat(actual.toString())
+        assertThat(toStringHelper(actual).addValue(actual.asText()).omitNullValues().toString())
                 .isNotNull()
-                .isEqualTo("RecordDateTime{2017-01-12T03:04:05.000000006}");
+                .isEqualTo("RecordDateTime{2017/01/12 03:04:05.000}");
     }
 
     @Test

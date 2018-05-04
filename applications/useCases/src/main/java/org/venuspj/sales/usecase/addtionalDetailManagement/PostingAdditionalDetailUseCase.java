@@ -6,8 +6,7 @@ import org.springframework.stereotype.Service;
 import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetail;
 import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetailInputPort;
 import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetailOutputPort;
-import org.venuspj.sales.core.fundamentals.event.Event;
-import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTimeProvider;
+import org.venuspj.sales.core.fundamentals.event.EventProvider;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetail;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailId;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailRepository;
@@ -16,9 +15,9 @@ import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailRepository;
  */
 @Service
 public class PostingAdditionalDetailUseCase implements PostingAdditionalDetail {
-    private AdditionalDetailRepository additionalDetailRepository;
-    private EventBus eventBus;
-    private ClosingService closingService;
+    private final AdditionalDetailRepository additionalDetailRepository;
+    private final EventBus eventBus;
+    private final ClosingService closingService;
 
     @Autowired
     public PostingAdditionalDetailUseCase(AdditionalDetailRepository additionalDetailRepository, EventBus eventBus, ClosingService closingService) {
@@ -28,18 +27,19 @@ public class PostingAdditionalDetailUseCase implements PostingAdditionalDetail {
     }
 
     @Override
-    public void start(PostingAdditionalDetailInputPort inputPort,
-                      PostingAdditionalDetailOutputPort outputPort) {
+    public void start(PostingAdditionalDetailInputPort request,
+                      PostingAdditionalDetailOutputPort response) {
 
-        closingService.reopenIfClosed(inputPort.chargeGroupId(), inputPort.moment());
+        closingService.reopenIfClosed(request.chargeGroupIdentifier(), request.moment());
 
-        AdditionalDetail additionalDetail = new AdditionalDetail(AdditionalDetailId.empty(), new Event(RecordDateTimeProvider.currentRecordDateTime(), inputPort.operationUserId()), inputPort.chargeGroupId());
+        AdditionalDetail additionalDetail = new AdditionalDetail(AdditionalDetailId.empty(), EventProvider.newEvent(),request.chargeGroupIdentifier());
 
         additionalDetailRepository.store(additionalDetail);
-        outputPort.setAdditionalDetail(additionalDetail);
+        response.setAdditionalDetail(additionalDetail);
 
-        eventBus.post(PostedAddtionalDetail.of(additionalDetail.additionalDetailId(), inputPort.moment()));
+        eventBus.post(PostedAddtionalDetail.of(additionalDetail.additionalDetailId(), request.moment()));
 
     }
+
 
 }
