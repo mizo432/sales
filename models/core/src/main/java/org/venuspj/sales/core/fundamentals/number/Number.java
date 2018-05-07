@@ -17,8 +17,8 @@ public class Number implements Comparable<Number> {
 
     @Override
     public boolean equals(Object obj) {
-        if (isNull(obj)) return false;
-        return equal(this.value, ((Number) obj).value);
+        return obj instanceof Number
+                && equal(this.value, ((Number) obj).value);
     }
 
     @Override
