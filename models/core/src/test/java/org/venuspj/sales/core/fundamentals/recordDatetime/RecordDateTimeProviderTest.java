@@ -2,17 +2,17 @@ package org.venuspj.sales.core.fundamentals.recordDatetime;
 
 import org.junit.Test;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
+import static org.venuspj.util.logger.LoggerFactory.getLogger;
 import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
 /**
  */
 public class RecordDateTimeProviderTest {
-    private static final Logger LOGGER = LoggerFactory.getLogger(RecordDateTimeProviderTest.class);
+    private static final Logger LOGGER = getLogger();
 
     @Test
     public void currentRecordDateTime() {
@@ -23,7 +23,7 @@ public class RecordDateTimeProviderTest {
         LOGGER.debug("actual:" + actual);
         assertThat(toStringHelper(actual).addValue(actual.asText()).omitNullValues().toString())
                 .isNotNull()
-                .isEqualTo("RecordDateTime{2017/01/12 03:04:05.000}");
+                .isEqualTo("RecordDateTime{\"2017/01/12 03:04:05.000\"}");
     }
 
     @Test
