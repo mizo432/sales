@@ -34,7 +34,7 @@ public class InvoiceDetail {
         this.bullingAmount = bullingAmount;
         this.recordDate = recordDate;
         this.deposit = deposit;
-        this.tax = this.tax;
+        this.tax = tax;
         this.invoiceDetailFromSaleDetails = invoiceDetailFromSaleDetails;
 
     }
