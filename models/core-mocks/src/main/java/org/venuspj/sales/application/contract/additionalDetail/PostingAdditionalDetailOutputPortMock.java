@@ -1,7 +1,8 @@
 package org.venuspj.sales.application.contract.additionalDetail;
 
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetail;
-import org.venuspj.sales.utils.Objects2;
+
+import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
 public class PostingAdditionalDetailOutputPortMock implements PostingAdditionalDetailOutputPort {
     AdditionalDetail additionalDetail;
@@ -13,9 +14,8 @@ public class PostingAdditionalDetailOutputPortMock implements PostingAdditionalD
 
     @Override
     public String toString() {
-        return Objects2
-                .toStringHelper(this)
-                .add("additionalDetail", additionalDetail)
+        return toStringHelper(this)
+                .defaultConfig()
                 .toString();
     }
 }

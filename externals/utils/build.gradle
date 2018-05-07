@@ -7,6 +7,7 @@ repositories {
 }
 
 dependencies {
+    compile group: 'org.venuspj', name : 'venus-utils', version: "${venusUtilsVersion}"
     compile group: 'org.slf4j', name: 'slf4j-api', version: "${slf4jVersion}"
     compile group: 'com.google.guava', name: 'guava', version: "${guavaVersion}"
     testRuntime group: 'ch.qos.logback', name: 'logback-core', version: "${logbackVersion}"

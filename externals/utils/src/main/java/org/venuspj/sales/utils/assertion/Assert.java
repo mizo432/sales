@@ -1,6 +1,7 @@
 package org.venuspj.sales.utils.assertion;
 
-import org.venuspj.sales.utils.Objects2;
+
+import static org.venuspj.util.objects2.Objects2.isNull;
 
 public class Assert {
     public static void nonNull(Object object) {
@@ -9,7 +10,7 @@ public class Assert {
     }
 
     public static void nonNull(Object object,String message) {
-        if(Objects2.isNull(object))
+        if(isNull(object))
             throw new AssertionException(message);
 
     }
