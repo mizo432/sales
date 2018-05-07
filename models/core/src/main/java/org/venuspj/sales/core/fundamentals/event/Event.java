@@ -1,19 +1,19 @@
 package org.venuspj.sales.core.fundamentals.event;
 
-import org.venuspj.sales.core.model.user.UserId;
+import org.venuspj.sales.core.model.user.UserIdentifier;
 
 /**
  */
 public class Event {
     WhenOccurred whenOccurred;
-    UserId userId;
+    UserIdentifier userIdentifier;
 
     Event() {
     }
 
-    public Event(WhenOccurred whenOccurred, UserId userId) {
+    public Event(WhenOccurred whenOccurred, UserIdentifier userIdentifier) {
         this.whenOccurred = whenOccurred;
-        this.userId = userId;
+        this.userIdentifier = userIdentifier;
     }
 
     public WhenOccurred whenOccurred() {

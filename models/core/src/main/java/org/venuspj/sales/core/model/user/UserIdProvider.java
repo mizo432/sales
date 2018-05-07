@@ -3,18 +3,18 @@ package org.venuspj.sales.core.model.user;
 import static org.venuspj.util.objects2.Objects2.nonNull;
 
 public class UserIdProvider {
-    private static UserId userId;
+    private static UserIdentifier userIdentifier;
 
-    public static void setUserId(UserId anUserId) {
-        userId = anUserId;
+    public static void setUserIdentifier(UserIdentifier anUserIdentifier) {
+        userIdentifier = anUserIdentifier;
 
     }
 
-    public static UserId currentUserId() {
-        if (nonNull(userId)) {
-            return userId;
+    public static UserIdentifier currentUserId() {
+        if (nonNull(userIdentifier)) {
+            return userIdentifier;
         }
 
-        return new UserId(0);
+        return new UserIdentifier(0);
     }
 }

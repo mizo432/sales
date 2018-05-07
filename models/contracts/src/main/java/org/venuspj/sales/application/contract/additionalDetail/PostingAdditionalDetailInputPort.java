@@ -3,13 +3,13 @@ package org.venuspj.sales.application.contract.additionalDetail;
 import org.venuspj.cleanArchtecture.UseCaseInputPort;
 import org.venuspj.sales.core.fundamentals.event.Event;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupIdentifier;
-import org.venuspj.sales.core.model.user.UserId;
+import org.venuspj.sales.core.model.user.UserIdentifier;
 
 /**
  */
 public interface PostingAdditionalDetailInputPort extends UseCaseInputPort {
 
-    UserId operationUserId();
+    UserIdentifier operationUserId();
 
     ChargeGroupIdentifier chargeGroupIdentifier();
 

@@ -2,13 +2,13 @@ package org.venuspj.sales.core.model.user;
 
 import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
-public class UserId {
-    Integer value;
-    public UserId(){
+public class UserIdentifier {
+    private Integer value;
+    public UserIdentifier(){
 
     }
-    public UserId(Integer aValue){
-        value = aValue;
+    public UserIdentifier(Integer value){
+        this.value = value;
 
     }
 

@@ -4,24 +4,24 @@ import org.venuspj.sales.core.fundamentals.event.Event;
 import org.venuspj.sales.core.fundamentals.event.EventProvider;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupIdMock;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupIdentifier;
-import org.venuspj.sales.core.model.user.UserId;
+import org.venuspj.sales.core.model.user.UserIdentifier;
 import org.venuspj.sales.core.model.user.UserIdMock;
 
 public class PostingAdditionalDetailInputPortMock implements PostingAdditionalDetailInputPort {
-    UserId operationUserId;
+    UserIdentifier operationUserIdentifier;
     ChargeGroupIdentifier chargeGroupIdentifier;
     Event moment;
 
-    public PostingAdditionalDetailInputPortMock(UserId anOperationUserId, ChargeGroupIdentifier aChargeGroupIdentifier, Event aMoment) {
-        operationUserId = anOperationUserId;
+    public PostingAdditionalDetailInputPortMock(UserIdentifier anOperationUserIdentifier, ChargeGroupIdentifier aChargeGroupIdentifier, Event aMoment) {
+        operationUserIdentifier = anOperationUserIdentifier;
         chargeGroupIdentifier = aChargeGroupIdentifier;
         moment = aMoment;
 
     }
 
     @Override
-    public UserId operationUserId() {
-        return operationUserId;
+    public UserIdentifier operationUserId() {
+        return operationUserIdentifier;
     }
 
     @Override
@@ -36,10 +36,10 @@ public class PostingAdditionalDetailInputPortMock implements PostingAdditionalDe
 
 
     public static PostingAdditionalDetailInputPort createMock() {
-        UserId userId = UserIdMock.DEFAULT_USER_ID;
+        UserIdentifier userIdentifier = UserIdMock.DEFAULT_USER_ID;
         ChargeGroupIdentifier chargeGroupIdentifier = ChargeGroupIdMock.DEFAULT_CHARGE_GROUP_ID;
         Event event = EventProvider.newEvent();
-        return new PostingAdditionalDetailInputPortMock(userId, chargeGroupIdentifier, event);
+        return new PostingAdditionalDetailInputPortMock(userIdentifier, chargeGroupIdentifier, event);
 
     }
 }
