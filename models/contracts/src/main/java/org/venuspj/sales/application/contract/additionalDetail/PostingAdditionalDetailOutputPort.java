@@ -1,6 +1,6 @@
 package org.venuspj.sales.application.contract.additionalDetail;
 
-import org.venuspj.sales.cleanArchtecture.UseCaseOutputPort;
+import org.venuspj.cleanArchtecture.UseCaseOutputPort;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetail;
 
 /**

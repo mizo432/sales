@@ -1,4 +1,4 @@
-package org.venuspj.sales.utils.assertion;
+package org.venuspj.assertion;
 
 public class AssertionException extends RuntimeException {
 

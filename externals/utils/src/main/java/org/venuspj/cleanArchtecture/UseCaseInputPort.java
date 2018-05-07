@@ -1,4 +1,4 @@
-package org.venuspj.sales.cleanArchtecture;
+package org.venuspj.cleanArchtecture;
 
 /**
  * ユースケースの入力

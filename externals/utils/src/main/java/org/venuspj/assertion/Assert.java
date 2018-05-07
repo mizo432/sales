@@ -1,4 +1,4 @@
-package org.venuspj.sales.utils.assertion;
+package org.venuspj.assertion;
 
 
 import static org.venuspj.util.objects2.Objects2.isNull;
