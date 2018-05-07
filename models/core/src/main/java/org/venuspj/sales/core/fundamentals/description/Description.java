@@ -10,8 +10,8 @@ public class Description {
 
     }
 
-    Description(String aValue) {
-        value = aValue;
+    Description(String value) {
+        this.value = value;
 
     }
 
@@ -20,6 +20,10 @@ public class Description {
         return toStringHelper(this)
                 .defaultConfig()
                 .toString();
+    }
+
+    public String asText() {
+        return value;
     }
 
     public static Description empty() {
