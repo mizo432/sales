@@ -1,7 +1,8 @@
 package org.venuspj.sales.core.model.invoice.issue;
 
 import org.venuspj.sales.core.fundamentals.event.Event;
-import org.venuspj.sales.utils.Objects2;
+
+import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
 /**
  * 請求書発行
@@ -43,13 +44,8 @@ public class InvoiceIssue {
 
     @Override
     public String toString() {
-        return Objects2
-                .toStringHelper(this)
-                .add("invoiceIssueId", invoiceIssueId)
-                .add("invoiceNo", invoiceNo)
-                .add("event", event)
-                .add("pdfFileInf", pdfFileInf)
-                .omitNullValues()
+        return toStringHelper(this)
+                .defaultConfig()
                 .toString();
     }
 

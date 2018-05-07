@@ -1,6 +1,6 @@
 rootProject.name = 'sales'
-include 'venus-utils'
-project(':venus-utils').projectDir = file('./externals/utils')
+include 'utils'
+project(':utils').projectDir = file('./externals/utils')
 include 'core'
 project(':core').projectDir = file('./models/core')
 include 'useCases'

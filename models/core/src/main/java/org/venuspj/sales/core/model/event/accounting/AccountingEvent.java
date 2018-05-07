@@ -4,7 +4,7 @@ import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTimeValue;
 
 import java.util.Set;
 
-import static org.venuspj.sales.utils.collect.Sets2.newHashSet;
+import static org.venuspj.util.collect.Sets2.newHashSet;
 
 
 public abstract class AccountingEvent {

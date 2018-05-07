@@ -3,14 +3,15 @@ package org.venuspj.sales.core.model.invoice.details;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.listValue.ListValue;
 import org.venuspj.sales.core.model.event.postingSale.Tax;
-import org.venuspj.sales.utils.collect.Lists2;
 
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import static org.venuspj.util.collect.Lists2.newArrayList;
+
 public class InvoiceDetails implements ListValue<InvoiceDetail> {
-    List<InvoiceDetail> list = Lists2.newArrayList();
+    List<InvoiceDetail> list = newArrayList();
 
     public <I extends InvoiceDetail> InvoiceDetails(Collection<I> list) {
         list.addAll(list);

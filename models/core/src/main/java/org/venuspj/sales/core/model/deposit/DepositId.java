@@ -1,8 +1,6 @@
 package org.venuspj.sales.core.model.deposit;
 
-import org.venuspj.sales.utils.Objects2;
-
-import static org.venuspj.sales.utils.Objects2.toStringHelper;
+import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
 /**
  */
@@ -20,7 +18,7 @@ public class DepositId {
     @Override
     public String toString() {
         return toStringHelper(this)
-                .addValue(value)
+                .defaultConfig()
                 .toString();
     }
 }

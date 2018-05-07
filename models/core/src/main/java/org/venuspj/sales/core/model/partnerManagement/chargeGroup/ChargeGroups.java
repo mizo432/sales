@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static org.venuspj.sales.utils.collect.Maps2.newHashMap;
+import static org.venuspj.util.collect.Maps2.newHashMap;
 
 public class ChargeGroups {
     Map<ChargeGroupIdentifier, ChargeGroup> map = newHashMap();

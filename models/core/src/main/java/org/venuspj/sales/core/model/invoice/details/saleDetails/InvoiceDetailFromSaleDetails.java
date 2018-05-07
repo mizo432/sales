@@ -1,11 +1,11 @@
 package org.venuspj.sales.core.model.invoice.details.saleDetails;
 
-import org.venuspj.sales.utils.collect.Lists2;
-
 import java.util.List;
 
+import static org.venuspj.util.collect.Lists2.newArrayList;
+
 public class InvoiceDetailFromSaleDetails {
-    List<InvoiceDetailFromSaleDetail> list = Lists2.newArrayList();
+    List<InvoiceDetailFromSaleDetail> list = newArrayList();
 
     public InvoiceDetailFromSaleDetails(List<InvoiceDetailFromSaleDetail> aList) {
         list.addAll(list);

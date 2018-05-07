@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.model.user;
 
-import org.venuspj.sales.utils.Objects2;
+import static org.venuspj.util.objects2.Objects2.nonNull;
 
 public class UserIdProvider {
     private static UserId userId;
@@ -11,7 +11,7 @@ public class UserIdProvider {
     }
 
     public static UserId currentUserId() {
-        if (Objects2.nonNull(userId)) {
+        if (nonNull(userId)) {
             return userId;
         }
 

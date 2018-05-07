@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.model.accountManagement.account;
 
-import org.venuspj.sales.utils.Objects2;
+import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
 public class AccountNumber {
     private Integer value;
@@ -14,9 +14,8 @@ public class AccountNumber {
     }
     @Override
     public String toString() {
-        return Objects2
-                .toStringHelper(this)
-                .addValue(value)
+        return toStringHelper(this)
+                .defaultConfig()
                 .toString();
     }
 }

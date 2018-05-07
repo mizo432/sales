@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.model.partnerManagement.partner;
 
-import static org.venuspj.sales.utils.Objects2.nonNull;
+import static org.venuspj.util.objects2.Objects2.nonNull;
 
 public class PartnerIdentifier {
     private Integer value;

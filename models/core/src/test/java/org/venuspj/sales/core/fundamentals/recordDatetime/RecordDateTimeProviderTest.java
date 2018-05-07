@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
-import static org.venuspj.sales.utils.Objects2.toStringHelper;
+import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
 /**
  */

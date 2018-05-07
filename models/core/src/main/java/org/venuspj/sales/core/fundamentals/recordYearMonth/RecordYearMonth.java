@@ -2,7 +2,7 @@ package org.venuspj.sales.core.fundamentals.recordYearMonth;
 
 import java.time.YearMonth;
 
-import static org.venuspj.sales.utils.Objects2.nonNull;
+import static org.venuspj.util.objects2.Objects2.nonNull;
 
 /**
  */

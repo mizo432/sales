@@ -1,12 +1,12 @@
 package org.venuspj.sales.core.model.invoice;
 
-import org.venuspj.sales.utils.collect.Lists2;
-
 import java.util.List;
+
+import static org.venuspj.util.collect.Lists2.newArrayList;
 
 public class InvoiceIds {
 
-    private List<InvoiceIdentifier> list = Lists2.newArrayList();
+    private List<InvoiceIdentifier> list = newArrayList();
 
     public InvoiceIds(List<InvoiceIdentifier> list) {
         this.list.addAll(list);

@@ -5,7 +5,7 @@ import org.venuspj.sales.core.fundamentals.listValue.ListValue;
 import java.util.Collections;
 import java.util.List;
 
-import static org.venuspj.sales.utils.collect.Lists2.newArrayList;
+import static org.venuspj.util.collect.Lists2.newArrayList;
 
 public class AccountEntries implements ListValue<AccountEntry>, AccountEntry {
 

@@ -1,12 +1,11 @@
 package org.venuspj.sales.core.fundamentals.recordDate;
 
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
-import org.venuspj.sales.utils.Objects2;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
 
-import static org.venuspj.sales.utils.Objects2.isNull;
+import static org.venuspj.util.objects2.Objects2.*;
 
 public class RecordDate {
     LocalDate value = null;
@@ -35,12 +34,12 @@ public class RecordDate {
         if (!(obj instanceof RecordDate))
             return false;
         RecordDate that = (RecordDate) obj;
-        return Objects2.equal(value, that.value);
+        return equal(value, that.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects2.hash(value);
+        return hash(value);
     }
 
     public RecordYearMonth getRecordYearMonth() {

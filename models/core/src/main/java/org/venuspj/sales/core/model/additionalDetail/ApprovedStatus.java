@@ -1,12 +1,12 @@
 package org.venuspj.sales.core.model.additionalDetail;
 
-import org.venuspj.sales.utils.Objects2;
+import static org.venuspj.util.objects2.Objects2.equal;
 
 public enum ApprovedStatus {
     NON_APPROVED, APPROVED;
 
     public boolean isApploved() {
-        return Objects2.equal(this, APPROVED);
+        return equal(this, APPROVED);
     }
 
 }

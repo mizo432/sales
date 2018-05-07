@@ -1,8 +1,6 @@
 package org.venuspj.sales.core.fundamentals.number;
 
-import static org.venuspj.sales.utils.Objects2.equal;
-import static org.venuspj.sales.utils.Objects2.hash;
-import static org.venuspj.sales.utils.Objects2.isNull;
+import static org.venuspj.util.objects2.Objects2.*;
 
 public class Number implements Comparable<Number> {
     private final Integer value;

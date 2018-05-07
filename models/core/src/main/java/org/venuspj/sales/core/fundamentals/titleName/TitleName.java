@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.fundamentals.titleName;
 
-import static org.venuspj.sales.utils.Objects2.toStringHelper;
+import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
 public class TitleName {
     private final String value;
@@ -12,8 +12,7 @@ public class TitleName {
     @Override
     public String toString() {
         return toStringHelper(this)
-                .addValue(value)
-                .omitNullValues()
+                .defaultConfig()
                 .toString();
     }
 }

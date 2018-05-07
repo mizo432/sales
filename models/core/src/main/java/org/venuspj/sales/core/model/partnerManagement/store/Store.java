@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.model.partnerManagement.store;
 
-import org.venuspj.sales.utils.Objects2;
+import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
 public class Store {
     StoreIdentifier storeIdentifier;
@@ -14,10 +14,8 @@ public class Store {
 
     @Override
     public String toString() {
-        return Objects2
-                .toStringHelper(this)
-                .add("storeIdentifier", storeIdentifier)
-                .omitNullValues()
+        return toStringHelper(this)
+                .defaultConfig()
                 .toString();
     }
 }

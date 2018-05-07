@@ -3,7 +3,7 @@ package org.venuspj.sales.core.model.event.postingSale;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.amount.AmountValue;
 
-import static org.venuspj.sales.utils.Objects2.isNull;
+import static org.venuspj.util.objects2.Objects2.isNull;
 
 public class Tax implements AmountValue {
     private Integer value;

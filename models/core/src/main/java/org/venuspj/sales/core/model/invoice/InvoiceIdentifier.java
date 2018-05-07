@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.model.invoice;
 
-import org.venuspj.sales.utils.Objects2;
+import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
 public class InvoiceIdentifier {
     private Integer value;
@@ -18,9 +18,8 @@ public class InvoiceIdentifier {
 
     @Override
     public String toString() {
-        return Objects2
-                .toStringHelper(this)
-                .addValue(value)
+        return toStringHelper(this)
+                .defaultConfig()
                 .toString();
     }
 

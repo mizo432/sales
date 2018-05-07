@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.model.partnerManagement.chargeGroup;
 
-import org.venuspj.sales.utils.Objects2;
+import static org.venuspj.util.objects2.Objects2.nonNull;
 
 public class ChargeGroupIdentifier {
     private Integer value;
@@ -15,6 +15,6 @@ public class ChargeGroupIdentifier {
     }
 
     public boolean isPresent() {
-        return Objects2.nonNull(value);
+        return nonNull(value);
     }
 }

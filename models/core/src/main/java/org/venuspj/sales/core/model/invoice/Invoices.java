@@ -3,7 +3,6 @@ package org.venuspj.sales.core.model.invoice;
 
 import org.venuspj.sales.core.fundamentals.listValue.ListValue;
 import org.venuspj.sales.core.fundamentals.recordDate.RecordDate;
-import org.venuspj.sales.utils.Objects2;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -11,7 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.venuspj.sales.utils.collect.Lists2.newArrayList;
+import static org.venuspj.util.collect.Lists2.newArrayList;
 
 /**
  * 請求書エンティティ

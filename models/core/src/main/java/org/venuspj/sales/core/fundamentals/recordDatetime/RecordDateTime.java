@@ -2,14 +2,14 @@ package org.venuspj.sales.core.fundamentals.recordDatetime;
 
 import com.google.common.collect.ComparisonChain;
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
-import org.venuspj.sales.utils.Objects2;
 
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 
-import static org.venuspj.sales.utils.Objects2.isNull;
+import static org.venuspj.util.objects2.Objects2.isNull;
+import static org.venuspj.util.objects2.Objects2.nonNull;
 
 public class RecordDateTime implements Comparable<RecordDateTime> {
     private LocalDateTime value;
@@ -36,7 +36,7 @@ public class RecordDateTime implements Comparable<RecordDateTime> {
     }
 
     public boolean isPresent() {
-        return Objects2.nonNull(value);
+        return nonNull(value);
     }
 
     public LocalDateTime asLocalDateTime() {
