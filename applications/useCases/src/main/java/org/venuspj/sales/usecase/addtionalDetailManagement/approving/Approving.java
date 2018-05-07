@@ -15,9 +15,11 @@ import org.venuspj.sales.core.model.additionalDetail.status.ApploveStatus;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroup;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupRepository;
 import org.venuspj.sales.core.usecase.addtionalDetailManagement.approvingAdditionDetail.ApprovingAdditionDetail;
-import org.venuspj.sales.utils.collect.Maps2;
+
 
 import java.util.Map;
+
+import static org.venuspj.util.collect.Maps2.newHashMap;
 
 @Service
 public class Approving implements ApprovingAdditionDetail {
@@ -34,7 +36,7 @@ public class Approving implements ApprovingAdditionDetail {
     }
 
     private Map<AdditionalDetailId, ApprovingAdditionDetail> getTestDataMap() {
-        return Maps2.newHashMap();
+        return newHashMap();
     }
 
     AdditionalDetail start(AdditionalDetailId anAdditionalDetailId) {

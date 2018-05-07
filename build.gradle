@@ -40,13 +40,13 @@ subprojects {
     ext {
         //Library versions
         springSecurityOauth2Version = '2.1.0.RELEASE+'
-        guavaVersion = '21.0+'
+        guavaVersion = '25.0-jre'
         mybatisTypeHandlerVersion = '1.0.2'
         mybatisBootVersion = '1.2.0'
         assertJVersion = '3.9.1'
         h2dbVersion = '1.4.197'
-        logbackVersion = '1.1.9'
         slf4jVersion = '1.7.25'
+        logbackVersion = '1.2.3'
         junitVersion = "4.12"
         thymeleafExtrasVersion = '3.0.2.RELEASE'
         thymeleafExtrasJava8timeVersion = '3.0.0.RELEASE'
