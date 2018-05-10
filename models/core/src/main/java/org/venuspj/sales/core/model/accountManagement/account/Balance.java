@@ -20,4 +20,9 @@ public class Balance implements AmountValue {
     public Amount asAmount() {
         return Amount.yen(value);
     }
+
+    @Override
+    public Integer asInteger() {
+        return value;
+    }
 }

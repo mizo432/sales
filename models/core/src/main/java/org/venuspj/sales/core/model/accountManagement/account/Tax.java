@@ -11,8 +11,16 @@ public class Tax implements AmountValue {
 
     }
 
-    public static Tax createEmpty() {
+    public static Tax empty() {
         return new Tax(null);
+    }
+
+    public static Tax yens(Integer value) {
+        return new Tax(value);
+    }
+
+    public static Tax zero() {
+        return new Tax(0);
     }
 
     @Override
@@ -21,4 +29,7 @@ public class Tax implements AmountValue {
 
     }
 
+    public Integer asInteger() {
+        return value;
+    }
 }

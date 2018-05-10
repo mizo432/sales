@@ -11,7 +11,7 @@ public abstract class AssetAccount extends AbstractAccount {
                         Amount anAmount,
                         AccountsTitle anAccountsTitle,
                         AccountsSubTitle anAccountsSubTitle) {
-        super(aNumber, anAmount, AccountsPart.ASSETS, anAccountsTitle, anAccountsSubTitle, Tax.createEmpty(), TaxClassification.EXCLUDES);
+        super(aNumber, anAmount, AccountsPart.ASSETS, anAccountsTitle, anAccountsSubTitle, Tax.empty(), TaxClassification.EXCLUDES);
     }
 
 }

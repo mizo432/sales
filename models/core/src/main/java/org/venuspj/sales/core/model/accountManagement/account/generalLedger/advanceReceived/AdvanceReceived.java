@@ -13,7 +13,7 @@ public class AdvanceReceived extends AbstractAccount {
                            Amount anAmount,
                            AccountsTitle anAccountsTitle,
                            AccountsSubTitle anAccountsSubTitle) {
-        super(aNumber, anAmount, AccountsPart.LIABILITIES, anAccountsTitle, anAccountsSubTitle, Tax.createEmpty(), TaxClassification.EXCLUDES);
+        super(aNumber, anAmount, AccountsPart.LIABILITIES, anAccountsTitle, anAccountsSubTitle, Tax.empty(), TaxClassification.EXCLUDES);
     }
 
 }
