@@ -5,6 +5,7 @@ import org.venuspj.sales.core.fundamentals.amount.AmountValue;
 
 import static java.util.Objects.isNull;
 import static org.venuspj.util.objects2.Objects2.equal;
+import static org.venuspj.util.objects2.Objects2.hash;
 
 public class Tax implements AmountValue {
     private Integer value;
@@ -35,19 +36,27 @@ public class Tax implements AmountValue {
     public Integer asInteger() {
         if (isNull(value)) return Integer.valueOf(0);
         return value;
+
     }
 
     @Override
     public boolean equals(Object obj) {
         return obj instanceof Tax && sameValueAs((Tax) obj);
+
     }
 
     private boolean sameValueAs(Tax obj) {
         return equal(value, obj.value);
+
     }
 
     public boolean isEmpty() {
         return isNull(value);
 
+    }
+
+    @Override
+    public int hashCode() {
+        return hash(value);
     }
 }
