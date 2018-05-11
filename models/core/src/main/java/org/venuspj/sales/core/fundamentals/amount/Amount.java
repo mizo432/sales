@@ -1,5 +1,7 @@
 package org.venuspj.sales.core.fundamentals.amount;
 
+import static org.venuspj.util.objects2.Objects2.equal;
+
 /**
  */
 public class Amount {
@@ -45,4 +47,12 @@ public class Amount {
 
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Amount && sameValueAs((Amount) obj);
+    }
+
+    private boolean sameValueAs(Amount that) {
+        return equal(value, that.value);
+    }
 }

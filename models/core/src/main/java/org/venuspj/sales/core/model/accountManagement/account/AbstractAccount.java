@@ -2,7 +2,6 @@ package org.venuspj.sales.core.model.accountManagement.account;
 
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.model.accountManagement.TaxClassification;
-import org.venuspj.sales.core.model.accountManagement.account.generalLedger.deposit.Deposit;
 import org.venuspj.util.builder.ObjectBuilder;
 
 import static org.venuspj.util.objects2.Objects2.isNull;
@@ -63,6 +62,11 @@ public abstract class AbstractAccount<T> implements Account {
 
     protected AccountNumber getNumber() {
         return number;
+    }
+
+    public Amount getSubTotal() {
+        if(taxClassification.isOuterTax()) return Amount.yen(amount.asInteger() + tax.asInteger());
+        return Amount.yen(amount.asInteger());
     }
 
     public static abstract class AbstractAccountBuilder<T extends AbstractAccount<T>, B extends AbstractAccountBuilder<T, B>> extends ObjectBuilder<T, B> {

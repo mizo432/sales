@@ -14,4 +14,10 @@ public enum TaxClassification {
     TaxClassification(String aName) {
         name = new Name(aName);
     }
+
+    public boolean isOuterTax() {
+        return this == OUTER_TAX;
+
+    }
+
 }
