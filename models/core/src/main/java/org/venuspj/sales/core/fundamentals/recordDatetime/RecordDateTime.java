@@ -46,10 +46,13 @@ public class RecordDateTime implements Comparable<RecordDateTime> {
 
     @Override
     public int compareTo(RecordDateTime o) {
-        if(isNull(o)) return -1;
+        if (isNull(o)) return -1;
+
+        if (this == o) return 0;
+
         return ComparisonChain
                 .start()
-                .compare(value,o.asLocalDateTime())
+                .compare(value, o.asLocalDateTime())
                 .result();
 
     }
