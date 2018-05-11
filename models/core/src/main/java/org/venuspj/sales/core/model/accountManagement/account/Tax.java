@@ -3,6 +3,7 @@ package org.venuspj.sales.core.model.accountManagement.account;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.amount.AmountValue;
 
+import static java.util.Objects.isNull;
 import static org.venuspj.util.objects2.Objects2.equal;
 
 public class Tax implements AmountValue {
@@ -32,15 +33,16 @@ public class Tax implements AmountValue {
     }
 
     public Integer asInteger() {
+        if (isNull(value)) return Integer.valueOf(0);
         return value;
     }
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof Tax && sameValueAs((Tax)obj);
+        return obj instanceof Tax && sameValueAs((Tax) obj);
     }
 
     private boolean sameValueAs(Tax obj) {
-        return equal(value,obj.value);
+        return equal(value, obj.value);
     }
 }

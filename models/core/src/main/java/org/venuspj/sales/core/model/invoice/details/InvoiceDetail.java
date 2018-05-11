@@ -2,7 +2,7 @@ package org.venuspj.sales.core.model.invoice.details;
 
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.recordDate.RecordDate;
-import org.venuspj.sales.core.model.event.postingSale.Tax;
+import org.venuspj.sales.core.model.accountManagement.account.Tax;
 import org.venuspj.sales.core.model.invoice.InvoiceIdentifier;
 import org.venuspj.sales.core.model.invoice.details.saleDetails.InvoiceDetailFromSaleDetails;
 

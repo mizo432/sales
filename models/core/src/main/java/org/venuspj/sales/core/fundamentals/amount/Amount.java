@@ -1,6 +1,7 @@
 package org.venuspj.sales.core.fundamentals.amount;
 
 import static org.venuspj.util.objects2.Objects2.equal;
+import static org.venuspj.util.objects2.Objects2.hash;
 
 /**
  */
@@ -54,5 +55,10 @@ public class Amount {
 
     private boolean sameValueAs(Amount that) {
         return equal(value, that.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return hash(value);
     }
 }
