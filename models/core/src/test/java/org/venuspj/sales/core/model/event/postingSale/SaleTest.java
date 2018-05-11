@@ -40,8 +40,14 @@ public class SaleTest {
 
     @Test
     public void getSubTotal2() {
-        Sale target = createDummySale();
-        new SaleBuilder().witTax(Tax.yens(70)).witTaxClassification(TaxClassification.INNER_TAX).assignTo(target);
+        Sale target = new SaleBuilder()
+                .withNumber(new AccountNumber(10))
+                .withAmount(Amount.yen(1000))
+                .withAccountsTitle(AccountsTitle.SALE)
+                .withAccountsSubTitle(new AccountsSubTitle("aaaa"))
+                .witTax(Tax.yens(70))
+                .witTaxClassification(TaxClassification.INNER_TAX)
+                .build();
         assertThat(target)
                 .isNotNull();
         assertThat(target.getSubTotal())
