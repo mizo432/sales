@@ -6,7 +6,7 @@ import org.venuspj.sales.core.model.accountManagement.account.*;
 
 /**
  */
-public abstract class AssetAccount extends AbstractAccount {
+public abstract class AssetAccount extends AbstractAccount<AssetAccount> {
     public AssetAccount(AccountNumber aNumber,
                         Amount anAmount,
                         AccountsTitle anAccountsTitle,
