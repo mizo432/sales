@@ -16,5 +16,6 @@ public class ChargeGroupIdentifier {
 
     public boolean isPresent() {
         return nonNull(value);
+
     }
 }

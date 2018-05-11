@@ -16,16 +16,19 @@ public class Sale extends AbstractAccount<Sale> {
         @Override
         protected Sale createValueObject() {
             return new Sale(number, amount, accountsTitle, accountsSubTitle, tax, taxClassification);
+
         }
 
         @Override
         protected SaleBuilder getThis() {
             return this;
+
         }
 
         @Override
         protected SaleBuilder newInstance() {
             return new SaleBuilder();
+
         }
     }
 }

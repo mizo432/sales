@@ -25,13 +25,21 @@ public class Sale implements Account {
 
     }
 
-    public boolean sameIdentifireAs(SaleId aSaleId) {
-        return equal(saleId, aSaleId);
+    public boolean sameIdentifireAs(Sale that) {
+        return equal(this.saleId, that.saleId);
+
     }
 
     @Override
     public int hashCode() {
         return hash(saleId);
+
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Sale &&
+                sameIdentifireAs((Sale) obj);
+
+    }
 }
