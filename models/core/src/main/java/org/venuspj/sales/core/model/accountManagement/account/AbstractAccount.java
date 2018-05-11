@@ -10,7 +10,13 @@ import static org.venuspj.util.objects2.Objects2.isNull;
  * 勘定の基底クラス
  */
 public abstract class AbstractAccount<T> implements Account {
-    private final AccountNumber number;
+    private AccountNumber number;
+    private AccountsPart accountsPart;
+    private AccountsSubTitle accountsSubTitle;
+    private AccountsTitle accountsTitle;
+    private Amount amount;
+    private Tax tax;
+    private TaxClassification taxClassification;
 
     public AccountsPart getAccountsPart() {
         return accountsPart;
@@ -36,12 +42,6 @@ public abstract class AbstractAccount<T> implements Account {
         return taxClassification;
     }
 
-    private final AccountsPart accountsPart;
-    private final AccountsSubTitle accountsSubTitle;
-    private final AccountsTitle accountsTitle;
-    private final Amount amount;
-    private final Tax tax;
-    private final TaxClassification taxClassification;
 
     public AbstractAccount(AccountNumber aNumber,
                            Amount anAmount,
@@ -65,7 +65,7 @@ public abstract class AbstractAccount<T> implements Account {
     }
 
     public Amount getSubTotal() {
-        if(taxClassification.isOuterTax()) return Amount.yen(amount.asInteger() + tax.asInteger());
+        if (taxClassification.isOuterTax()) return Amount.yen(amount.asInteger() + tax.asInteger());
         return Amount.yen(amount.asInteger());
     }
 
@@ -128,7 +128,7 @@ public abstract class AbstractAccount<T> implements Account {
         }
 
 
-        public B withNumber(AccountNumber number){
+        public B withNumber(AccountNumber number) {
             if (isNull(number)) return getThis();
             addConfigurator(b -> b.number = number);
             return getThis();

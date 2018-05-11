@@ -17,6 +17,7 @@ public class TaxTest {
                 .isEqualTo(0);
         assertThat(actual.isEmpty())
                 .isTrue();
+
     }
 
     @Test
@@ -26,6 +27,7 @@ public class TaxTest {
                 .isNotNull();
         assertThat(actual.asInteger())
                 .isEqualTo(10);
+
     }
 
     @Test
@@ -35,6 +37,7 @@ public class TaxTest {
                 .isNotNull();
         assertThat(actual.asInteger())
                 .isEqualTo(0);
+
     }
 
     @Test
@@ -45,5 +48,6 @@ public class TaxTest {
                 .isNotNull();
         assertThat(actual.asInteger())
                 .isEqualTo(10);
+
     }
 }
