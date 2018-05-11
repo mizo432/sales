@@ -14,7 +14,9 @@ public class TaxTest {
         assertThat(actual)
                 .isNotNull();
         assertThat(actual.asInteger())
-                .isNull();
+                .isEqualTo(0);
+        assertThat(actual.isEmpty())
+                .isTrue();
     }
 
     @Test

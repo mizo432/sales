@@ -45,4 +45,9 @@ public class Tax implements AmountValue {
     private boolean sameValueAs(Tax obj) {
         return equal(value, obj.value);
     }
+
+    public boolean isEmpty() {
+        return isNull(value);
+
+    }
 }
