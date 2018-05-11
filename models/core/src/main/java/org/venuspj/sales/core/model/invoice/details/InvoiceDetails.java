@@ -1,7 +1,7 @@
 package org.venuspj.sales.core.model.invoice.details;
 
 import org.venuspj.sales.core.fundamentals.amount.Amount;
-import org.venuspj.sales.core.fundamentals.listValue.ListValue;
+import org.venuspj.sales.core.fundamentals.values.ListValue;
 import org.venuspj.sales.core.model.accountManagement.account.Tax;
 
 import java.util.Collection;

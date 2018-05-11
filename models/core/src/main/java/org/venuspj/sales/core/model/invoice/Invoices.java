@@ -1,8 +1,8 @@
 package org.venuspj.sales.core.model.invoice;
 
 
-import org.venuspj.sales.core.fundamentals.listValue.ListValue;
 import org.venuspj.sales.core.fundamentals.recordDate.RecordDate;
+import org.venuspj.sales.core.fundamentals.values.ListValue;
 
 import java.util.Collections;
 import java.util.Comparator;

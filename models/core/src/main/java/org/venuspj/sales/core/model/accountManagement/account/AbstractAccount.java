@@ -43,20 +43,20 @@ public abstract class AbstractAccount<T> implements Account {
     }
 
 
-    public AbstractAccount(AccountNumber aNumber,
-                           Amount anAmount,
-                           AccountsPart anAccountsPart,
-                           AccountsTitle anAccountsTitle,
-                           AccountsSubTitle anAccountsSubTitle,
-                           Tax aTax,
-                           TaxClassification aTaxClassification) {
-        number = aNumber;
-        amount = anAmount;
-        accountsPart = anAccountsPart;
-        accountsTitle = anAccountsTitle;
-        accountsSubTitle = anAccountsSubTitle;
-        tax = aTax;
-        taxClassification = aTaxClassification;
+    public AbstractAccount(AccountNumber number,
+                           Amount amount,
+                           AccountsPart accountsPart,
+                           AccountsTitle accountsTitle,
+                           AccountsSubTitle accountsSubTitle,
+                           Tax tax,
+                           TaxClassification taxClassification) {
+        this.number = number;
+        this.amount = amount;
+        this.accountsPart = accountsPart;
+        this.accountsTitle = accountsTitle;
+        this.accountsSubTitle = accountsSubTitle;
+        this.tax = tax;
+        this.taxClassification = taxClassification;
 
     }
 

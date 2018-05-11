@@ -1,6 +1,7 @@
 package org.venuspj.sales.core.model.accountManagement.account.acountEntry;
 
-import org.venuspj.sales.core.fundamentals.listValue.ListValue;
+
+import org.venuspj.sales.core.fundamentals.values.ListValue;
 
 import java.util.Collections;
 import java.util.List;
