@@ -1,4 +1,20 @@
 package org.venuspj.sales.core.model.sale;
 
-public class SaleCaption {
+import org.venuspj.sales.core.fundamentals.values.StringValue;
+
+public class SaleCaption implements StringValue {
+    private String value;
+
+    SaleCaption() {
+
+    }
+
+    public SaleCaption(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String asText() {
+        return value;
+    }
 }

@@ -5,14 +5,33 @@ import org.venuspj.sales.core.model.accountManagement.account.AccountNumber;
 import org.venuspj.sales.core.model.accountManagement.account.AccountsSubTitle;
 import org.venuspj.sales.core.model.accountManagement.account.AccountsTitle;
 
-public class TradeAccountsReceivable extends AssetAccount {
+public class TradeAccountsReceivable extends AssetAccount<TradeAccountsReceivable> {
 
-    public TradeAccountsReceivable(AccountNumber aNumber,
-                                   Amount anAmount,
-                                   AccountsSubTitle anAccountsSubTitle) {
-        super(aNumber,
-                anAmount,
+    public TradeAccountsReceivable(AccountNumber number,
+                                   Amount amount,
+                                   AccountsSubTitle accountsSubTitle) {
+        super(number,
+                amount,
                 AccountsTitle.TRADE_ACCOUNTS_RECEIVABLE,
-                anAccountsSubTitle);
+                accountsSubTitle);
+    }
+
+    public static class TradeAccountsReceivableBuilder extends AssetAccountBuilder<TradeAccountsReceivable, TradeAccountsReceivableBuilder> {
+
+        @Override
+        protected TradeAccountsReceivable createValueObject() {
+            return new TradeAccountsReceivable(number, amount, accountsSubTitle);
+        }
+
+        @Override
+        protected TradeAccountsReceivableBuilder getThis() {
+            return this;
+        }
+
+        @Override
+        protected TradeAccountsReceivableBuilder newInstance() {
+            return new TradeAccountsReceivableBuilder();
+        }
+
     }
 }

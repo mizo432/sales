@@ -6,12 +6,16 @@ import org.venuspj.sales.core.model.accountManagement.account.*;
 
 /**
  */
-public abstract class AssetAccount extends AbstractAccount<AssetAccount> {
+public abstract class AssetAccount<A extends AssetAccount<A>> extends AbstractAccount<A> {
     public AssetAccount(AccountNumber aNumber,
                         Amount anAmount,
                         AccountsTitle anAccountsTitle,
                         AccountsSubTitle anAccountsSubTitle) {
         super(aNumber, anAmount, AccountsPart.ASSETS, anAccountsTitle, anAccountsSubTitle, Tax.empty(), TaxClassification.EXCLUDES);
+    }
+
+    public static abstract class AssetAccountBuilder<A extends AssetAccount<A>,B extends AssetAccountBuilder<A,B>> extends AbstractAccountBuilder<A,B> {
+
     }
 
 }

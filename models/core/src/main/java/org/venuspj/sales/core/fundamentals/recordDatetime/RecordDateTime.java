@@ -1,6 +1,7 @@
 package org.venuspj.sales.core.fundamentals.recordDatetime;
 
 import com.google.common.collect.ComparisonChain;
+import org.venuspj.sales.core.fundamentals.recordDate.DateValue;
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
 
 import java.time.LocalDateTime;
@@ -11,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 import static org.venuspj.util.objects2.Objects2.isNull;
 import static org.venuspj.util.objects2.Objects2.nonNull;
 
-public class RecordDateTime implements Comparable<RecordDateTime> {
+public class RecordDateTime implements Comparable<RecordDateTime>,DateValue {
     private LocalDateTime value;
 
     public RecordDateTime() {
@@ -55,5 +56,10 @@ public class RecordDateTime implements Comparable<RecordDateTime> {
                 .compare(value, o.asLocalDateTime())
                 .result();
 
+    }
+
+    @Override
+    public RecordDateTimeValue atEndOfDay() {
+        return null;
     }
 }

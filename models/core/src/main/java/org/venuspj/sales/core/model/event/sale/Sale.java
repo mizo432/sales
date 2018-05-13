@@ -1,45 +1,37 @@
 package org.venuspj.sales.core.model.event.sale;
 
+import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.event.Event;
-import org.venuspj.sales.core.model.accountManagement.account.Account;
+import org.venuspj.sales.core.model.accountManagement.TaxClassification;
+import org.venuspj.sales.core.model.accountManagement.account.*;
 
 import static org.venuspj.util.objects2.Objects2.equal;
 import static org.venuspj.util.objects2.Objects2.hash;
 
-public class Sale implements Account {
+public class Sale extends AbstractAccount<Sale> {
 
-    SaleId saleId;
-
-    Event event;
-
-    SaleDetails saleDetails;
-
-    Sale() {
-
+    public Sale(AccountNumber number, Amount amount, AccountsSubTitle accountsSubTitle, Tax tax, TaxClassification taxClassification) {
+        super(number, amount, AccountsPart.GENERAL_AND_ADMINISTRATIVE_EXPENSES, AccountsTitle.SALE, accountsSubTitle, tax, taxClassification);
     }
 
-    public Sale(SaleId aSaleId, Event anEvent, SaleDetails anySaleDetails) {
-        saleId = aSaleId;
-        event = anEvent;
-        saleDetails = anySaleDetails;
+    public static class SaleBuilder extends AbstractAccountBuilder<Sale, SaleBuilder> {
 
-    }
+        @Override
+        protected Sale createValueObject() {
+            return new Sale(number, amount, accountsSubTitle, tax, taxClassification);
 
-    public boolean sameIdentifireAs(Sale that) {
-        return equal(this.saleId, that.saleId);
+        }
 
-    }
+        @Override
+        protected SaleBuilder getThis() {
+            return this;
 
-    @Override
-    public int hashCode() {
-        return hash(saleId);
+        }
 
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return obj instanceof Sale &&
-                sameIdentifireAs((Sale) obj);
+        @Override
+        protected SaleBuilder newInstance() {
+            return new SaleBuilder();
+        }
 
     }
 }

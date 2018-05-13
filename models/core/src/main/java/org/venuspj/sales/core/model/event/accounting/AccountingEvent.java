@@ -8,12 +8,12 @@ import static org.venuspj.util.collect.Sets2.newHashSet;
 
 
 public abstract class AccountingEvent {
-    private AccountingEvent event;
+    private EventType event;
     private RecordDateTimeValue whenOccurred;
     private RecordDateTimeValue whenNoticed;
-    private Set<AccountingEntry> resultingEntries = newHashSet();
+    protected Set<AccountingEntry> resultingEntries = newHashSet();
 
-    protected AccountingEvent(AccountingEvent event,
+    protected AccountingEvent(EventType event,
                               RecordDateTimeValue whenOccurred,
                               RecordDateTimeValue whenNoticed) {
         this.event = event;
@@ -24,6 +24,11 @@ public abstract class AccountingEvent {
 
     public RecordDateTimeValue getWhenNoticed() {
         return whenNoticed;
+
+    }
+
+    public EventType getEventType() {
+        return event;
 
     }
 
