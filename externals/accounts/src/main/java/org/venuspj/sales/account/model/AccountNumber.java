@@ -1,21 +1,20 @@
 package org.venuspj.sales.account.model;
 
-import static org.venuspj.util.objects2.Objects2.toStringHelper;
-
 public class AccountNumber {
     private Integer value;
 
-    AccountNumber(){
+    AccountNumber() {
 
     }
-    public AccountNumber(Integer aValue){
-        value = aValue;
+
+    public AccountNumber(Integer value) {
+        this.value = value;
 
     }
-    @Override
-    public String toString() {
-        return toStringHelper(this)
-                .defaultConfig()
-                .toString();
+
+    public Integer asInteger() {
+        return value;
+
     }
+
 }

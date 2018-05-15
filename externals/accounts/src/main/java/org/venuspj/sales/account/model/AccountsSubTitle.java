@@ -12,4 +12,8 @@ public class AccountsSubTitle {
     public AccountsSubTitle(String value) {
         this.value = value;
     }
+
+    public String asText() {
+        return value;
+    }
 }
