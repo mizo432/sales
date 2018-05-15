@@ -11,6 +11,14 @@ public class Event {
     Event() {
     }
 
+    public WhenOccurred getWhenOccurred() {
+        return whenOccurred;
+    }
+
+    public UserIdentifier getUserIdentifier() {
+        return userIdentifier;
+    }
+
     public Event(WhenOccurred whenOccurred, UserIdentifier userIdentifier) {
         this.whenOccurred = whenOccurred;
         this.userIdentifier = userIdentifier;
