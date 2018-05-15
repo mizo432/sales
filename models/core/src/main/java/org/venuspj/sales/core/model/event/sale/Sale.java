@@ -1,7 +1,7 @@
 package org.venuspj.sales.core.model.event.sale;
 
 import org.venuspj.sales.core.fundamentals.event.Event;
-import org.venuspj.sales.core.model.accountManagement.account.Account;
+import org.venuspj.sales.account.model.Account;
 
 import static org.venuspj.util.objects2.Objects2.equal;
 import static org.venuspj.util.objects2.Objects2.hash;

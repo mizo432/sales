@@ -1,9 +1,8 @@
 package org.venuspj.sales.core.model.event.postingSale;
 
+import org.venuspj.sales.account.model.*;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
-import org.venuspj.sales.core.model.accountManagement.TaxClassification;
-import org.venuspj.sales.core.model.accountManagement.account.*;
-import org.venuspj.sales.core.model.accountManagement.account.Tax;
+import org.venuspj.sales.account.model.TaxClassification;
 
 public class Sale extends AbstractAccount<Sale> {
 

@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.model.event.postingSale;
 
-import org.venuspj.sales.core.model.accountManagement.account.Tax;
+import org.venuspj.sales.account.model.Tax;
 
 /**
  * アクティビティ売上を記帳する

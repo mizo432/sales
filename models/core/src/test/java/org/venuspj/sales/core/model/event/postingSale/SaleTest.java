@@ -3,11 +3,11 @@ package org.venuspj.sales.core.model.event.postingSale;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
-import org.venuspj.sales.core.model.accountManagement.TaxClassification;
-import org.venuspj.sales.core.model.accountManagement.account.AccountNumber;
-import org.venuspj.sales.core.model.accountManagement.account.AccountsSubTitle;
-import org.venuspj.sales.core.model.accountManagement.account.AccountsTitle;
-import org.venuspj.sales.core.model.accountManagement.account.Tax;
+import org.venuspj.sales.account.model.TaxClassification;
+import org.venuspj.sales.account.model.AccountNumber;
+import org.venuspj.sales.account.model.AccountsSubTitle;
+import org.venuspj.sales.account.model.AccountsTitle;
+import org.venuspj.sales.account.model.Tax;
 import org.venuspj.sales.core.model.event.postingSale.Sale.SaleBuilder;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
