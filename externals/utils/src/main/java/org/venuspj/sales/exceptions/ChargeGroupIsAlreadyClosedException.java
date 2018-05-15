@@ -1,4 +1,4 @@
-package org.venuspj.sales.core.exceptions;
+package org.venuspj.sales.exceptions;
 
 /**
  * Created by mizoguchi on 2017/05/28.

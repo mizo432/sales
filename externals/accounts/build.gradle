@@ -1,6 +1,6 @@
 apply plugin: 'java'
 
-archivesBaseName = 'abstracts'
+archivesBaseName = 'accounts'
 
 repositories {
     mavenCentral()
@@ -8,6 +8,7 @@ repositories {
 
 dependencies {
     compile group: 'org.slf4j', name: 'slf4j-api', version: "${slf4jVersion}"
+    compile project(":fundamentals")
     testRuntime group: 'ch.qos.logback', name: 'logback-core', version: "${logbackVersion}"
     testRuntime group: 'ch.qos.logback', name: 'logback-classic', version: "${logbackVersion}"
 }
