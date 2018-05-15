@@ -6,9 +6,7 @@ import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTimeValue;
 
 import java.time.LocalDateTime;
 
-import static org.venuspj.util.objects2.Objects2.equal;
-import static org.venuspj.util.objects2.Objects2.isNull;
-import static org.venuspj.util.objects2.Objects2.nonNull;
+import static org.venuspj.util.objects2.Objects2.*;
 
 public class WhenOccurred implements RecordDateTimeValue {
     private LocalDateTime value;
@@ -48,4 +46,8 @@ public class WhenOccurred implements RecordDateTimeValue {
 
     }
 
+    @Override
+    public int hashCode() {
+        return hash(value);
+    }
 }
