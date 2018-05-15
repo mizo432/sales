@@ -6,7 +6,9 @@ import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTimeValue;
 
 import java.time.LocalDateTime;
 
+import static org.venuspj.util.objects2.Objects2.equal;
 import static org.venuspj.util.objects2.Objects2.isNull;
+import static org.venuspj.util.objects2.Objects2.nonNull;
 
 public class WhenOccurred implements RecordDateTimeValue {
     private LocalDateTime value;
@@ -34,4 +36,16 @@ public class WhenOccurred implements RecordDateTimeValue {
                 .result();
 
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof WhenOccurred && sameValueAs((WhenOccurred) obj);
+
+    }
+
+    public boolean sameValueAs(WhenOccurred other) {
+        return nonNull(other) && equal(value, other.value);
+
+    }
+
 }
