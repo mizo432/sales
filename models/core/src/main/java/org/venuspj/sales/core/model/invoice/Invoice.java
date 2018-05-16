@@ -65,6 +65,12 @@ public class Invoice implements StatementOfSettlements {
         return invoiceIdentifier;
     }
 
+    public ChargeGroupIdentifier getChargeGroupIdentifier() {
+        return chargeGroupIdentifier;
+
+    }
+
+
     @Override
     public RecordYearMonth recordYearMonth() {
         return recordDate.getRecordYearMonth();
