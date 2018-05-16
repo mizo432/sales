@@ -52,12 +52,16 @@ public class Invoice implements StatementOfSettlements {
     public Invoice(InvoiceIdentifier invoiceIdentifier,
                    ChargeGroupIdentifier chargeGroupIdentifier,
                    InvoiceDetails invoiceDetails,
-                   RecordDate recordDate) {
+                   RecordDate recordDate,
+                   OutputFormat outputFormat,
+                   Amount totalAmount) {
 
         this.chargeGroupIdentifier = chargeGroupIdentifier;
         this.invoiceIdentifier = invoiceIdentifier;
         this.invoiceDetails.addAll(invoiceDetails);
         this.recordDate = recordDate;
+        this.outputFormat = outputFormat;
+        this.totalAmount = totalAmount;
 
     }
 
