@@ -42,7 +42,7 @@ public class Invoice implements StatementOfSettlements {
 
     private OutputFormat outputFormat;
 
-    public OutputFormat outputFormat() {
+    public OutputFormat getOutputFormat() {
         return outputFormat;
     }
 
@@ -61,7 +61,7 @@ public class Invoice implements StatementOfSettlements {
 
     }
 
-    public InvoiceIdentifier invoiceId() {
+    public InvoiceIdentifier getInvoiceIdentifier() {
         return invoiceIdentifier;
     }
 
@@ -72,39 +72,45 @@ public class Invoice implements StatementOfSettlements {
 
 
     @Override
-    public RecordYearMonth recordYearMonth() {
+    public RecordYearMonth getRecordYearMonth() {
         return recordDate.getRecordYearMonth();
     }
 
     public RecordDate recordDate() {
         return recordDate;
+
     }
 
     public InvoiceDetails getInvoiceDetails() {
         return invoiceDetails;
+
     }
 
     @Override
-    public PayableAmount payableAmount() {
+    public PayableAmount getPayableAmount() {
         return null;
+
     }
 
     @Override
-    public ReceivableAmount receivableAmount() {
+    public ReceivableAmount getReceivableAmount() {
         return null;
+
     }
 
     public Tax tax() {
         return invoiceDetails.tax();
+
     }
 
     public Amount totalAmount() {
         return totalAmount;
+
     }
 
     public boolean existsSaleDetails() {
         return invoiceDetails.existsSaleDetails();
-    }
 
+    }
 
 }
