@@ -8,8 +8,7 @@ import java.time.Month;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 
-import static org.venuspj.util.objects2.Objects2.isNull;
-import static org.venuspj.util.objects2.Objects2.nonNull;
+import static org.venuspj.util.objects2.Objects2.*;
 
 public class RecordDateTime implements Comparable<RecordDateTime> {
     private LocalDateTime value;
@@ -41,6 +40,22 @@ public class RecordDateTime implements Comparable<RecordDateTime> {
 
     public LocalDateTime asLocalDateTime() {
         return value;
+
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof RecordDateTime &&
+                sameValueAs((RecordDateTime) obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return hash(value);
+    }
+
+    public boolean sameValueAs(RecordDateTime other) {
+        return equal(value, other.value);
 
     }
 
