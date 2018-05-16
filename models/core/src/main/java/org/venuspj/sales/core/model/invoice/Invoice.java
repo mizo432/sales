@@ -35,11 +35,6 @@ public class Invoice implements StatementOfSettlements {
      */
     private Amount totalAmount;
 
-    /**
-     * 合計金額
-     */
-    private Amount totalTaxAmount;
-
     private OutputFormat outputFormat;
 
     public OutputFormat getOutputFormat() {
