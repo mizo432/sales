@@ -9,6 +9,8 @@ import static org.venuspj.util.collect.Sets2.newHashSet;
 
 public abstract class AccountingEvent {
     private AccountingEvent event;
+
+
     private RecordDateTimeValue whenOccurred;
     private RecordDateTimeValue whenNoticed;
     private Set<AccountingEntry> resultingEntries = newHashSet();
@@ -29,6 +31,16 @@ public abstract class AccountingEvent {
 
     public void addResultingEntry(AccountingEntry entry) {
         resultingEntries.add(entry);
+
+    }
+
+    public AccountingEvent getEvent() {
+        return event;
+
+    }
+
+    public RecordDateTimeValue getWhenOccurred() {
+        return whenOccurred;
 
     }
 

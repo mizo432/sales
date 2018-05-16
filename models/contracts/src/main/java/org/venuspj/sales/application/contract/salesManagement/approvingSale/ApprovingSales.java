@@ -1,4 +1,4 @@
-package org.venuspj.sales.core.usecase.salesManagement.approvingSale;
+package org.venuspj.sales.application.contract.salesManagement.approvingSale;
 
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupIdentifier;
