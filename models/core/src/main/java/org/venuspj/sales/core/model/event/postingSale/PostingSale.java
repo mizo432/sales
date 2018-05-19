@@ -2,7 +2,6 @@ package org.venuspj.sales.core.model.event.postingSale;
 
 import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTimeValue;
 import org.venuspj.sales.core.model.accountManagement.account.Tax;
-import org.venuspj.sales.core.model.event.accounting.AccountingEntry;
 import org.venuspj.sales.core.model.event.accounting.AccountingEvent;
 import org.venuspj.sales.core.model.event.accounting.EventType;
 import org.venuspj.sales.core.model.event.accounting.ServiceAgreement;
@@ -19,6 +18,7 @@ public class PostingSale extends AccountingEvent {
     private Custody custody;
 
     private ServiceAgreement serviceAgreement;
+
 
     // 借方
     /**

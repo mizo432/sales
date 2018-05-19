@@ -11,7 +11,7 @@ import java.util.Map;
 import static org.venuspj.util.collect.Lists2.newArrayList;
 import static org.venuspj.util.collect.Maps2.newHashMap;
 
-public class ServiceAgreement {
+public abstract class ServiceAgreement {
     private double rate;
     private Map<EventType, TemporalCollection> postingRules = newHashMap();
 

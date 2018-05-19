@@ -10,7 +10,7 @@ public abstract class PostingRule {
     }
 
     private void makeEntry(AccountingEvent event, Amount amount) {
-        AccountingEntry entry = new AccountingEntry(amount, event.getWhenNoticed(), type);
+        AbstractAccountingEntry entry = new AbstractAccountingEntry(amount, event.getWhenNoticed(), type);
         event.addResultingEntry(entry);
     }
 

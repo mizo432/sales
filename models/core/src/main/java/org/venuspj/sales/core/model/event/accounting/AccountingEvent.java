@@ -11,7 +11,7 @@ public abstract class AccountingEvent {
     private EventType event;
     private RecordDateTimeValue whenOccurred;
     private RecordDateTimeValue whenNoticed;
-    protected Set<AccountingEntry> resultingEntries = newHashSet();
+    protected Set<AbstractAccountingEntry> resultingEntries = newHashSet();
 
     protected AccountingEvent(EventType event,
                               RecordDateTimeValue whenOccurred,
@@ -27,12 +27,17 @@ public abstract class AccountingEvent {
 
     }
 
+    public RecordDateTimeValue getWhenOccurred() {
+        return whenOccurred;
+
+    }
+
     public EventType getEventType() {
         return event;
 
     }
 
-    public void addResultingEntry(AccountingEntry entry) {
+    public void addResultingEntry(AbstractAccountingEntry entry) {
         resultingEntries.add(entry);
 
     }
