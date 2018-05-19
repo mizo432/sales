@@ -3,7 +3,7 @@ package org.venuspj.sales.usecase.addtionalDetailManagement.approving;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.venuspj.exceptions.EntityNotFoundException;
-import org.venuspj.sales.core.exceptions.ChargeGroupIsAlreadyClosedException;
+import org.venuspj.sales.application.contract.addtionalDetailManagement.approvingAdditionDetail.ApprovingAdditionDetail;
 import org.venuspj.sales.core.fundamentals.event.Event;
 import org.venuspj.sales.core.fundamentals.event.EventProvider;
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
@@ -14,7 +14,7 @@ import org.venuspj.sales.core.model.additionalDetail.status.AdditionalDetailStat
 import org.venuspj.sales.core.model.additionalDetail.status.ApploveStatus;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroup;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupRepository;
-import org.venuspj.sales.core.usecase.addtionalDetailManagement.approvingAdditionDetail.ApprovingAdditionDetail;
+import org.venuspj.sales.exceptions.ChargeGroupIsAlreadyClosedException;
 
 import java.util.Map;
 

@@ -1,12 +1,7 @@
 package org.venuspj.sales.core.model.event.sale;
 
+import org.venuspj.sales.account.model.*;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
-import org.venuspj.sales.core.fundamentals.event.Event;
-import org.venuspj.sales.core.model.accountManagement.TaxClassification;
-import org.venuspj.sales.core.model.accountManagement.account.*;
-
-import static org.venuspj.util.objects2.Objects2.equal;
-import static org.venuspj.util.objects2.Objects2.hash;
 
 public class Sale extends AbstractAccount<Sale> {
 

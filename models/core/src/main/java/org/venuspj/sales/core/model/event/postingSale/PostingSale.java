@@ -1,10 +1,12 @@
 package org.venuspj.sales.core.model.event.postingSale;
 
+import org.venuspj.sales.account.model.Tax;
+import org.venuspj.sales.core.fundamentals.event.Event;
 import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTimeValue;
-import org.venuspj.sales.core.model.accountManagement.account.Tax;
 import org.venuspj.sales.core.model.event.accounting.AccountingEvent;
 import org.venuspj.sales.core.model.event.accounting.EventType;
 import org.venuspj.sales.core.model.event.accounting.ServiceAgreement;
+import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroup;
 
 /**
  * アクティビティ売上を記帳する
@@ -13,9 +15,7 @@ public class PostingSale extends AccountingEvent {
 
     private ChargeGroup chargeGroup;
 
-    private Moment moment;
-
-    private Custody custody;
+    private Event moment;
 
     private ServiceAgreement serviceAgreement;
 
