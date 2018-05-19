@@ -14,7 +14,7 @@ import org.venuspj.sales.core.model.additionalDetail.status.AdditionalDetailStat
 import org.venuspj.sales.core.model.additionalDetail.status.ApploveStatus;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroup;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupRepository;
-import org.venuspj.sales.core.usecase.addtionalDetailManagement.approvingAdditionDetail.ApprovingAdditionDetail;
+import org.venuspj.sales.application.contract.addtionalDetailManagement.approvingAdditionDetail.ApprovingAdditionDetail;
 
 
 import java.util.Map;
