@@ -1,7 +1,18 @@
 package org.venuspj.sales.core.model.bankBook.log;
 
+import org.venuspj.sales.account.model.AccountNumber;
+import org.venuspj.sales.account.model.AccountsSubTitle;
+import org.venuspj.sales.account.model.AccountsTitle;
+import org.venuspj.sales.account.model.generalLedger.assetAccount.AssetAccount;
+import org.venuspj.sales.core.fundamentals.amount.Amount;
+
 /**
  * Created by mizoguchi on 2017/05/21.
  */
-public class BankAccountLog {
+public class BankAccountLog extends AssetAccount<BankAccountLog> {
+
+    public BankAccountLog(AccountNumber aNumber, Amount amount, AccountsSubTitle accountsSubTitle) {
+        super(aNumber, amount, AccountsTitle.BANK_ACCOUNT, accountsSubTitle);
+
+    }
 }

@@ -1,7 +1,7 @@
 package org.venuspj.sales.core.model.invoice;
 
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
-import org.venuspj.sales.core.model.accountManagement.account.Tax;
+import org.venuspj.sales.account.model.Tax;
 import org.venuspj.sales.core.model.invoice.details.InvoiceDetails;
 
 
@@ -10,17 +10,17 @@ import org.venuspj.sales.core.model.invoice.details.InvoiceDetails;
  */
 public interface StatementOfSettlements {
 
-    OutputFormat outputFormat();
+    OutputFormat getOutputFormat();
 
-    InvoiceIdentifier invoiceId();
+    InvoiceIdentifier getInvoiceIdentifier();
 
-    RecordYearMonth recordYearMonth();
+    RecordYearMonth getRecordYearMonth();
 
     InvoiceDetails getInvoiceDetails();
 
-    PayableAmount payableAmount();
+    PayableAmount getPayableAmount();
 
-    ReceivableAmount receivableAmount();
+    ReceivableAmount getReceivableAmount();
 
     Tax tax();
 

@@ -45,7 +45,7 @@ public class Invoices implements ListValue<Invoice> {
             public int compare(Invoice o1, Invoice o2) {
                 return o1.recordDate().compareTo(o2.recordDate());
             }
-        }.reversed()).map(iv -> iv.invoiceId()).collect(Collectors.toList()).indexOf(invoiceIdentifier) > 0;
+        }.reversed()).map(iv -> iv.getInvoiceIdentifier()).collect(Collectors.toList()).indexOf(invoiceIdentifier) > 0;
     }
 
     public RecordDate getOldestRecordDate() {

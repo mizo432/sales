@@ -1,7 +1,5 @@
 package org.venuspj.sales.core.model.deposit;
 
-import static org.venuspj.util.objects2.Objects2.toStringHelper;
-
 /**
  */
 public class DepositId {
@@ -11,14 +9,12 @@ public class DepositId {
 
     }
 
-    public DepositId(Integer aValue) {
-        value = aValue;
+    public DepositId(Integer value) {
+        this.value = value;
     }
 
-    @Override
-    public String toString() {
-        return toStringHelper(this)
-                .defaultConfig()
-                .toString();
+    public Integer asInteger() {
+        return value;
+
     }
 }
