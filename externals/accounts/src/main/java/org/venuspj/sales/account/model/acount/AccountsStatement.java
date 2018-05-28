@@ -1,4 +1,4 @@
-package org.venuspj.sales.account.model;
+package org.venuspj.sales.account.model.acount;
 
 import org.venuspj.sales.core.fundamentals.titleName.TitleName;
 

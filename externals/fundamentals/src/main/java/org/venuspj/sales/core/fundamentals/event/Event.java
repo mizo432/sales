@@ -8,7 +8,7 @@ public class Event {
     WhenOccurred whenOccurred;
     UserIdentifier userIdentifier;
 
-    Event() {
+    public Event() {
     }
 
     public WhenOccurred getWhenOccurred() {

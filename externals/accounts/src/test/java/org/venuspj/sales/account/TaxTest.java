@@ -1,7 +1,7 @@
 package org.venuspj.sales.account;
 
 import org.junit.Test;
-import org.venuspj.sales.account.model.Tax;
+import org.venuspj.sales.account.model.acount.Tax;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;

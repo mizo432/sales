@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.model.accountManagement.account.generalLedger.assetAccount;
 
-import org.venuspj.sales.account.model.*;
+import org.venuspj.sales.account.model.acount.*;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 
 /**

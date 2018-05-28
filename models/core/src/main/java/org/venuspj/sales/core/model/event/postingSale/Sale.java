@@ -1,8 +1,7 @@
 package org.venuspj.sales.core.model.event.postingSale;
 
-import org.venuspj.sales.account.model.*;
+import org.venuspj.sales.account.model.acount.*;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
-import org.venuspj.sales.account.model.TaxClassification;
 
 import static org.venuspj.util.objects2.Objects2.isNull;
 

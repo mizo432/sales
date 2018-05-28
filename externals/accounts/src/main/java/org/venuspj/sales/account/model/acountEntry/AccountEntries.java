@@ -21,5 +21,4 @@ public class AccountEntries implements ListValue<AccountEntry>, AccountEntry {
         return Collections.unmodifiableList(list);
     }
 
-
 }

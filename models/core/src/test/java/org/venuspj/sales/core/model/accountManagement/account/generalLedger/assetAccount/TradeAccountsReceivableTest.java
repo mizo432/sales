@@ -2,9 +2,9 @@ package org.venuspj.sales.core.model.accountManagement.account.generalLedger.ass
 
 import org.junit.Test;
 import org.slf4j.Logger;
-import org.venuspj.sales.account.model.AccountNumber;
-import org.venuspj.sales.account.model.Tax;
-import org.venuspj.sales.account.model.TaxClassification;
+import org.venuspj.sales.account.model.acount.AccountNumber;
+import org.venuspj.sales.account.model.acount.Tax;
+import org.venuspj.sales.account.model.acount.TaxClassification;
 import org.venuspj.sales.account.model.generalLedger.assetAccount.TradeAccountsReceivable;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 

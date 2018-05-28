@@ -1,4 +1,4 @@
-package org.venuspj.sales.account.model;
+package org.venuspj.sales.account.model.acount;
 
 /**
  * 勘定補助科目

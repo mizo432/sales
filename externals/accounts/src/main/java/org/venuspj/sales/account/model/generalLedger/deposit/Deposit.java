@@ -1,8 +1,7 @@
 package org.venuspj.sales.account.model.generalLedger.deposit;
 
-import org.venuspj.sales.account.model.*;
+import org.venuspj.sales.account.model.acount.*;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
-import org.venuspj.sales.account.model.TaxClassification;
 
 public class Deposit extends AbstractAccount<Deposit> {
     public Deposit(AccountNumber number,

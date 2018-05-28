@@ -2,12 +2,8 @@ package org.venuspj.sales.core.model.event.postingSale;
 
 import org.junit.Test;
 import org.slf4j.Logger;
+import org.venuspj.sales.account.model.acount.*;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
-import org.venuspj.sales.account.model.TaxClassification;
-import org.venuspj.sales.account.model.AccountNumber;
-import org.venuspj.sales.account.model.AccountsSubTitle;
-import org.venuspj.sales.account.model.AccountsTitle;
-import org.venuspj.sales.account.model.Tax;
 import org.venuspj.sales.core.model.event.postingSale.Sale.SaleBuilder;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
@@ -41,7 +37,7 @@ public class SaleTest {
     @Test
     public void getSubTotal2() {
         Sale target = new SaleBuilder()
-                .withNumber(new AccountNumber(10))
+                .withNumber(AccountNumber.of(10))
                 .withAmount(Amount.yen(1000))
                 .withAccountsTitle(AccountsTitle.SALE)
                 .withAccountsSubTitle(new AccountsSubTitle("aaaa"))

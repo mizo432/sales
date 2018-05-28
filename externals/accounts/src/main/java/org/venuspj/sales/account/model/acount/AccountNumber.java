@@ -1,9 +1,9 @@
-package org.venuspj.sales.account.model;
+package org.venuspj.sales.account.model.acount;
 
 public class AccountNumber {
     private Integer value;
 
-    AccountNumber() {
+    public AccountNumber() {
 
     }
 
@@ -15,6 +15,10 @@ public class AccountNumber {
     public Integer asInteger() {
         return value;
 
+    }
+
+    public static AccountNumber of(Integer value) {
+        return new AccountNumber(value);
     }
 
 }

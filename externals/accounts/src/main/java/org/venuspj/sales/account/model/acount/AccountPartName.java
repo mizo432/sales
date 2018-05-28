@@ -1,4 +1,4 @@
-package org.venuspj.sales.account.model;
+package org.venuspj.sales.account.model.acount;
 
 public class AccountPartName {
     private final String value;

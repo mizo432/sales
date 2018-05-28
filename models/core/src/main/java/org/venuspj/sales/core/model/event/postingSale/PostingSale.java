@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.model.event.postingSale;
 
-import org.venuspj.sales.account.model.Tax;
+import org.venuspj.sales.account.model.acount.Tax;
 import org.venuspj.sales.core.fundamentals.event.Event;
 import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTimeValue;
 import org.venuspj.sales.core.model.event.accounting.AccountingEvent;

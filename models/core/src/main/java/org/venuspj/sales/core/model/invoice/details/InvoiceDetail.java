@@ -1,8 +1,8 @@
 package org.venuspj.sales.core.model.invoice.details;
 
+import org.venuspj.sales.account.model.acount.Tax;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.recordDate.RecordDate;
-import org.venuspj.sales.account.model.Tax;
 import org.venuspj.sales.core.model.invoice.InvoiceIdentifier;
 import org.venuspj.sales.core.model.invoice.details.saleDetails.InvoiceDetailFromSaleDetails;
 

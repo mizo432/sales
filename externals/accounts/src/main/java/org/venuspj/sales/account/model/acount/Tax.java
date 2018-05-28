@@ -1,4 +1,4 @@
-package org.venuspj.sales.account.model;
+package org.venuspj.sales.account.model.acount;
 
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.amount.AmountValue;
@@ -33,6 +33,7 @@ public class Tax implements AmountValue {
 
     }
 
+    @Override
     public Integer asInteger() {
         if (isNull(value)) return Integer.valueOf(0);
         return value;
