@@ -4,6 +4,7 @@ import org.venuspj.sales.account.model.acount.*;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 
 /**
+ * 資産会計
  */
 public abstract class AssetAccount<A extends AssetAccount<A>> extends AbstractAccount<A> {
     public AssetAccount(AccountNumber aNumber,
@@ -13,7 +14,7 @@ public abstract class AssetAccount<A extends AssetAccount<A>> extends AbstractAc
         super(aNumber, anAmount, AccountsPart.ASSETS, anAccountsTitle, anAccountsSubTitle, Tax.empty(), TaxClassification.EXCLUDES);
     }
 
-    public static abstract class AssetAccountBuilder<A extends AssetAccount<A>,B extends AssetAccountBuilder<A,B>> extends AbstractAccountBuilder<A,B> {
+    public static abstract class AssetAccountBuilder<A extends AssetAccount<A>, B extends AssetAccountBuilder<A, B>> extends AbstractAccountBuilder<A, B> {
 
     }
 
