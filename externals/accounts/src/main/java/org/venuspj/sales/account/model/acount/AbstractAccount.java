@@ -9,13 +9,13 @@ import static org.venuspj.util.objects2.Objects2.isNull;
  * 勘定の基底クラス
  */
 public abstract class AbstractAccount<T> implements Account {
-    private AccountNumber number;
-    private AccountsPart accountsPart;
-    private AccountsSubTitle accountsSubTitle;
-    private AccountsTitle accountsTitle;
-    private Amount amount;
-    private Tax tax;
-    private TaxClassification taxClassification;
+    private AccountNumber number = new AccountNumber();
+    private AccountsPart accountsPart = AccountsPart.UNKNOWN;
+    private AccountsSubTitle accountsSubTitle = new AccountsSubTitle();
+    private AccountsTitle accountsTitle = AccountsTitle.UNKNOWN;
+    private Amount amount = Amount.yenZero();
+    private Tax tax = Tax.empty();
+    private TaxClassification taxClassification = TaxClassification.UNKNOWN;
 
     public AccountsPart getAccountsPart() {
         return accountsPart;
@@ -41,14 +41,17 @@ public abstract class AbstractAccount<T> implements Account {
         return taxClassification;
     }
 
+    protected AbstractAccount() {
 
-    public AbstractAccount(AccountNumber number,
-                           Amount amount,
-                           AccountsPart accountsPart,
-                           AccountsTitle accountsTitle,
-                           AccountsSubTitle accountsSubTitle,
-                           Tax tax,
-                           TaxClassification taxClassification) {
+    }
+
+    protected AbstractAccount(AccountNumber number,
+                              Amount amount,
+                              AccountsPart accountsPart,
+                              AccountsTitle accountsTitle,
+                              AccountsSubTitle accountsSubTitle,
+                              Tax tax,
+                              TaxClassification taxClassification) {
         this.number = number;
         this.amount = amount;
         this.accountsPart = accountsPart;
@@ -69,13 +72,13 @@ public abstract class AbstractAccount<T> implements Account {
     }
 
     public static abstract class AbstractAccountBuilder<T extends AbstractAccount<T>, B extends AbstractAccountBuilder<T, B>> extends ObjectBuilder<T, B> {
-        protected AccountNumber number;
-        protected AccountsPart accountsPart;
-        protected AccountsSubTitle accountsSubTitle;
-        protected AccountsTitle accountsTitle;
-        protected Amount amount;
-        protected Tax tax;
-        protected TaxClassification taxClassification;
+        protected AccountNumber number = new AccountNumber();
+        protected AccountsPart accountsPart = AccountsPart.UNKNOWN;
+        protected AccountsSubTitle accountsSubTitle = new AccountsSubTitle();
+        protected AccountsTitle accountsTitle = AccountsTitle.UNKNOWN;
+        protected Amount amount = Amount.yenZero();
+        protected Tax tax = Tax.empty();
+        protected TaxClassification taxClassification = TaxClassification.UNKNOWN;
 
         @Override
         protected void apply(T vo, B builder) {

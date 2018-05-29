@@ -10,7 +10,7 @@ public enum AccountsTitle {
     DEPOSIT(AccountsPart.LIABILITIES, "預り金"),
     SALE(AccountsPart.LIABILITIES, "売上"),
     TRADE_ACCOUNTS_RECEIVABLE(AccountsPart.ASSETS, "売掛金"),
-    BANK_ACCOUNT(AccountsPart.ASSETS, "銀行口座");
+    BANK_ACCOUNT(AccountsPart.ASSETS, "銀行口座"), UNKNOWN(AccountsPart.UNKNOWN, "未定");
 
     private final AccountsPart accountsPart;
     private final Name accountsName;
