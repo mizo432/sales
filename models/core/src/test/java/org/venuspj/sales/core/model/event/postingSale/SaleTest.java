@@ -53,7 +53,7 @@ public class SaleTest {
 
     private Sale createDummySale() {
         return new SaleBuilder()
-                .withNumber(new AccountNumber(10))
+                .withNumber(AccountNumber.of(10))
                 .withAmount(Amount.yen(1000))
                 .withAccountsTitle(AccountsTitle.SALE)
                 .withAccountsSubTitle(new AccountsSubTitle("aaaa"))

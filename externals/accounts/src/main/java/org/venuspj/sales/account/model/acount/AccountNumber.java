@@ -7,8 +7,7 @@ public class AccountNumber {
 
     }
 
-    //TODO このコンストラクターはプライベート化する
-    public AccountNumber(Integer value) {
+    AccountNumber(Integer value) {
         this.value = value;
 
     }

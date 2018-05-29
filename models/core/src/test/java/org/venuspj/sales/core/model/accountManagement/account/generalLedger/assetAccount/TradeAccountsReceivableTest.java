@@ -33,7 +33,7 @@ public class TradeAccountsReceivableTest {
 
     private TradeAccountsReceivable createDummyDeposit() {
         return new TradeAccountsReceivable.TradeAccountsReceivableBuilder()
-                .withNumber(new AccountNumber(10))
+                .withNumber(AccountNumber.of(10))
                 .withAmount(Amount.yen(10))
                 .build();
     }

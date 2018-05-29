@@ -47,5 +47,6 @@ public class PostingAdditionalDetailController implements PostingAdditionalDetai
             }
         };
         postingAdditionalDetail.start(this, presenter);
+
     }
 }
