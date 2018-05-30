@@ -105,50 +105,49 @@ public abstract class AbstractAccount<T> implements AccountEntry {
             builder.withAccountsSubTitle(vo.getAccountsSubTitle());
             builder.withAccountsTitle(vo.getAccountsTitle());
             builder.withAmount(vo.getAmount());
-            builder.witTax(vo.getTax());
-            builder.witTaxClassification(vo.getTaxClassification());
+            builder.withTax(vo.getTax());
+            builder.withTaxClassification(vo.getTaxClassification());
         }
 
-        public B witTaxClassification(TaxClassification taxClassification) {
+        protected B withTaxClassification(TaxClassification taxClassification) {
             if (isNull(taxClassification)) return getThis();
             addConfigurator(b -> b.taxClassification = taxClassification);
             return getThis();
         }
 
-        public B witTax(Tax tax) {
+        protected B withTax(Tax tax) {
             if (isNull(tax)) return getThis();
             addConfigurator(b -> b.tax = tax);
             return getThis();
         }
 
-        public B withAmount(Amount amount) {
+        protected B withAmount(Amount amount) {
             if (isNull(amount)) return getThis();
             addConfigurator(b -> b.amount = amount);
             return getThis();
         }
 
 
-        public B withAccountsTitle(AccountsTitle accountsTitle) {
+        protected B withAccountsTitle(AccountsTitle accountsTitle) {
             if (isNull(accountsTitle)) return getThis();
             addConfigurator(b -> b.accountsTitle = accountsTitle);
             return getThis();
         }
 
-        public B withAccountsSubTitle(AccountsSubTitle accountsSubTitle) {
+        protected B withAccountsSubTitle(AccountsSubTitle accountsSubTitle) {
             if (isNull(accountsSubTitle)) return getThis();
             addConfigurator(b -> b.accountsSubTitle = accountsSubTitle);
             return getThis();
         }
 
-        public B withAccountsPart(AccountsPart accountsPart) {
+        protected B withAccountsPart(AccountsPart accountsPart) {
             if (isNull(accountsPart)) return getThis();
             addConfigurator(b -> b.accountsPart = accountsPart);
             return getThis();
 
         }
 
-
-        public B withNumber(AccountNumber number) {
+        protected B withNumber(AccountNumber number) {
             if (isNull(number)) return getThis();
             addConfigurator(b -> b.number = number);
             return getThis();

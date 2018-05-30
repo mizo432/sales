@@ -41,8 +41,8 @@ public class SaleTest {
                 .withAmount(Amount.yen(1000))
                 .withAccountsTitle(AccountsTitle.SALE)
                 .withAccountsSubTitle(new AccountsSubTitle("aaaa"))
-                .witTax(Tax.yens(70))
-                .witTaxClassification(TaxClassification.INNER_TAX)
+                .withTax(Tax.yens(70))
+                .withTaxClassification(TaxClassification.INNER_TAX)
                 .build();
         assertThat(target)
                 .isNotNull();
@@ -57,8 +57,8 @@ public class SaleTest {
                 .withAmount(Amount.yen(1000))
                 .withAccountsTitle(AccountsTitle.SALE)
                 .withAccountsSubTitle(new AccountsSubTitle("aaaa"))
-                .witTax(Tax.yens(80))
-                .witTaxClassification(TaxClassification.OUTER_TAX)
+                .withTax(Tax.yens(80))
+                .withTaxClassification(TaxClassification.OUTER_TAX)
                 .build();
     }
 

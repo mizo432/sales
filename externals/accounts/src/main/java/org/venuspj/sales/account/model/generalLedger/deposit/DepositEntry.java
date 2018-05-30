@@ -5,7 +5,6 @@ import org.venuspj.sales.core.fundamentals.amount.Amount;
 
 /**
  * 預り金勘定科目
- *
  */
 public class DepositEntry extends AbstractAccount<DepositEntry> {
 
@@ -19,6 +18,15 @@ public class DepositEntry extends AbstractAccount<DepositEntry> {
 
 
     public static class DepositBuilder extends AbstractAccountBuilder<DepositEntry, DepositBuilder> {
+        @Override
+        public DepositBuilder withNumber(AccountNumber accountNumber) {
+            return super.withNumber(number);
+        }
+
+        @Override
+        public DepositBuilder withAmount(Amount amount) {
+            return super.withAmount(amount);
+        }
 
         @Override
         protected void apply(DepositEntry depositEntry, DepositBuilder depositBuilder) {
@@ -28,6 +36,7 @@ public class DepositEntry extends AbstractAccount<DepositEntry> {
         @Override
         protected DepositEntry createValueObject() {
             return new DepositEntry(number, amount, accountsTitle, accountsSubTitle);
+
         }
 
         @Override

@@ -29,10 +29,47 @@ public class Sale extends AbstractAccount<Sale> {
 
         private SaleCategory saleCategory;
 
+
+        @Override
+        public SaleBuilder withTax(Tax tax) {
+            return super.withTax(tax);
+        }
+
+        @Override
+        public SaleBuilder withTaxClassification(TaxClassification taxClassification) {
+            return super.withTaxClassification(taxClassification);
+
+        }
+
+        @Override
+        public SaleBuilder withAccountsSubTitle(AccountsSubTitle accountsSubTitle) {
+            return super.withAccountsSubTitle(accountsSubTitle);
+
+        }
+
+        @Override
+        public SaleBuilder withAccountsTitle(AccountsTitle accountsTitle) {
+            return super.withAccountsTitle(accountsTitle);
+
+        }
+
+        @Override
+        public SaleBuilder withNumber(AccountNumber accountNumber) {
+            return super.withNumber(number);
+
+        }
+
+        @Override
+        public SaleBuilder withAmount(Amount amount) {
+            return super.withAmount(amount);
+
+        }
+
         @Override
         protected void apply(Sale vo, SaleBuilder builder) {
             super.apply(vo, builder);
             builder.withSaleCategory(vo.getSaleCategory());
+
         }
 
         private SaleBuilder withSaleCategory(SaleCategory saleCategory) {
@@ -41,6 +78,7 @@ public class Sale extends AbstractAccount<Sale> {
             addConfigurator(builder -> builder.saleCategory = saleCategory);
 
             return getThis();
+
         }
 
         @Override
