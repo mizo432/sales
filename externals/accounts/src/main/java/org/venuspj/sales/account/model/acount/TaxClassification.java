@@ -7,7 +7,8 @@ public enum TaxClassification {
     OUTER_TAX("外税"),
     UNTAXABLE("非課税"),
     NON_TAXABLE("不課税"),
-    EXCLUDES("対象外科目"), UNKNOWN("未定");
+    EXCLUDES("対象外科目"),
+    UNKNOWN("未定");
 
     private final Name name;
 

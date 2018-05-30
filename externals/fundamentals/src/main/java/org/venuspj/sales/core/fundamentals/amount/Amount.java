@@ -61,4 +61,8 @@ public class Amount {
     public int hashCode() {
         return hash(value);
     }
+
+    public boolean isPositive() {
+        return value > 0;
+    }
 }

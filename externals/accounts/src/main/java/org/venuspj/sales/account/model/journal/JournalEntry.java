@@ -12,24 +12,21 @@ public class JournalEntry {
     private final JournalEntryNumber entryNumber;
     private final JournalEntryType entryType;
     private final Event event;
-    private final AccountEntries credits;
-    private final AccountEntries debits;
+    private final AccountEntries accountEntries;
 
     public JournalEntry() {
         entryType = JournalEntryType.UNKNOWN;
         event = EventProvider.newEvent();
-        credits = AccountEntries.create();
-        debits = AccountEntries.create();
+        accountEntries = AccountEntries.create();
         entryNumber = JournalEntryNumber.empty();
 
     }
 
-    private JournalEntry(JournalEntryNumber entryNumber, Event event, AccountEntries credits, AccountEntries debits, JournalEntryType entryType) {
+    private JournalEntry(JournalEntryNumber entryNumber, Event event, AccountEntries accountEntries, JournalEntryType entryType) {
         this.entryType = entryType;
         this.entryNumber = entryNumber;
         this.event = event;
-        this.credits = credits;
-        this.debits = debits;
+        this.accountEntries = accountEntries;
 
     }
 
@@ -43,7 +40,7 @@ public class JournalEntry {
      * @return
      */
     public AccountEntries getCedits() {
-        return credits;
+        return accountEntries.getCredits();
 
     }
 
@@ -53,7 +50,7 @@ public class JournalEntry {
      * @return
      */
     public AccountEntries getDebits() {
-        return debits;
+        return accountEntries.getDebits();
 
     }
 
@@ -61,8 +58,7 @@ public class JournalEntry {
         protected JournalEntryNumber entryNumber = new JournalEntryNumber();
         protected JournalEntryType entryType = JournalEntryType.UNKNOWN;
         protected Event event = new Event();
-        protected AccountEntries credits = AccountEntries.create();
-        protected AccountEntries debits = AccountEntries.create();
+        protected AccountEntries accountEntries = AccountEntries.create();
 
         @Override
         protected void apply(JournalEntry vo, JournalEntryBuilder builder) {
@@ -90,7 +86,7 @@ public class JournalEntry {
 
         @Override
         protected JournalEntry createValueObject() {
-            return new JournalEntry(entryNumber, event, credits, debits, entryType);
+            return new JournalEntry(entryNumber, event, accountEntries, entryType);
         }
 
         @Override

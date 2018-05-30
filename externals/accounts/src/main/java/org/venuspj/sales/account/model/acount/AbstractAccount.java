@@ -1,5 +1,6 @@
 package org.venuspj.sales.account.model.acount;
 
+import org.venuspj.sales.account.model.acountEntry.AccountEntry;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.util.builder.ObjectBuilder;
 
@@ -8,7 +9,7 @@ import static org.venuspj.util.objects2.Objects2.isNull;
 /**
  * 勘定の基底クラス
  */
-public abstract class AbstractAccount<T> implements Account {
+public abstract class AbstractAccount<T> implements AccountEntry {
     private AccountNumber number = new AccountNumber();
     private AccountsPart accountsPart = AccountsPart.UNKNOWN;
     private AccountsSubTitle accountsSubTitle = new AccountsSubTitle();
@@ -39,6 +40,23 @@ public abstract class AbstractAccount<T> implements Account {
 
     public TaxClassification getTaxClassification() {
         return taxClassification;
+    }
+
+    @Override
+    public boolean isCredit() {
+        return DebitOrCredit.CREDIT == whichDebitOrCredit();
+
+    }
+
+    @Override
+    public boolean isDebit() {
+        return DebitOrCredit.DEBIT == whichDebitOrCredit();
+
+    }
+
+    DebitOrCredit whichDebitOrCredit() {
+        return getAccountsPart().whichDebitOrCredit(amount);
+
     }
 
     protected AbstractAccount() {

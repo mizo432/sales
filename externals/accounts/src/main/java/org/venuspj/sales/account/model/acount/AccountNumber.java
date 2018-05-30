@@ -1,6 +1,7 @@
 package org.venuspj.sales.account.model.acount;
 
 public class AccountNumber {
+
     private Integer value;
 
     public AccountNumber() {

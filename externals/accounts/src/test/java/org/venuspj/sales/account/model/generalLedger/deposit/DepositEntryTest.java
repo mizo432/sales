@@ -11,25 +11,25 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 import static org.venuspj.util.logger.LoggerFactory.getLogger;
 import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
-public class DepositTest {
+public class DepositEntryTest {
 
     private static Logger LOGGER = getLogger();
 
     @Test
     public void toStringValue() {
-        Deposit target = createDummyDeposit();
+        DepositEntry target = createDummyDeposit();
         LOGGER.debug(toStringHelper(target).defaultConfig().toString());
     }
 
     @Test
     public void tax() {
-        Deposit target = createDummyDeposit();
+        DepositEntry target = createDummyDeposit();
         assertThat(target).isNotNull();
         assertThat(target.getTax()).isNotNull().isEqualTo(Tax.empty());
     }
 
-    private Deposit createDummyDeposit() {
-        return new Deposit.DepositBuilder()
+    private DepositEntry createDummyDeposit() {
+        return new DepositEntry.DepositBuilder()
                 .withNumber(AccountNumber.of(10))
                 .withAmount(Amount.yen(10))
                 .build();

@@ -6,7 +6,8 @@ import org.venuspj.sales.core.fundamentals.amount.Amount;
 public class Sale extends AbstractAccount<Sale> {
 
     public Sale(AccountNumber number, Amount amount, AccountsSubTitle accountsSubTitle, Tax tax, TaxClassification taxClassification) {
-        super(number, amount, AccountsPart.GENERAL_AND_ADMINISTRATIVE_EXPENSES, AccountsTitle.SALE, accountsSubTitle, tax, taxClassification);
+        super(number, amount, AccountsPart.REVENUE, AccountsTitle.SALE, accountsSubTitle, tax, taxClassification);
+
     }
 
     public static class SaleBuilder extends AbstractAccountBuilder<Sale, SaleBuilder> {

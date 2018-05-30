@@ -16,7 +16,7 @@ public class Sale extends AbstractAccount<Sale> {
                 Tax tax,
                 TaxClassification taxClassification,
                 SaleCategory saleCategory) {
-        super(number, amount, AccountsPart.SALES, accountsTitle, accountsSubTitle, tax, taxClassification);
+        super(number, amount, AccountsPart.REVENUE, accountsTitle, accountsSubTitle, tax, taxClassification);
         this.saleCategory = saleCategory;
     }
 
