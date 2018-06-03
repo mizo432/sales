@@ -1,10 +1,10 @@
 package org.venuspj.sales.application.contract.reconciliatingManagement.importingBankAccountLog;
 
-import org.venuspj.cleanArchtecture.UseCaseIteractor;
+import org.venuspj.cleanArchtecture.UseCaseInteractor;
 
 /**
  *
  */
-public interface PosingBankAccount extends UseCaseIteractor<PostingBankAccountRequest, PostingBankAccountResponse> {
+public interface PosingBankAccount extends UseCaseInteractor<PostingBankAccountRequest, PostingBankAccountResponse> {
 
 }

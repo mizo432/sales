@@ -1,10 +1,10 @@
 package org.venuspj.sales.application.contract.salesManagement.calcuratingSale;
 
-import org.venuspj.cleanArchtecture.UseCaseIteractor;
+import org.venuspj.cleanArchtecture.UseCaseInteractor;
 
 /**
  * 売上を計算する
  */
-public interface CalculatingSale extends UseCaseIteractor<CalculatingSaleRequest,CalculatingSaleResponse> {
+public interface CalculatingSale extends UseCaseInteractor<CalculatingSaleRequest,CalculatingSaleResponse> {
 
 }

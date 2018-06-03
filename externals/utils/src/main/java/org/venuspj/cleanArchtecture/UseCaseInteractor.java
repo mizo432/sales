@@ -3,7 +3,7 @@ package org.venuspj.cleanArchtecture;
 /**
  * アプリケーションレベルの機能(ユースケース)のインターフェイス.
  */
-public interface UseCaseIteractor<I extends UseCaseInputPort, O extends UseCaseOutputPort> {
+public interface UseCaseInteractor<I extends UseCaseInputPort, O extends UseCaseOutputPort> {
 
     void start(I request, O response);
 
