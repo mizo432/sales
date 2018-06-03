@@ -1,6 +1,6 @@
 package org.venuspj.sales.application.contract.reconciliatingManagement.importingBankAccountLog;
 
-import org.venuspj.cleanArchtecture.UseCaseInteractor;
+import org.venuspj.cleanArchitecture.UseCaseInteractor;
 
 /**
  *

@@ -1,4 +1,4 @@
-package org.venuspj.cleanArchtecture.annotation;
+package org.venuspj.cleanArchitecture.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,6 +1,6 @@
 package org.venuspj.sales.application.contract.salesManagement.calcuratingSale;
 
-import org.venuspj.cleanArchtecture.UseCaseOutputPort;
+import org.venuspj.cleanArchitecture.UseCaseOutputPort;
 
 public interface CalculatingSaleResponse extends UseCaseOutputPort {
 }

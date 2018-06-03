@@ -1,7 +1,7 @@
 package org.venuspj.sales.application.contract.additionalDetail;
 
-import org.venuspj.cleanArchtecture.UseCaseInteractor;
-import org.venuspj.cleanArchtecture.annotation.UseCaseContract;
+import org.venuspj.cleanArchitecture.UseCaseInteractor;
+import org.venuspj.cleanArchitecture.annotation.UseCaseContract;
 
 /**
  */

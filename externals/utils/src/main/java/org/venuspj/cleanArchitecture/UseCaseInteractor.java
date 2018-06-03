@@ -1,4 +1,4 @@
-package org.venuspj.cleanArchtecture;
+package org.venuspj.cleanArchitecture;
 
 /**
  * アプリケーションレベルの機能(ユースケース)のインターフェイス.
