@@ -11,15 +11,20 @@ import java.time.format.DateTimeFormatter;
 
 import static org.venuspj.util.objects2.Objects2.*;
 
-public class RecordDateTime implements Comparable<RecordDateTime>,DateValue {
+public class RecordDateTime implements Comparable<RecordDateTime>, DateValue {
     private LocalDateTime value;
 
     public RecordDateTime() {
 
     }
 
+    @Deprecated
     public RecordDateTime(LocalDateTime aValue) {
         value = aValue;
+    }
+
+    public static RecordDateTime of(LocalDateTime value) {
+        return new RecordDateTime(value);
     }
 
     public String asText() {

@@ -6,21 +6,21 @@ import static org.venuspj.util.objects2.Objects2.hash;
 /**
  */
 public class Amount {
-    Integer value;
+    Long value;
 
-    Amount() {
+    public Amount() {
 
     }
 
-    public Amount(Integer aValue) {
+    public Amount(Long aValue) {
         value = aValue;
     }
 
     public static Amount yenZero() {
-        return new Amount(0);
+        return new Amount(0L);
     }
 
-    public static Amount yen(int value) {
+    public static Amount yen(Long value) {
         return new Amount(value);
 
     }
@@ -43,7 +43,7 @@ public class Amount {
         return value < other.value;
     }
 
-    public Integer asInteger() {
+    public Long asLong() {
         return value;
 
     }
@@ -64,5 +64,9 @@ public class Amount {
 
     public boolean isPositive() {
         return value > 0;
+    }
+
+    public boolean isSmallOrEqual(Amount other) {
+        return value < other.value;
     }
 }

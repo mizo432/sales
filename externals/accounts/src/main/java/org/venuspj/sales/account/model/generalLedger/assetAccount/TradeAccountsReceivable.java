@@ -1,17 +1,17 @@
 package org.venuspj.sales.account.model.generalLedger.assetAccount;
 
+import org.venuspj.sales.account.model.acount.AccountAmount;
 import org.venuspj.sales.account.model.acount.AccountNumber;
 import org.venuspj.sales.account.model.acount.AccountsSubTitle;
 import org.venuspj.sales.account.model.acount.AccountsTitle;
-import org.venuspj.sales.core.fundamentals.amount.Amount;
 
 public class TradeAccountsReceivable extends AssetAccount<TradeAccountsReceivable> {
 
     public TradeAccountsReceivable(AccountNumber number,
-                                   Amount amount,
+                                   AccountAmount accountAmount,
                                    AccountsSubTitle accountsSubTitle) {
         super(number,
-                amount,
+                accountAmount,
                 AccountsTitle.TRADE_ACCOUNTS_RECEIVABLE,
                 accountsSubTitle);
     }
@@ -24,13 +24,13 @@ public class TradeAccountsReceivable extends AssetAccount<TradeAccountsReceivabl
         }
 
         @Override
-        public TradeAccountsReceivableBuilder withAmount(Amount amount) {
-            return super.withAmount(amount);
+        public TradeAccountsReceivableBuilder withAccountAmount(AccountAmount accountAmount) {
+            return super.withAccountAmount(accountAmount);
         }
 
         @Override
         protected TradeAccountsReceivable createValueObject() {
-            return new TradeAccountsReceivable(number, amount, accountsSubTitle);
+            return new TradeAccountsReceivable(number, accountAmount, accountsSubTitle);
         }
 
         @Override

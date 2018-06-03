@@ -8,12 +8,12 @@ public class AmountTest {
 
     @Test
     public void testConstructor() {
-        Amount actual = new Amount(1);
+        Amount actual = new Amount(1L);
         assertThat(actual)
                 .isNotNull();
-        assertThat(actual.asInteger())
+        assertThat(actual.asLong())
                 .isNotNull()
-                .isEqualTo(1);
+                .isEqualTo(1L);
 
     }
 
@@ -21,7 +21,7 @@ public class AmountTest {
     public void yenZero() {
         Amount actual = Amount.yenZero();
         assertThat(actual).isNotNull();
-        assertThat(actual.asInteger())
+        assertThat(actual.asLong())
                 .isNotNull()
                 .isEqualTo(0);
 
@@ -29,9 +29,9 @@ public class AmountTest {
 
     @Test
     public void yen() {
-        Amount actual = Amount.yen(10);
+        Amount actual = Amount.yen(10L);
         assertThat(actual).isNotNull();
-        assertThat(actual.asInteger())
+        assertThat(actual.asLong())
                 .isNotNull()
                 .isEqualTo(10);
     }

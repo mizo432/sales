@@ -1,7 +1,6 @@
 package org.venuspj.sales.account.model.generalLedger.deposit;
 
 import org.venuspj.sales.account.model.acount.*;
-import org.venuspj.sales.core.fundamentals.amount.Amount;
 
 /**
  * 預り金勘定科目
@@ -9,10 +8,10 @@ import org.venuspj.sales.core.fundamentals.amount.Amount;
 public class DepositEntry extends AbstractAccount<DepositEntry> {
 
     public DepositEntry(AccountNumber number,
-                        Amount amount,
+                        AccountAmount accountAmount,
                         AccountsTitle accountsTitle,
                         AccountsSubTitle accountsSubTitle) {
-        super(number, amount, AccountsPart.LIABILITIES, accountsTitle, accountsSubTitle, Tax.empty(), TaxClassification.EXCLUDES);
+        super(number, accountAmount, AccountsPart.LIABILITIES, accountsTitle, accountsSubTitle, Tax.empty(), TaxClassification.EXCLUDES);
 
     }
 
@@ -24,8 +23,8 @@ public class DepositEntry extends AbstractAccount<DepositEntry> {
         }
 
         @Override
-        public DepositBuilder withAmount(Amount amount) {
-            return super.withAmount(amount);
+        public DepositBuilder withAccountAmount(AccountAmount accountAmount) {
+            return super.withAccountAmount(accountAmount);
         }
 
         @Override
@@ -35,7 +34,7 @@ public class DepositEntry extends AbstractAccount<DepositEntry> {
 
         @Override
         protected DepositEntry createValueObject() {
-            return new DepositEntry(number, amount, accountsTitle, accountsSubTitle);
+            return new DepositEntry(number, accountAmount, accountsTitle, accountsSubTitle);
 
         }
 

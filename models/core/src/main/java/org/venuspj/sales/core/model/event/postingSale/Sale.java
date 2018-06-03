@@ -1,7 +1,6 @@
 package org.venuspj.sales.core.model.event.postingSale;
 
 import org.venuspj.sales.account.model.acount.*;
-import org.venuspj.sales.core.fundamentals.amount.Amount;
 
 import static org.venuspj.util.objects2.Objects2.isNull;
 
@@ -10,13 +9,13 @@ public class Sale extends AbstractAccount<Sale> {
     private SaleCategory saleCategory;
 
     public Sale(AccountNumber number,
-                Amount amount,
+                AccountAmount accountAmount,
                 AccountsTitle accountsTitle,
                 AccountsSubTitle accountsSubTitle,
                 Tax tax,
                 TaxClassification taxClassification,
                 SaleCategory saleCategory) {
-        super(number, amount, AccountsPart.REVENUE, accountsTitle, accountsSubTitle, tax, taxClassification);
+        super(number, accountAmount, AccountsPart.REVENUE, accountsTitle, accountsSubTitle, tax, taxClassification);
         this.saleCategory = saleCategory;
     }
 
@@ -60,8 +59,8 @@ public class Sale extends AbstractAccount<Sale> {
         }
 
         @Override
-        public SaleBuilder withAmount(Amount amount) {
-            return super.withAmount(amount);
+        public SaleBuilder withAccountAmount(AccountAmount accountAmount) {
+            return super.withAccountAmount(accountAmount);
 
         }
 
@@ -83,7 +82,7 @@ public class Sale extends AbstractAccount<Sale> {
 
         @Override
         protected Sale createValueObject() {
-            return new Sale(number, amount, accountsTitle, accountsSubTitle, tax, taxClassification, saleCategory);
+            return new Sale(number, accountAmount, accountsTitle, accountsSubTitle, tax, taxClassification, saleCategory);
 
         }
 

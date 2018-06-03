@@ -21,7 +21,7 @@ public class WhenOccurred implements RecordDateTimeValue {
 
     @Override
     public RecordDateTime asRecordDateTime() {
-        return new RecordDateTime(value);
+        return RecordDateTime.of(value);
     }
 
 

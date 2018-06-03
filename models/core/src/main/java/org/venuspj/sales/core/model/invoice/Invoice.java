@@ -1,11 +1,12 @@
 package org.venuspj.sales.core.model.invoice;
 
+import org.venuspj.sales.account.model.acount.Tax;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.recordDate.RecordDate;
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
-import org.venuspj.sales.account.model.acount.Tax;
-import org.venuspj.sales.core.model.invoice.details.InvoiceDetails;
+import org.venuspj.sales.core.model.invoice.details.StatementDetails;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupIdentifier;
+import org.venuspj.sales.core.model.statementOfSettlements.StatementOfSettlements;
 
 
 /**
@@ -28,7 +29,7 @@ public class Invoice implements StatementOfSettlements {
     /**
      * 請求書明細
      */
-    private InvoiceDetails invoiceDetails = InvoiceDetails.create();
+    private StatementDetails statementDetails = StatementDetails.create();
 
     /**
      * 合計金額
@@ -37,6 +38,7 @@ public class Invoice implements StatementOfSettlements {
 
     private OutputFormat outputFormat;
 
+    @Override
     public OutputFormat getOutputFormat() {
         return outputFormat;
     }
@@ -44,22 +46,22 @@ public class Invoice implements StatementOfSettlements {
     public Invoice() {
     }
 
-    public Invoice(InvoiceIdentifier invoiceIdentifier,
-                   ChargeGroupIdentifier chargeGroupIdentifier,
-                   InvoiceDetails invoiceDetails,
-                   RecordDate recordDate,
-                   OutputFormat outputFormat,
-                   Amount totalAmount) {
+    Invoice(InvoiceIdentifier invoiceIdentifier,
+            ChargeGroupIdentifier chargeGroupIdentifier,
+            StatementDetails statementDetails,
+            RecordDate recordDate,
+            Amount totalAmount) {
 
         this.chargeGroupIdentifier = chargeGroupIdentifier;
         this.invoiceIdentifier = invoiceIdentifier;
-        this.invoiceDetails.addAll(invoiceDetails);
+        this.statementDetails = statementDetails;
         this.recordDate = recordDate;
-        this.outputFormat = outputFormat;
+        this.outputFormat = OutputFormat.INVOICE;
         this.totalAmount = totalAmount;
 
     }
 
+    @Override
     public InvoiceIdentifier getInvoiceIdentifier() {
         return invoiceIdentifier;
     }
@@ -80,8 +82,9 @@ public class Invoice implements StatementOfSettlements {
 
     }
 
-    public InvoiceDetails getInvoiceDetails() {
-        return invoiceDetails;
+    @Override
+    public StatementDetails getStatementDetails() {
+        return statementDetails;
 
     }
 
@@ -97,18 +100,19 @@ public class Invoice implements StatementOfSettlements {
 
     }
 
+    @Override
     public Tax tax() {
-        return invoiceDetails.tax();
+        return statementDetails.totalTax();
 
     }
 
     public Amount totalAmount() {
-        return totalAmount;
+        return statementDetails.totalAmount();
 
     }
 
     public boolean existsSaleDetails() {
-        return invoiceDetails.existsSaleDetails();
+        return statementDetails.existsSaleDetails();
 
     }
 

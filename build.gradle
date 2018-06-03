@@ -52,7 +52,7 @@ subprojects {
         thymeleafExtrasJava8timeVersion = '3.0.0.RELEASE'
         springSessionVersion = '1.3.0.RELEASE+'
         findbugsAnnotationsVersion = '3.0.1'
-        venusUtilsVersion = '1.0.0'
+        venusUtilsVersion = '1.0.1'
 
         // build paramaters
         defaultEncoding = 'UTF-8'

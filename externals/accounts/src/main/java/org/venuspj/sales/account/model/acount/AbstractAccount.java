@@ -1,7 +1,6 @@
 package org.venuspj.sales.account.model.acount;
 
 import org.venuspj.sales.account.model.acountEntry.AccountEntry;
-import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.util.builder.ObjectBuilder;
 
 import static org.venuspj.util.objects2.Objects2.isNull;
@@ -14,7 +13,7 @@ public abstract class AbstractAccount<T> implements AccountEntry {
     private AccountsPart accountsPart = AccountsPart.UNKNOWN;
     private AccountsSubTitle accountsSubTitle = new AccountsSubTitle();
     private AccountsTitle accountsTitle = AccountsTitle.UNKNOWN;
-    private Amount amount = Amount.yenZero();
+    private AccountAmount accountAmount = AccountAmount.yenZero();
     private Tax tax = Tax.empty();
     private TaxClassification taxClassification = TaxClassification.UNKNOWN;
 
@@ -30,8 +29,8 @@ public abstract class AbstractAccount<T> implements AccountEntry {
         return accountsTitle;
     }
 
-    public Amount getAmount() {
-        return amount;
+    public AccountAmount getAccountAmount() {
+        return accountAmount;
     }
 
     public Tax getTax() {
@@ -55,7 +54,7 @@ public abstract class AbstractAccount<T> implements AccountEntry {
     }
 
     DebitOrCredit whichDebitOrCredit() {
-        return getAccountsPart().whichDebitOrCredit(amount);
+        return getAccountsPart().whichDebitOrCredit(accountAmount);
 
     }
 
@@ -64,14 +63,14 @@ public abstract class AbstractAccount<T> implements AccountEntry {
     }
 
     protected AbstractAccount(AccountNumber number,
-                              Amount amount,
+                              AccountAmount accountAmount,
                               AccountsPart accountsPart,
                               AccountsTitle accountsTitle,
                               AccountsSubTitle accountsSubTitle,
                               Tax tax,
                               TaxClassification taxClassification) {
         this.number = number;
-        this.amount = amount;
+        this.accountAmount = accountAmount;
         this.accountsPart = accountsPart;
         this.accountsTitle = accountsTitle;
         this.accountsSubTitle = accountsSubTitle;
@@ -84,9 +83,9 @@ public abstract class AbstractAccount<T> implements AccountEntry {
         return number;
     }
 
-    public Amount getSubTotal() {
-        if (taxClassification.isOuterTax()) return Amount.yen(amount.asInteger() + tax.asInteger());
-        return Amount.yen(amount.asInteger());
+    public AccountAmount getSubTotal() {
+        if (taxClassification.isOuterTax()) return AccountAmount.yen(accountAmount.asLong() + tax.asLong());
+        return AccountAmount.yen(accountAmount.asLong());
     }
 
     public static abstract class AbstractAccountBuilder<T extends AbstractAccount<T>, B extends AbstractAccountBuilder<T, B>> extends ObjectBuilder<T, B> {
@@ -94,7 +93,7 @@ public abstract class AbstractAccount<T> implements AccountEntry {
         protected AccountsPart accountsPart = AccountsPart.UNKNOWN;
         protected AccountsSubTitle accountsSubTitle = new AccountsSubTitle();
         protected AccountsTitle accountsTitle = AccountsTitle.UNKNOWN;
-        protected Amount amount = Amount.yenZero();
+        protected AccountAmount accountAmount = AccountAmount.yenZero();
         protected Tax tax = Tax.empty();
         protected TaxClassification taxClassification = TaxClassification.UNKNOWN;
 
@@ -104,7 +103,7 @@ public abstract class AbstractAccount<T> implements AccountEntry {
             builder.withAccountsPart(vo.getAccountsPart());
             builder.withAccountsSubTitle(vo.getAccountsSubTitle());
             builder.withAccountsTitle(vo.getAccountsTitle());
-            builder.withAmount(vo.getAmount());
+            builder.withAccountAmount(vo.getAccountAmount());
             builder.withTax(vo.getTax());
             builder.withTaxClassification(vo.getTaxClassification());
         }
@@ -121,9 +120,9 @@ public abstract class AbstractAccount<T> implements AccountEntry {
             return getThis();
         }
 
-        protected B withAmount(Amount amount) {
-            if (isNull(amount)) return getThis();
-            addConfigurator(b -> b.amount = amount);
+        protected B withAccountAmount(AccountAmount accountAmount) {
+            if (isNull(accountAmount)) return getThis();
+            addConfigurator(b -> b.accountAmount = accountAmount);
             return getThis();
         }
 

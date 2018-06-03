@@ -5,11 +5,11 @@ import org.venuspj.sales.core.fundamentals.values.StringValue;
 public class SaleCaption implements StringValue {
     private String value;
 
-    SaleCaption() {
+    public SaleCaption() {
 
     }
 
-    public SaleCaption(String value) {
+    SaleCaption(String value) {
         this.value = value;
     }
 
@@ -17,4 +17,6 @@ public class SaleCaption implements StringValue {
     public String asText() {
         return value;
     }
+
+
 }

@@ -3,9 +3,9 @@ package org.venuspj.sales.account.model.generalLedger.deposit;
 
 import org.junit.Test;
 import org.slf4j.Logger;
+import org.venuspj.sales.account.model.acount.AccountAmount;
 import org.venuspj.sales.account.model.acount.AccountNumber;
 import org.venuspj.sales.account.model.acount.Tax;
-import org.venuspj.sales.core.fundamentals.amount.Amount;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 import static org.venuspj.util.logger.LoggerFactory.getLogger;
@@ -31,7 +31,7 @@ public class DepositEntryTest {
     private DepositEntry createDummyDeposit() {
         return new DepositEntry.DepositBuilder()
                 .withNumber(AccountNumber.of(10))
-                .withAmount(Amount.yen(10))
+                .withAccountAmount(AccountAmount.yen(10L))
                 .build();
     }
 

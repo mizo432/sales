@@ -14,8 +14,8 @@ public class TaxTest {
         Tax actual = Tax.empty();
         assertThat(actual)
                 .isNotNull();
-        assertThat(actual.asInteger())
-                .isEqualTo(0);
+        assertThat(actual.asLong())
+                .isEqualTo(0L);
         assertThat(actual.isEmpty())
                 .isTrue();
 
@@ -23,11 +23,11 @@ public class TaxTest {
 
     @Test
     public void yens() {
-        Tax actual = Tax.yens(10);
+        Tax actual = Tax.yens(10L);
         assertThat(actual)
                 .isNotNull();
-        assertThat(actual.asInteger())
-                .isEqualTo(10);
+        assertThat(actual.asLong())
+                .isEqualTo(10L);
 
     }
 
@@ -36,19 +36,19 @@ public class TaxTest {
         Tax actual = Tax.zero();
         assertThat(actual)
                 .isNotNull();
-        assertThat(actual.asInteger())
-                .isEqualTo(0);
+        assertThat(actual.asLong())
+                .isEqualTo(0L);
 
     }
 
     @Test
     public void asAmount() {
-        Tax target = Tax.yens(10);
+        Tax target = Tax.yens(10L);
         Amount actual = target.asAmount();
         assertThat(actual)
                 .isNotNull();
-        assertThat(actual.asInteger())
-                .isEqualTo(10);
+        assertThat(actual.asLong())
+                .isEqualTo(10L);
 
     }
 }

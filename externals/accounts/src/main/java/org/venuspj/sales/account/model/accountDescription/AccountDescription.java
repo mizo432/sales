@@ -1,18 +1,20 @@
 package org.venuspj.sales.account.model.accountDescription;
 
-import static org.venuspj.util.objects2.Objects2.toStringHelper;
+import org.venuspj.sales.core.fundamentals.values.StringValue;
 
-public class AccountDescription {
+public class AccountDescription implements StringValue {
     private final String value;
 
     AccountDescription(String aValue) {
         value = aValue;
     }
 
+    public static AccountDescription of(String value) {
+        return new AccountDescription(value);
+    }
+
     @Override
-    public String toString() {
-        return toStringHelper(this)
-                .defaultConfig()
-                .toString();
+    public String asText() {
+        return value;
     }
 }

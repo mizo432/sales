@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.model.event.accounting;
 
-import org.venuspj.sales.core.fundamentals.amount.Amount;
+import org.venuspj.sales.account.model.acount.AccountAmount;
 
 public abstract class PostingRule {
     EventType type;
@@ -9,8 +9,8 @@ public abstract class PostingRule {
         this.type = type;
     }
 
-    private void makeEntry(AccountingEvent event, Amount amount) {
-        AbstractAccountingEntry entry = new AbstractAccountingEntry(amount, event.getWhenNoticed(), type);
+    private void makeEntry(AccountingEvent event, AccountAmount accountAmount) {
+        AbstractAccountingEntry entry = new AbstractAccountingEntry(accountAmount, event.getWhenNoticed(), type);
         event.addResultingEntry(entry);
     }
 
@@ -18,6 +18,7 @@ public abstract class PostingRule {
         makeEntry(event, calculateAmount(event));
     }
 
-    protected abstract Amount calculateAmount(AccountingEvent event);
+    protected abstract AccountAmount calculateAmount(AccountingEvent event);
+
 
 }

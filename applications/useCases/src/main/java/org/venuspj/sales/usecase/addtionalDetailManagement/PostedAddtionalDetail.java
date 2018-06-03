@@ -1,7 +1,7 @@
 package org.venuspj.sales.usecase.addtionalDetailManagement;
 
 import org.venuspj.sales.core.fundamentals.event.Event;
-import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailId;
+import org.venuspj.sales.core.model.invoice.details.additionalDetail.AdditionalDetailId;
 
 /**
  */

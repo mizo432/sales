@@ -7,9 +7,9 @@ import org.venuspj.sales.application.contract.additionalDetail.PostingAdditional
 import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetailInputPort;
 import org.venuspj.sales.application.contract.additionalDetail.PostingAdditionalDetailOutputPort;
 import org.venuspj.sales.core.fundamentals.event.EventProvider;
-import org.venuspj.sales.core.model.additionalDetail.AdditionalDetail;
-import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailId;
-import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailRepository;
+import org.venuspj.sales.core.model.invoice.details.additionalDetail.AdditionalDetail;
+import org.venuspj.sales.core.model.invoice.details.additionalDetail.AdditionalDetailId;
+import org.venuspj.sales.core.model.invoice.details.additionalDetail.AdditionalDetailRepository;
 
 /**
  */

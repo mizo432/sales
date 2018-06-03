@@ -8,9 +8,9 @@ import static org.venuspj.util.objects2.Objects2.equal;
 import static org.venuspj.util.objects2.Objects2.hash;
 
 public class Tax implements AmountValue {
-    private Integer value;
+    private Long value;
 
-    public Tax(Integer aValue) {
+    public Tax(Long aValue) {
         value = aValue;
 
     }
@@ -19,12 +19,12 @@ public class Tax implements AmountValue {
         return new Tax(null);
     }
 
-    public static Tax yens(Integer value) {
+    public static Tax yens(Long value) {
         return new Tax(value);
     }
 
     public static Tax zero() {
-        return new Tax(0);
+        return new Tax(0L);
     }
 
     @Override
@@ -34,8 +34,8 @@ public class Tax implements AmountValue {
     }
 
     @Override
-    public Integer asInteger() {
-        if (isNull(value)) return Integer.valueOf(0);
+    public Long asLong() {
+        if (isNull(value)) return Long.valueOf(0);
         return value;
 
     }
