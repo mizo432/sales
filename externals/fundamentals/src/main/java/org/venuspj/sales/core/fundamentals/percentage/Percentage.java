@@ -1,6 +1,7 @@
 package org.venuspj.sales.core.fundamentals.percentage;
 
 import static org.venuspj.util.objects2.Objects2.equal;
+import static org.venuspj.util.objects2.Objects2.hash;
 
 public class Percentage {
     private Double value;
@@ -27,6 +28,12 @@ public class Percentage {
     @Override
     public boolean equals(Object obj) {
         return obj instanceof Percentage && sameValueAs((Percentage) obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return hash(value);
+
     }
 
     private boolean sameValueAs(Percentage obj) {
