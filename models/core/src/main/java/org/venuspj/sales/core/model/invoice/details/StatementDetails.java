@@ -32,9 +32,9 @@ public class StatementDetails implements ListValue<StatementDetail> {
     }
 
     public Amount getTotalAmountAndTax() {
-        Long TotalAmountAndTax = totalTax().asLong() + totalAmount().asLong();
+        Long totalAmountAndTax = totalTax().asLong() + totalAmount().asLong();
         // TODO atdk
-        return Amount.yen(getTotalAmountAndTax().asLong());
+        return Amount.yen(totalAmountAndTax);
     }
 
     public Amount totalAmount() {
