@@ -22,7 +22,7 @@ public class Payments {
 
     public Amount calcTotalPayment() {
         Long total = list.stream()
-                .mapToLong(payment -> payment.getAmount().asLong())
+                .mapToLong(payment -> payment.getPaymentAmount().asLong())
                 .sum();
 
         return Amount.yen(total);
