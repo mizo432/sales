@@ -1,10 +1,17 @@
 package org.venuspj.sales.account.model.payment;
 
-import org.venuspj.sales.core.fundamentals.amount.Amount;
-
 public abstract class Payment {
 
-    private Amount amount;
+    private PaymentAmount paymentAmount;
+
+    public Payment() {
+
+    }
+
+    Payment(PaymentAmount paymentAmount) {
+        this.paymentAmount = paymentAmount;
+
+    }
 
     /**
      * 支払いを受けとる.
@@ -26,7 +33,7 @@ public abstract class Payment {
      */
     abstract void calcTotalPayment();
 
-    public Amount getAmount() {
-        return this.amount;
+    public PaymentAmount getPaymentAmount() {
+        return this.paymentAmount;
     }
 }
