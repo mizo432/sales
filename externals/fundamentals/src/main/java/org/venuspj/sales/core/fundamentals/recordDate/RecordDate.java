@@ -17,6 +17,10 @@ public class RecordDate {
         value = aValue;
     }
 
+    public static RecordDate of(LocalDate value) {
+        return new RecordDate(value);
+    }
+
     public int compareTo(RecordDate other) {
         return value.compareTo(other.value);
     }
@@ -43,9 +47,9 @@ public class RecordDate {
     }
 
     public RecordYearMonth getRecordYearMonth() {
-        if(isNull(value)) return RecordYearMonth.empty();
+        if (isNull(value)) return RecordYearMonth.empty();
 
-        return new RecordYearMonth(YearMonth.of(value.getYear(),value.getMonth()));
+        return new RecordYearMonth(YearMonth.of(value.getYear(), value.getMonth()));
 
     }
 }

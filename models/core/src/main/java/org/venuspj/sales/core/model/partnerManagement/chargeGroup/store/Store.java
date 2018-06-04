@@ -1,4 +1,4 @@
-package org.venuspj.sales.core.model.partnerManagement.store;
+package org.venuspj.sales.core.model.partnerManagement.chargeGroup.store;
 
 public class Store {
     StoreIdentifier storeIdentifier;
