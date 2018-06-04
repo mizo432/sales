@@ -1,6 +1,6 @@
 package org.venuspj.sales.application.contract.salesManagement.calcuratingSale;
 
-import org.venuspj.cleanArchitecture.UseCaseInteractor;
+import org.venuspj.cleanArchitecture.useCase.UseCaseInteractor;
 
 /**
  * 売上を計算する

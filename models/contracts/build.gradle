@@ -3,10 +3,14 @@ apply plugin: 'java'
 archivesBaseName = 'contracts'
 
 repositories {
+    maven {
+        url 'http://mizo432.github.com/maven-repository/repository'
+    }
     mavenCentral()
 }
 
 dependencies {
+    compile group: 'org.venuspj', name : 'venus-creanArchitecture', version: "${venusArchitectureVersion}"
     compile project(":utils")
     compile project(":core")
     compile group: 'org.slf4j', name : 'slf4j-api', version: "${slf4jVersion}"
