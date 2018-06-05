@@ -90,7 +90,6 @@ public abstract class AbstractAccount<T> implements AccountEntry {
 
     public static abstract class AbstractAccountBuilder<T extends AbstractAccount<T>, B extends AbstractAccountBuilder<T, B>> extends ObjectBuilder<T, B> {
         protected AccountNumber number = new AccountNumber();
-        protected AccountsPart accountsPart = AccountsPart.UNKNOWN;
         protected AccountsSubTitle accountsSubTitle = new AccountsSubTitle();
         protected AccountsTitle accountsTitle = AccountsTitle.UNKNOWN;
         protected AccountAmount accountAmount = AccountAmount.yenZero();
@@ -100,7 +99,6 @@ public abstract class AbstractAccount<T> implements AccountEntry {
         @Override
         protected void apply(T vo, B builder) {
             builder.withNumber(vo.getNumber());
-            builder.withAccountsPart(vo.getAccountsPart());
             builder.withAccountsSubTitle(vo.getAccountsSubTitle());
             builder.withAccountsTitle(vo.getAccountsTitle());
             builder.withAccountAmount(vo.getAccountAmount());
@@ -137,13 +135,6 @@ public abstract class AbstractAccount<T> implements AccountEntry {
             if (isNull(accountsSubTitle)) return getThis();
             addConfigurator(b -> b.accountsSubTitle = accountsSubTitle);
             return getThis();
-        }
-
-        protected B withAccountsPart(AccountsPart accountsPart) {
-            if (isNull(accountsPart)) return getThis();
-            addConfigurator(b -> b.accountsPart = accountsPart);
-            return getThis();
-
         }
 
         protected B withNumber(AccountNumber number) {
