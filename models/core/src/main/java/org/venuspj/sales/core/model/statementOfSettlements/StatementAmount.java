@@ -41,7 +41,7 @@ public class StatementAmount implements AmountValue {
     @Override
     public Long asLong() {
         if (isNull(value)) return 0L;
-        return value < 0L ? -value : value;
+        return Math.abs(value);
 
     }
 }
