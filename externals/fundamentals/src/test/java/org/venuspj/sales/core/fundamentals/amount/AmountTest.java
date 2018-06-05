@@ -138,4 +138,18 @@ public class AmountTest {
         assertThat(actual).isNotNull().isEqualTo(41);
     }
 
+    @Test
+    public void equal1() {
+        Amount target = Amount.yen(10L);
+        boolean actual = target.equals(null);
+        assertThat(actual).isNotNull().isFalse();
+    }
+
+    @Test
+    public void equal2() {
+        Amount target = Amount.yen(10L);
+        boolean actual = target.equals(10L);
+        assertThat(actual).isNotNull().isFalse();
+    }
+
 }
