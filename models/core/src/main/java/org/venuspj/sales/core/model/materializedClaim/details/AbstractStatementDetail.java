@@ -63,4 +63,28 @@ public class AbstractStatementDetail implements StatementDetail {
     public StatementAmount getAmount() {
         return null;
     }
+
+    public InvoiceIdentifier getInvoiceIdentifier() {
+        return invoiceIdentifier;
+    }
+
+    public DetailSource getDetailSource() {
+        return detailSource;
+    }
+
+    public Summary getSummary() {
+        return summary;
+    }
+
+    public Amount getBullingAmount() {
+        return bullingAmount;
+    }
+
+    public RecordDate getRecordDate() {
+        return recordDate;
+    }
+
+    public Amount getDeposit() {
+        return deposit;
+    }
 }
