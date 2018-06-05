@@ -12,6 +12,37 @@ public class DetailSource {
     SaleCategory saleCategory = SaleCategory.NON_ASSIGNED;
     InvoiceDetailSourceClassification invoiceDetailSourceClassification = InvoiceDetailSourceClassification.NON_ASSIGNED;
 
+    public DetailSource() {
+
+    }
+
+    public DetailSource(SaleIdentifier saleIdentifier,
+                        AdditionalDetailId additionalDetailId,
+                        SaleCategory saleCategory,
+                        InvoiceDetailSourceClassification invoiceDetailSourceClassification) {
+        this.saleIdentifier = saleIdentifier;
+        this.additionalDetailId = additionalDetailId;
+        this.saleCategory = saleCategory;
+        this.invoiceDetailSourceClassification = invoiceDetailSourceClassification;
+
+    }
+
+    public SaleIdentifier getSaleIdentifier() {
+        return saleIdentifier;
+    }
+
+    public AdditionalDetailId getAdditionalDetailId() {
+        return additionalDetailId;
+    }
+
+    public SaleCategory getSaleCategory() {
+        return saleCategory;
+    }
+
+    public InvoiceDetailSourceClassification getInvoiceDetailSourceClassification() {
+        return invoiceDetailSourceClassification;
+    }
+
     @Override
     public String toString() {
         return toStringHelper(this)
