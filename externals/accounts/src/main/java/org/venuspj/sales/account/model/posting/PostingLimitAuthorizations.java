@@ -1,8 +1,8 @@
 package org.venuspj.sales.account.model.posting;
 
 import org.venuspj.sales.core.fundamentals.amount.Amount;
-import org.venuspj.sales.core.fundamentals.event.WhenOccurred;
 import org.venuspj.sales.core.fundamentals.values.ListValue;
+import org.venuspj.sales.core.fundamentals.whenOccurred.WhenOccurred;
 
 import java.util.List;
 

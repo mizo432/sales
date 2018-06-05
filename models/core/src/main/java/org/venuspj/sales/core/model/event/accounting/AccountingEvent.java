@@ -1,7 +1,7 @@
 package org.venuspj.sales.core.model.event.accounting;
 
 import org.venuspj.sales.account.fundamentals.whenNoticed.WhenNoticed;
-import org.venuspj.sales.account.fundamentals.whenOccurred.WhenOccurred;
+import org.venuspj.sales.core.fundamentals.whenOccurred.WhenOccurred;
 import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTimeValue;
 
 import java.util.Set;

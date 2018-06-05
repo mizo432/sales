@@ -1,17 +1,24 @@
 package org.venuspj.sales.core.fundamentals.description;
 
 
+import org.venuspj.sales.core.fundamentals.values.StringValue;
+
 import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
-public class Description {
+public class Description implements StringValue {
     String value;
 
-    Description() {
+    public Description() {
 
     }
 
     Description(String value) {
         this.value = value;
+
+    }
+
+    public static Description of(String value) {
+        return new Description(value);
 
     }
 
@@ -22,6 +29,7 @@ public class Description {
                 .toString();
     }
 
+    @Override
     public String asText() {
         return value;
     }

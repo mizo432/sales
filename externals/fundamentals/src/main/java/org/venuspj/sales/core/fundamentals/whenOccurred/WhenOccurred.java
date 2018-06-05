@@ -1,14 +1,12 @@
-package org.venuspj.sales.account.fundamentals.whenOccurred;
+package org.venuspj.sales.core.fundamentals.whenOccurred;
 
-import org.venuspj.sales.account.fundamentals.whenNoticed.WhenNoticed;
 import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTime;
 import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTimeValue;
 import org.venuspj.util.collect.ComparisonChain;
 
 import java.time.LocalDateTime;
 
-import static org.venuspj.util.objects2.Objects2.equal;
-import static org.venuspj.util.objects2.Objects2.hash;
+import static org.venuspj.util.objects2.Objects2.*;
 
 public class WhenOccurred implements RecordDateTimeValue {
     private LocalDateTime value;
@@ -30,6 +28,10 @@ public class WhenOccurred implements RecordDateTimeValue {
 
     }
 
+    public static WhenOccurred of(RecordDateTime recordDateTime) {
+        return of(recordDateTime.asLocalDateTime());
+    }
+
     @Override
     public RecordDateTime asRecordDateTime() {
         return RecordDateTime.of(value);
@@ -37,6 +39,7 @@ public class WhenOccurred implements RecordDateTimeValue {
 
     @Override
     public int compareTo(RecordDateTimeValue o) {
+        if (isNull(o)) return -1;
         return ComparisonChain
                 .start()
                 .compare(asRecordDateTime(), o.asRecordDateTime())
@@ -57,4 +60,5 @@ public class WhenOccurred implements RecordDateTimeValue {
     public int hashCode() {
         return hash(value);
     }
+
 }

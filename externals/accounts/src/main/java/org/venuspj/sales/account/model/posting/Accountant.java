@@ -1,7 +1,7 @@
 package org.venuspj.sales.account.model.posting;
 
 import org.venuspj.sales.core.fundamentals.amount.Amount;
-import org.venuspj.sales.core.fundamentals.event.WhenOccurred;
+import org.venuspj.sales.core.fundamentals.whenOccurred.WhenOccurred;
 
 /**
  * 経理担当者（ロール）
