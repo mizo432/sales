@@ -6,17 +6,25 @@ import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupIde
 import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
 public class InvoiceIssueId {
-    ChargeGroupIdentifier chargeGroupIdentifier;
-    RecordYearMonth recordYearMonth;
+    private ChargeGroupIdentifier chargeGroupIdentifier;
+    private RecordYearMonth recordYearMonth;
 
     InvoiceIssueId() {
 
     }
 
-    public InvoiceIssueId(ChargeGroupIdentifier aChargeGroupIdentifier, RecordYearMonth aRecordYearMonth) {
-        chargeGroupIdentifier = aChargeGroupIdentifier;
-        recordYearMonth = aRecordYearMonth;
+    public InvoiceIssueId(ChargeGroupIdentifier chargeGroupIdentifier, RecordYearMonth recordYearMonth) {
+        this.chargeGroupIdentifier = chargeGroupIdentifier;
+        this.recordYearMonth = recordYearMonth;
 
+    }
+
+    public ChargeGroupIdentifier getChargeGroupIdentifier() {
+        return chargeGroupIdentifier;
+    }
+
+    public RecordYearMonth getRecordYearMonth() {
+        return recordYearMonth;
     }
 
     @Override
