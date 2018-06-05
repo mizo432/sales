@@ -7,10 +7,11 @@ import org.venuspj.sales.core.model.sale.SaleIdentifier;
 import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
 public class DetailSource {
-    SaleIdentifier saleIdentifier = new SaleIdentifier();
-    AdditionalDetailId additionalDetailId = AdditionalDetailId.empty();
-    SaleCategory saleCategory = SaleCategory.NON_ASSIGNED;
-    InvoiceDetailSourceClassification invoiceDetailSourceClassification = InvoiceDetailSourceClassification.NON_ASSIGNED;
+    private SaleIdentifier saleIdentifier = new SaleIdentifier();
+    private AdditionalDetailId additionalDetailId = AdditionalDetailId.empty();
+    private SaleCategory saleCategory = SaleCategory.NON_ASSIGNED;
+    private InvoiceDetailSourceClassification invoiceDetailSourceClassification =
+            InvoiceDetailSourceClassification.NON_ASSIGNED;
 
     public DetailSource() {
 
