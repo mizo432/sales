@@ -22,6 +22,14 @@ public abstract class AbstractExperience implements Experience {
 
     }
 
+    public ApplicationDate getApplicationDate() {
+        return applicationDate;
+    }
+
+    public ExperienceDate getExperienceDate() {
+        return experienceDate;
+    }
+
     @Override
     public ChargeGroupIdentifier getChargeGroupIdentifier() {
         return chargeGroupIdentifier;
