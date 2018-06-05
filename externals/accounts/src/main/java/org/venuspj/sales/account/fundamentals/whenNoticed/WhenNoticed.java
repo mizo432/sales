@@ -57,4 +57,8 @@ public class WhenNoticed implements RecordDateTimeValue {
     public int hashCode() {
         return hash(value);
     }
+
+    public WhenNoticed atEndOfDay() {
+        return WhenNoticed.of(asRecordDateTime().atEndOfDay());
+    }
 }

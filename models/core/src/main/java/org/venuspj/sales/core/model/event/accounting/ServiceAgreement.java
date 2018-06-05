@@ -1,7 +1,7 @@
 package org.venuspj.sales.core.model.event.accounting;
 
 import com.google.common.collect.Range;
-import org.venuspj.sales.core.fundamentals.recordDate.DateValue;
+import org.venuspj.sales.account.fundamentals.whenNoticed.WhenNoticed;
 import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTimeValue;
 
 import java.util.Collection;
@@ -15,13 +15,12 @@ public abstract class ServiceAgreement {
     private double rate;
     private Map<EventType, TemporalCollection> postingRules = newHashMap();
 
-    public PostingRule getPostingRule(EventType eventType,DateValue when) {
+    public PostingRule getPostingRule(EventType eventType,WhenNoticed when) {
         return postingRules.get(eventType).get(when);
     }
 
     private TemporalCollection temporalCollection(EventType eventType){
         TemporalCollection result = postingRules.get(eventType);
-//        Assert.nonNull(result);
         return result;
 
     }
@@ -39,7 +38,7 @@ public abstract class ServiceAgreement {
 
         }
 
-        public PostingRule get(DateValue when) {
+        public PostingRule get(WhenNoticed when) {
             return postingRulePostingRuleConfig
                     .stream()
                     .filter(postingRulePostingRule -> postingRulePostingRule.availableOn(when))
@@ -60,7 +59,7 @@ public abstract class ServiceAgreement {
 
         }
 
-        public boolean availableOn(DateValue when) {
+        public boolean availableOn(WhenNoticed when) {
             return range.contains(when.atEndOfDay());
 
         }

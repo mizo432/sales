@@ -23,11 +23,12 @@ public class TitleName implements NameValue {
         return toStringHelper(this)
                 .defaultConfig()
                 .toString();
+
     }
 
     @Override
     public Name asName() {
-        return new Name(value);
+        return Name.of(value);
 
     }
 

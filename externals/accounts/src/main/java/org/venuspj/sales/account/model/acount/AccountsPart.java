@@ -8,10 +8,25 @@ import org.venuspj.sales.core.fundamentals.number.Number;
  * <pre>部相当する</pre>
  */
 public enum AccountsPart {
+    /**
+     * 資産
+     */
     ASSETS("資産", AccountsStatement.BALANCE_SHEETS, 0, DebitOrCredit.DEBIT),
+    /**
+     * 負債
+     */
     LIABILITIES("負債", AccountsStatement.BALANCE_SHEETS, 1, DebitOrCredit.CREDIT),
+    /**
+     * 純資産
+     */
     SHAREHOLDERS_EQUITY("純資産", AccountsStatement.BALANCE_SHEETS, 3, DebitOrCredit.CREDIT),
+    /**
+     * 収益
+     */
     REVENUE("収益", AccountsStatement.PROFIT_AND_LOSS_STATEMENTS, 4, DebitOrCredit.CREDIT),
+    /**
+     * 費用
+     */
     EXPENSE("費用", AccountsStatement.PROFIT_AND_LOSS_STATEMENTS, 5, DebitOrCredit.DEBIT),
     UNKNOWN("未定", AccountsStatement.UNKNOWN, 7, DebitOrCredit.DEBIT);
 
@@ -44,11 +59,11 @@ public enum AccountsPart {
     }
 
     public DebitOrCredit whichDebitOrCredit(AmountValue amountValue) {
-        if(sideOnPlus == DebitOrCredit.CREDIT)
-            return amountValue.asAmount().isPositive()?DebitOrCredit.CREDIT:DebitOrCredit.DEBIT;
+        if (sideOnPlus == DebitOrCredit.CREDIT)
+            return amountValue.asAmount().isPositive() ? DebitOrCredit.CREDIT : DebitOrCredit.DEBIT;
 
-        if(sideOnPlus == DebitOrCredit.DEBIT)
-            return amountValue.asAmount().isPositive()?DebitOrCredit.DEBIT:DebitOrCredit.CREDIT;
+        if (sideOnPlus == DebitOrCredit.DEBIT)
+            return amountValue.asAmount().isPositive() ? DebitOrCredit.DEBIT : DebitOrCredit.CREDIT;
 
         return DebitOrCredit.UNKNOWN;
     }

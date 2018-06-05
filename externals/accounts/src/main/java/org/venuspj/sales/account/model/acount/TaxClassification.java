@@ -12,8 +12,8 @@ public enum TaxClassification {
 
     private final Name name;
 
-    TaxClassification(String aName) {
-        name = new Name(aName);
+    TaxClassification(String name) {
+        this.name = Name.of(name);
     }
 
     public boolean isOuterTax() {
