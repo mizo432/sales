@@ -49,7 +49,7 @@ public class RecordDate {
     public RecordYearMonth getRecordYearMonth() {
         if (isNull(value)) return RecordYearMonth.empty();
 
-        return new RecordYearMonth(YearMonth.of(value.getYear(), value.getMonth()));
+        return RecordYearMonth.of(YearMonth.of(value.getYear(), value.getMonth()));
 
     }
 }

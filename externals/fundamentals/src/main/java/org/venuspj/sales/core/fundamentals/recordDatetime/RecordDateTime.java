@@ -18,9 +18,9 @@ public class RecordDateTime implements Comparable<RecordDateTime>, DateValue {
 
     }
 
-    @Deprecated
-    public RecordDateTime(LocalDateTime aValue) {
-        value = aValue;
+    RecordDateTime(LocalDateTime value) {
+        this.value = value;
+
     }
 
     public static RecordDateTime of(LocalDateTime value) {
@@ -33,11 +33,11 @@ public class RecordDateTime implements Comparable<RecordDateTime>, DateValue {
 
     public RecordYearMonth recordYearMonth() {
         if (!isPresent()) {
-            return new RecordYearMonth(null);
+            return new RecordYearMonth();
         }
         int year = value.getYear();
         Month month = value.getMonth();
-        return new RecordYearMonth(YearMonth.of(year, month));
+        return RecordYearMonth.of(YearMonth.of(year, month));
     }
 
     public boolean isPresent() {
