@@ -3,7 +3,6 @@ package org.venuspj.sales.core.model.event.postingSale;
 import org.venuspj.sales.account.fundamentals.whenNoticed.WhenNoticed;
 import org.venuspj.sales.account.model.acount.Tax;
 import org.venuspj.sales.core.fundamentals.event.Event;
-import org.venuspj.sales.core.fundamentals.whenOccurred.WhenOccurred;
 import org.venuspj.sales.core.model.event.accounting.AccountingEvent;
 import org.venuspj.sales.core.model.event.accounting.EventType;
 import org.venuspj.sales.core.model.event.accounting.ServiceAgreement;
@@ -40,8 +39,12 @@ public class PostingSale extends AccountingEvent {
      */
     private Deposit deposit;
 
-    protected PostingSale(WhenOccurred whenOccurred, WhenNoticed whenNoticed) {
-        super(EventType.POSTING_SALE, whenOccurred, whenNoticed);
+    protected PostingSale(Event event, WhenNoticed whenNoticed, ServiceAgreement serviceAgreement, ChargeGroup chargeGroup) {
+        super(EventType.POSTING_SALE, event.whenOccurred(), whenNoticed);
+        this.serviceAgreement = serviceAgreement;
+        this.moment = event;
+        this.chargeGroup = chargeGroup;
+
     }
 
     public void post() {
