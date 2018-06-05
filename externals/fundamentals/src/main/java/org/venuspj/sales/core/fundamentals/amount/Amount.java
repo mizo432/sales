@@ -67,6 +67,6 @@ public class Amount {
     }
 
     public boolean isSmallOrEqual(Amount other) {
-        return value < other.value;
+        return value <= other.value;
     }
 }
