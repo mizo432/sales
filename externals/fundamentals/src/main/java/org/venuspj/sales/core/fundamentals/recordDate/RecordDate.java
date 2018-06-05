@@ -13,7 +13,7 @@ public class RecordDate {
     public RecordDate() {
     }
 
-    public RecordDate(LocalDate value) {
+    RecordDate(LocalDate value) {
         this.value = value;
     }
 
