@@ -24,19 +24,24 @@ public class StatementAmount implements AmountValue {
 
     public static StatementAmount zeroYen() {
         return yens(0L);
+
     }
 
     public static StatementAmount of(AmountValue amountValue) {
         return new StatementAmount(amountValue.asLong());
+
     }
 
     @Override
     public Amount asAmount() {
-        return isNull(value) || value > 0 ? Amount.yen(value) : Amount.yen(-value);
+        return isNull(value) || value > 0L ? Amount.yen(value) : Amount.yen(-value);
+
     }
 
     @Override
     public Long asLong() {
-        return isNull(value) ? 0L : (value < 0 ? -value : value);
+        if (isNull(value)) return 0L;
+        return value < 0L ? -value : value;
+
     }
 }
