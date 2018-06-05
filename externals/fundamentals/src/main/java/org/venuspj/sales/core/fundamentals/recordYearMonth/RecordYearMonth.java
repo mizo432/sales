@@ -18,11 +18,6 @@ public class RecordYearMonth {
 
     }
 
-    public static RecordYearMonth empty() {
-        return new RecordYearMonth();
-
-    }
-
     public static RecordYearMonth of(YearMonth value) {
         return new RecordYearMonth(value);
 

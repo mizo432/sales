@@ -52,7 +52,7 @@ public class RecordDate {
     }
 
     public RecordYearMonth getRecordYearMonth() {
-        if (isNull(value)) return RecordYearMonth.empty();
+        if (isNull(value)) return new RecordYearMonth();
 
         return RecordYearMonth.of(YearMonth.of(value.getYear(), value.getMonth()));
 
