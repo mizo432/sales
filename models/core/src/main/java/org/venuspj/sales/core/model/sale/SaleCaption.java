@@ -11,11 +11,18 @@ public class SaleCaption implements StringValue {
 
     SaleCaption(String value) {
         this.value = value;
+
     }
 
     @Override
     public String asText() {
         return value;
+
+    }
+
+    public static SaleCaption of(String value) {
+        return new SaleCaption(value);
+
     }
 
 

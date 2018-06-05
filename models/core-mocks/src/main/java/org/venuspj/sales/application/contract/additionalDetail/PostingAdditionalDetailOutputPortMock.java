@@ -1,6 +1,6 @@
 package org.venuspj.sales.application.contract.additionalDetail;
 
-import org.venuspj.sales.core.model.invoice.details.additionalDetail.AdditionalDetail;
+import org.venuspj.sales.core.model.materializedClaim.details.additionalDetail.AdditionalDetail;
 
 import static org.venuspj.util.objects2.Objects2.toStringHelper;
 

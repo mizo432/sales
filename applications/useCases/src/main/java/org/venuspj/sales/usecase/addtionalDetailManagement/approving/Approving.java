@@ -7,11 +7,11 @@ import org.venuspj.sales.application.contract.addtionalDetailManagement.approvin
 import org.venuspj.sales.core.fundamentals.event.Event;
 import org.venuspj.sales.core.fundamentals.event.EventProvider;
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
-import org.venuspj.sales.core.model.invoice.details.additionalDetail.AdditionalDetail;
-import org.venuspj.sales.core.model.invoice.details.additionalDetail.AdditionalDetailId;
-import org.venuspj.sales.core.model.invoice.details.additionalDetail.AdditionalDetailRepository;
-import org.venuspj.sales.core.model.invoice.details.additionalDetail.status.AdditionalDetailStatus;
-import org.venuspj.sales.core.model.invoice.details.additionalDetail.status.ApploveStatus;
+import org.venuspj.sales.core.model.materializedClaim.details.additionalDetail.AdditionalDetail;
+import org.venuspj.sales.core.model.materializedClaim.details.additionalDetail.AdditionalDetailId;
+import org.venuspj.sales.core.model.materializedClaim.details.additionalDetail.AdditionalDetailRepository;
+import org.venuspj.sales.core.model.materializedClaim.details.additionalDetail.status.AdditionalDetailStatus;
+import org.venuspj.sales.core.model.materializedClaim.details.additionalDetail.status.ApploveStatus;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroup;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupRepository;
 import org.venuspj.sales.exceptions.ChargeGroupIsAlreadyClosedException;

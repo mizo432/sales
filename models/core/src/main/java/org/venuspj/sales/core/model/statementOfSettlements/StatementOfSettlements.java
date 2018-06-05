@@ -2,11 +2,11 @@ package org.venuspj.sales.core.model.statementOfSettlements;
 
 import org.venuspj.sales.account.model.acount.Tax;
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
-import org.venuspj.sales.core.model.invoice.InvoiceIdentifier;
-import org.venuspj.sales.core.model.invoice.OutputFormat;
-import org.venuspj.sales.core.model.invoice.PayableAmount;
-import org.venuspj.sales.core.model.invoice.ReceivableAmount;
-import org.venuspj.sales.core.model.invoice.details.StatementDetails;
+import org.venuspj.sales.core.model.materializedClaim.invoice.InvoiceIdentifier;
+import org.venuspj.sales.core.model.materializedClaim.OutputFormat;
+import org.venuspj.sales.core.model.materializedClaim.paymentNotice.PayableAmount;
+import org.venuspj.sales.core.model.materializedClaim.invoice.ReceivableAmount;
+import org.venuspj.sales.core.model.materializedClaim.details.StatementDetails;
 
 
 /**
