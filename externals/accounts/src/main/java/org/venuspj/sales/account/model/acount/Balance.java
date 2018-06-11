@@ -6,15 +6,22 @@ import org.venuspj.sales.core.fundamentals.amount.AmountValue;
 public class Balance implements AmountValue {
     private Long value;
 
-    Balance() {
+    public Balance() {
 
     }
 
-    public Balance(Long value) {
+    Balance(Long value) {
         this.value = value;
 
     }
 
+    public static Balance yenZero() {
+        return new Balance(0L);
+    }
+
+    public static Balance yens(Long value) {
+        return new Balance(value);
+    }
 
     @Override
     public Amount asAmount() {
