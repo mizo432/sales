@@ -30,7 +30,7 @@ public class DepositEntryTest {
 
     private DepositEntry createDummyDeposit() {
         return new DepositEntry.DepositBuilder()
-                .withNumber(AccountNumber.of(10))
+                .withAccountNumber(AccountNumber.of(10))
                 .withAccountAmount(AccountAmount.yen(10L))
                 .build();
     }

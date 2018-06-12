@@ -37,7 +37,7 @@ public class Sale extends AbstractAccount<Sale> {
 
         @Override
         protected Sale createValueObject() {
-            return new Sale(saleIdentifier, number, accountAmount, accountsSubTitle, tax, taxClassification);
+            return new Sale(saleIdentifier, accountNumber, accountAmount, accountsSubTitle, tax, taxClassification);
 
         }
 

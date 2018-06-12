@@ -18,8 +18,8 @@ public class DepositEntry extends AbstractAccount<DepositEntry> {
 
     public static class DepositBuilder extends AbstractAccountBuilder<DepositEntry, DepositBuilder> {
         @Override
-        public DepositBuilder withNumber(AccountNumber accountNumber) {
-            return super.withNumber(number);
+        public DepositBuilder withAccountNumber(AccountNumber accountNumber) {
+            return super.withAccountNumber(this.accountNumber);
         }
 
         @Override
@@ -34,7 +34,7 @@ public class DepositEntry extends AbstractAccount<DepositEntry> {
 
         @Override
         protected DepositEntry createValueObject() {
-            return new DepositEntry(number, accountAmount, accountsTitle, accountsSubTitle);
+            return new DepositEntry(accountNumber, accountAmount, accountsTitle, accountsSubTitle);
 
         }
 

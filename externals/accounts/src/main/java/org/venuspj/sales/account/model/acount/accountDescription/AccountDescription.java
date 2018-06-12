@@ -1,4 +1,4 @@
-package org.venuspj.sales.account.model.accountDescription;
+package org.venuspj.sales.account.model.acount.accountDescription;
 
 import org.venuspj.sales.core.fundamentals.description.Description;
 import org.venuspj.sales.core.fundamentals.description.DescriptionValue;

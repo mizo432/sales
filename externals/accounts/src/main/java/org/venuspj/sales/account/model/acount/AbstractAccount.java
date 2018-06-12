@@ -9,7 +9,7 @@ import static org.venuspj.util.objects2.Objects2.isNull;
  * 勘定の基底クラス
  */
 public abstract class AbstractAccount<T> implements AccountEntry {
-    private AccountNumber number = new AccountNumber();
+    private AccountNumber accountNumber = new AccountNumber();
     private AccountsPart accountsPart = AccountsPart.UNKNOWN;
     private AccountsSubTitle accountsSubTitle = new AccountsSubTitle();
     private AccountsTitle accountsTitle = AccountsTitle.UNKNOWN;
@@ -62,14 +62,14 @@ public abstract class AbstractAccount<T> implements AccountEntry {
 
     }
 
-    protected AbstractAccount(AccountNumber number,
+    protected AbstractAccount(AccountNumber accountNumber,
                               AccountAmount accountAmount,
                               AccountsPart accountsPart,
                               AccountsTitle accountsTitle,
                               AccountsSubTitle accountsSubTitle,
                               Tax tax,
                               TaxClassification taxClassification) {
-        this.number = number;
+        this.accountNumber = accountNumber;
         this.accountAmount = accountAmount;
         this.accountsPart = accountsPart;
         this.accountsTitle = accountsTitle;
@@ -79,8 +79,8 @@ public abstract class AbstractAccount<T> implements AccountEntry {
 
     }
 
-    protected AccountNumber getNumber() {
-        return number;
+    protected AccountNumber getAccountNumber() {
+        return accountNumber;
     }
 
     public AccountAmount getSubTotal() {
@@ -89,7 +89,7 @@ public abstract class AbstractAccount<T> implements AccountEntry {
     }
 
     public static abstract class AbstractAccountBuilder<T extends AbstractAccount<T>, B extends AbstractAccountBuilder<T, B>> extends ObjectBuilder<T, B> {
-        protected AccountNumber number = new AccountNumber();
+        protected AccountNumber accountNumber = new AccountNumber();
         protected AccountsSubTitle accountsSubTitle = new AccountsSubTitle();
         protected AccountsTitle accountsTitle = AccountsTitle.UNKNOWN;
         protected AccountAmount accountAmount = AccountAmount.yenZero();
@@ -98,7 +98,7 @@ public abstract class AbstractAccount<T> implements AccountEntry {
 
         @Override
         protected void apply(T vo, B builder) {
-            builder.withNumber(vo.getNumber());
+            builder.withAccountNumber(vo.getAccountNumber());
             builder.withAccountsSubTitle(vo.getAccountsSubTitle());
             builder.withAccountsTitle(vo.getAccountsTitle());
             builder.withAccountAmount(vo.getAccountAmount());
@@ -137,9 +137,9 @@ public abstract class AbstractAccount<T> implements AccountEntry {
             return getThis();
         }
 
-        protected B withNumber(AccountNumber number) {
-            if (isNull(number)) return getThis();
-            addConfigurator(b -> b.number = number);
+        protected B withAccountNumber(AccountNumber accountNumber) {
+            if (isNull(accountNumber)) return getThis();
+            addConfigurator(b -> b.accountNumber = accountNumber);
             return getThis();
         }
 

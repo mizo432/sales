@@ -19,8 +19,8 @@ public class TradeAccountsReceivable extends AssetAccount<TradeAccountsReceivabl
     public static class TradeAccountsReceivableBuilder extends AssetAccountBuilder<TradeAccountsReceivable, TradeAccountsReceivableBuilder> {
 
         @Override
-        public TradeAccountsReceivableBuilder withNumber(AccountNumber accountNumber) {
-            return super.withNumber(number);
+        public TradeAccountsReceivableBuilder withAccountNumber(AccountNumber accountNumber) {
+            return super.withAccountNumber(this.accountNumber);
         }
 
         @Override
@@ -30,7 +30,7 @@ public class TradeAccountsReceivable extends AssetAccount<TradeAccountsReceivabl
 
         @Override
         protected TradeAccountsReceivable createValueObject() {
-            return new TradeAccountsReceivable(number, accountAmount, accountsSubTitle);
+            return new TradeAccountsReceivable(accountNumber, accountAmount, accountsSubTitle);
         }
 
         @Override

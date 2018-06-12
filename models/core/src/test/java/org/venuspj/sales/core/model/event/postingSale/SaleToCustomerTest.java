@@ -36,7 +36,7 @@ public class SaleToCustomerTest {
     @Test
     public void getSubTotal2() {
         Sale target = new SaleBuilder()
-                .withNumber(AccountNumber.of(10))
+                .withAccountNumber(AccountNumber.of(10))
                 .withAccountAmount(AccountAmount.yen(1000L))
                 .withAccountsTitle(AccountsTitle.SALE)
                 .withAccountsSubTitle(new AccountsSubTitle("aaaa"))
@@ -52,7 +52,7 @@ public class SaleToCustomerTest {
 
     private Sale createDummySale() {
         return new SaleBuilder()
-                .withNumber(AccountNumber.of(10))
+                .withAccountNumber(AccountNumber.of(10))
                 .withAccountAmount(AccountAmount.yen(1000L))
                 .withAccountsTitle(AccountsTitle.SALE)
                 .withAccountsSubTitle(new AccountsSubTitle("aaaa"))

@@ -1,11 +1,12 @@
 package org.venuspj.sales.core.model.materializedClaim.details;
 
+import org.venuspj.ddd.model.value.ListValue;
 import org.venuspj.sales.account.model.acount.Tax;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
-import org.venuspj.sales.core.fundamentals.values.ListValue;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import static org.venuspj.util.collect.Lists2.newArrayList;
@@ -51,6 +52,16 @@ public class StatementDetails implements ListValue<StatementDetail> {
     public List<StatementDetail> asList() {
         return Collections.unmodifiableList(list);
 
+    }
+
+    @Override
+    public Iterator<StatementDetail> iterator() {
+        return list.iterator();
+    }
+
+    @Override
+    public List<StatementDetail> getValue() {
+        return list;
     }
 
     public Tax totalTax() {

@@ -1,8 +1,8 @@
 package org.venuspj.sales.core.model.materializedClaim.invoice;
 
 
+import org.venuspj.ddd.model.value.ListValue;
 import org.venuspj.sales.core.fundamentals.recordDate.RecordDate;
-import org.venuspj.sales.core.fundamentals.values.ListValue;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -31,8 +31,14 @@ public class Invoices implements ListValue<Invoice> {
         list.addAll(aList);
     }
 
+    @Override
     public Iterator<Invoice> iterator() {
         return list.iterator();
+    }
+
+    @Override
+    public List<Invoice> getValue() {
+        return list;
     }
 
     public boolean isEmpty() {

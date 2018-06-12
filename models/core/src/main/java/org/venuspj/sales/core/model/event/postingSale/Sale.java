@@ -53,8 +53,8 @@ public class Sale extends AbstractAccount<Sale> {
         }
 
         @Override
-        public SaleBuilder withNumber(AccountNumber accountNumber) {
-            return super.withNumber(number);
+        public SaleBuilder withAccountNumber(AccountNumber accountNumber) {
+            return super.withAccountNumber(this.accountNumber);
 
         }
 
@@ -82,7 +82,7 @@ public class Sale extends AbstractAccount<Sale> {
 
         @Override
         protected Sale createValueObject() {
-            return new Sale(number, accountAmount, accountsTitle, accountsSubTitle, tax, taxClassification, saleCategory);
+            return new Sale(accountNumber, accountAmount, accountsTitle, accountsSubTitle, tax, taxClassification, saleCategory);
 
         }
 
