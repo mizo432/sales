@@ -3,6 +3,7 @@ package org.venuspj.sales.core.fundamentals.name;
 
 import org.venuspj.ddd.model.value.StringValue;
 
+import static org.venuspj.util.objects2.Objects2.hash;
 import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
 public class Name implements StringValue<Name> {
@@ -45,5 +46,10 @@ public class Name implements StringValue<Name> {
     @Override
     public boolean sameValueAs(Name other) {
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return hash(value);
     }
 }
