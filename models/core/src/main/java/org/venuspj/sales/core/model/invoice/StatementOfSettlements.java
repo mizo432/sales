@@ -1,7 +1,7 @@
 package org.venuspj.sales.core.model.invoice;
 
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
-import org.venuspj.sales.core.model.event.postingSale.Tax;
+import org.venuspj.sales.account.model.Tax;
 import org.venuspj.sales.core.model.invoice.details.InvoiceDetails;
 
 

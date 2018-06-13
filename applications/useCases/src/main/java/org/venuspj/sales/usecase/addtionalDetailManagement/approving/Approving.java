@@ -2,8 +2,8 @@ package org.venuspj.sales.usecase.addtionalDetailManagement.approving;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.venuspj.sales.core.exceptions.ChargeGroupIsAlreadyClosedException;
-import org.venuspj.sales.core.exceptions.EntityNotFoundException;
+import org.venuspj.sales.exceptions.ChargeGroupIsAlreadyClosedException;
+import org.venuspj.sales.exceptions.EntityNotFoundException;
 import org.venuspj.sales.core.fundamentals.event.Event;
 import org.venuspj.sales.core.fundamentals.event.EventProvider;
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;

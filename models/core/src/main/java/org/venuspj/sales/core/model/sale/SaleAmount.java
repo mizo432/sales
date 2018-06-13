@@ -18,4 +18,9 @@ public class SaleAmount implements AmountValue {
         return new Amount(value);
 
     }
+
+    @Override
+    public Integer asInteger() {
+        return value;
+    }
 }

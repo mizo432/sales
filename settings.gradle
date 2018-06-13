@@ -1,6 +1,10 @@
 rootProject.name = 'sales'
 include 'utils'
 project(':utils').projectDir = file('./externals/utils')
+include 'fundamentals'
+project(':fundamentals').projectDir = file('./externals/fundamentals')
+include 'accounts'
+project(':accounts').projectDir = file('./externals/accounts')
 include 'core'
 project(':core').projectDir = file('./models/core')
 include 'useCases'

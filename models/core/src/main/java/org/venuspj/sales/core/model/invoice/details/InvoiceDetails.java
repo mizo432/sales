@@ -1,8 +1,8 @@
 package org.venuspj.sales.core.model.invoice.details;
 
 import org.venuspj.sales.core.fundamentals.amount.Amount;
-import org.venuspj.sales.core.fundamentals.listValue.ListValue;
-import org.venuspj.sales.core.model.event.postingSale.Tax;
+import org.venuspj.sales.core.fundamentals.values.ListValue;
+import org.venuspj.sales.account.model.Tax;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -49,10 +49,11 @@ public class InvoiceDetails implements ListValue<InvoiceDetail> {
     public Tax tax() {
         Integer resultTax = 0;
 
-        for (InvoiceDetail invoiceDetail : list)
-            resultTax = resultTax + invoiceDetail.getTax().asInteger();
+        for (InvoiceDetail invoiceDetail : list) {
+            resultTax += invoiceDetail.getTax().asInteger();
+        }
 
-        return Tax.yen(resultTax);
+        return Tax.yens(resultTax);
 
     }
 }

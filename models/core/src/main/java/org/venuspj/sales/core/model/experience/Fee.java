@@ -9,4 +9,9 @@ public class Fee implements AmountValue {
         return null;
     }
 
+    @Override
+    public Integer asInteger() {
+        return null;
+    }
+
 }

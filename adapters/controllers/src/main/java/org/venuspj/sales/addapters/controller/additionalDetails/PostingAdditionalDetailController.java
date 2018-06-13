@@ -9,7 +9,7 @@ import org.venuspj.sales.application.contract.additionalDetail.PostingAdditional
 import org.venuspj.sales.core.fundamentals.event.Event;
 import org.venuspj.sales.core.model.additionalDetail.AdditionalDetail;
 import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroupIdentifier;
-import org.venuspj.sales.core.model.user.UserId;
+import org.venuspj.sales.core.model.user.UserIdentifier;
 
 @Controller
 @Scope("prototype")
@@ -23,7 +23,7 @@ public class PostingAdditionalDetailController implements PostingAdditionalDetai
     }
 
     @Override
-    public UserId operationUserId() {
+    public UserIdentifier operationUserId() {
         return null;
     }
 

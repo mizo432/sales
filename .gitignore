@@ -27,3 +27,5 @@ sales-web/build/
 /models/core-mocks/build/
 /externals/utils/build/
 /models/contracts/build/
+externals/accounts/build
+externals/fundamentals/build

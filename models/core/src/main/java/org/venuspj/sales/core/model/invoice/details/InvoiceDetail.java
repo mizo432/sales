@@ -2,40 +2,40 @@ package org.venuspj.sales.core.model.invoice.details;
 
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.recordDate.RecordDate;
-import org.venuspj.sales.core.model.event.postingSale.Tax;
+import org.venuspj.sales.account.model.Tax;
 import org.venuspj.sales.core.model.invoice.InvoiceIdentifier;
 import org.venuspj.sales.core.model.invoice.details.saleDetails.InvoiceDetailFromSaleDetails;
 
 public class InvoiceDetail {
-    InvoiceIdentifier invoiceIdentifier;
-    DetailSource detailSource;
-    Summary summary;
-    Amount bullingAmount;
-    RecordDate recordDate;
-    Amount deposit;
-    Tax tax;
-    InvoiceDetailFromSaleDetails invoiceDetailFromSaleDetails = InvoiceDetailFromSaleDetails.empty();
+    private InvoiceIdentifier invoiceIdentifier;
+    private DetailSource detailSource;
+    private Summary summary;
+    private Amount bullingAmount;
+    private RecordDate recordDate;
+    private Amount deposit;
+    private Tax tax;
+    private InvoiceDetailFromSaleDetails invoiceDetailFromSaleDetails = InvoiceDetailFromSaleDetails.empty();
 
     InvoiceDetail() {
 
     }
 
-    public InvoiceDetail(InvoiceIdentifier anInvoiceIdentifier,
-                         DetailSource aDetailSource,
-                         Summary aSummary,
-                         Amount aBullingAmount,
-                         RecordDate aRecordDate,
-                         Amount anDeposit,
+    public InvoiceDetail(InvoiceIdentifier invoiceIdentifier,
+                         DetailSource detailSource,
+                         Summary summary,
+                         Amount bullingAmount,
+                         RecordDate recordDate,
+                         Amount deposit,
                          Tax tax,
-                         InvoiceDetailFromSaleDetails anInvoiceDetailFromSaleDetails) {
-        invoiceIdentifier = anInvoiceIdentifier;
-        detailSource = aDetailSource;
-        summary = aSummary;
-        bullingAmount = aBullingAmount;
-        recordDate = aRecordDate;
-        deposit = anDeposit;
-        tax = tax;
-        invoiceDetailFromSaleDetails = anInvoiceDetailFromSaleDetails;
+                         InvoiceDetailFromSaleDetails invoiceDetailFromSaleDetails) {
+        this.invoiceIdentifier = invoiceIdentifier;
+        this.detailSource = detailSource;
+        this.summary = summary;
+        this.bullingAmount = bullingAmount;
+        this.recordDate = recordDate;
+        this.deposit = deposit;
+        this.tax = tax;
+        this.invoiceDetailFromSaleDetails = invoiceDetailFromSaleDetails;
 
     }
 
