@@ -11,7 +11,7 @@ public class Closing {
     ClosingStatus closingStatus;
 
     Closing(ChargeGroupIdentifier chargeGroupIdentifier, Event moment, ClosingStatus aClosingStatus) {
-        this.closingId = new ClosingId(chargeGroupIdentifier, moment.whenOccurred().asRecordDateTime().recordYearMonth());
+        this.closingId = new ClosingId(chargeGroupIdentifier, moment.getWhenOccurred().asRecordDateTime().recordYearMonth());
         this.moment = moment;
         closingStatus = aClosingStatus;
     }

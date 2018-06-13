@@ -46,10 +46,10 @@ public class Approving implements ApprovingAdditionDetail {
         if (!additionalDetail.isApproved())
             throw new IllegalStateException("追加明細はすでに承認済みです");
         ChargeGroup chargeGroup = chargeGroupRepository.findOne(additionalDetail.chargeGroupId());
-        RecordYearMonth recordYearMonth = additionalDetail.event().whenOccurred().asRecordDateTime().recordYearMonth();
+        RecordYearMonth recordYearMonth = additionalDetail.event().getWhenOccurred().asRecordDateTime().recordYearMonth();
         if (chargeGroup.hadClosedInvoice(recordYearMonth))
             throw new ChargeGroupIsAlreadyClosedException("請求先グループは既に請求締めされているため承認できません");
-        if (chargeGroup.hadClosedFutureInvoice(additionalDetail.event().whenOccurred().asRecordDateTime().recordYearMonth()))
+        if (chargeGroup.hadClosedFutureInvoice(additionalDetail.event().getWhenOccurred().asRecordDateTime().recordYearMonth()))
             throw new ChargeGroupIsAlreadyClosedException("請求先グループは既に請求締めされているため承認できません");
 
         Event event = EventProvider.newEvent();

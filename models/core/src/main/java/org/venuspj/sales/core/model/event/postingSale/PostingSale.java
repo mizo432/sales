@@ -40,7 +40,7 @@ public class PostingSale extends AccountingEvent {
     private Deposit deposit;
 
     protected PostingSale(Event event, WhenNoticed whenNoticed, ServiceAgreement serviceAgreement, ChargeGroup chargeGroup) {
-        super(EventType.POSTING_SALE, event.whenOccurred(), whenNoticed);
+        super(EventType.POSTING_SALE, event.getWhenOccurred(), whenNoticed);
         this.serviceAgreement = serviceAgreement;
         this.moment = event;
         this.chargeGroup = chargeGroup;

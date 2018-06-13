@@ -16,7 +16,7 @@ public class ClosingCredential {
     }
 
     public static ClosingCredential of(ChargeGroupIdentifier chargeGroupIdentifier, Event event) {
-        return new ClosingCredential(chargeGroupIdentifier, event.whenOccurred().asRecordDateTime().recordYearMonth());
+        return new ClosingCredential(chargeGroupIdentifier, event.getWhenOccurred().asRecordDateTime().recordYearMonth());
 
     }
 }
