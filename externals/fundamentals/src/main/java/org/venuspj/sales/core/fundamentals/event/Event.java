@@ -13,21 +13,33 @@ public class Event {
     public Event() {
     }
 
+    /**
+     * イベントが発生した日時を取得します。
+     *
+     * @return イベントが発生した日時
+     */
     public WhenOccurred getWhenOccurred() {
         return whenOccurred;
     }
 
+    /**
+     * イベントを発生させたユーザーを取得します。
+     *
+     * @return イベントを発生させたユーザー
+     */
     public UserIdentifier getUserIdentifier() {
         return userIdentifier;
+
     }
 
-    public Event(WhenOccurred whenOccurred, UserIdentifier userIdentifier) {
+    Event(WhenOccurred whenOccurred, UserIdentifier userIdentifier) {
         this.whenOccurred = whenOccurred;
         this.userIdentifier = userIdentifier;
     }
 
-    public WhenOccurred whenOccurred() {
-        return whenOccurred;
+    public static Event of(WhenOccurred whenOccurred, UserIdentifier userIdentifier) {
+        return new Event(whenOccurred, userIdentifier);
+
     }
 
 }
