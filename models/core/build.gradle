@@ -9,6 +9,7 @@ repositories {
 dependencies {
     compile group: 'com.google.guava', name: 'guava', version: "${guavaVersion}"
     compile group: 'org.venuspj', name : 'venus-utils', version: "${venusUtilsVersion}"
+    compile group: 'org.venuspj', name : 'venus-ddd', version: "${venusDddVersion}"
     compile project(":fundamentals")
     compile project(":accounts")
     compile group: 'org.slf4j', name : 'slf4j-api', version: "${slf4jVersion}"

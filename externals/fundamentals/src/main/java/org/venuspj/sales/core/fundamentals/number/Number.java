@@ -1,9 +1,11 @@
 package org.venuspj.sales.core.fundamentals.number;
 
+import org.venuspj.ddd.model.value.IntegerValue;
+
 import static org.venuspj.util.objects2.Objects2.*;
 
-public class Number implements Comparable<Number> {
-    private final Integer value;
+public class Number implements IntegerValue<Number>, Comparable<Number> {
+    private Integer value;
 
     public Number(Integer aValue) {
         value = aValue;
@@ -24,5 +26,21 @@ public class Number implements Comparable<Number> {
     @Override
     public int hashCode() {
         return hash(value);
+    }
+
+    @Override
+    public boolean sameValueAs(Number other) {
+        return equal(this.value, ((Number) other
+        ).value);
+    }
+
+    @Override
+    public Integer asInteger() {
+        return null;
+    }
+
+    @Override
+    public String asText() {
+        return null;
     }
 }

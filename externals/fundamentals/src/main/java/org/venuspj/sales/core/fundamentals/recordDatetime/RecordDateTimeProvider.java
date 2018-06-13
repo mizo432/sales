@@ -12,7 +12,7 @@ public class RecordDateTimeProvider {
     }
 
     public static RecordDateTime currentRecordDateTime() {
-        return new RecordDateTime(recordDateTimeProvider.currentDateTime());
+        return RecordDateTime.of(recordDateTimeProvider.currentDateTime());
 
     }
 

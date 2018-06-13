@@ -1,17 +1,23 @@
 package org.venuspj.sales.account.model.generalLedger.assetAccount;
 
-import org.venuspj.sales.account.model.*;
-import org.venuspj.sales.core.fundamentals.amount.Amount;
-import org.venuspj.sales.account.model.TaxClassification;
+import org.venuspj.sales.account.model.acount.*;
 
 /**
+ * 資産会計
  */
-public abstract class AssetAccount extends AbstractAccount<AssetAccount> {
-    public AssetAccount(AccountNumber aNumber,
-                        Amount anAmount,
-                        AccountsTitle anAccountsTitle,
-                        AccountsSubTitle anAccountsSubTitle) {
-        super(aNumber, anAmount, AccountsPart.ASSETS, anAccountsTitle, anAccountsSubTitle, Tax.empty(), TaxClassification.EXCLUDES);
+public abstract class AssetAccount<A extends AssetAccount<A>> extends AbstractAccount<A> {
+    public AssetAccount() {
+
+    }
+
+    protected AssetAccount(AccountNumber accountNumber,
+                           AccountAmount accountAmount,
+                           AccountsTitle accountsTitle,
+                           AccountsSubTitle accountsSubTitle) {
+        super(accountNumber, accountAmount, AccountsPart.ASSETS, accountsTitle, accountsSubTitle, Tax.empty(), TaxClassification.EXCLUDES);
+    }
+
+    public static abstract class AssetAccountBuilder<A extends AssetAccount<A>, B extends AssetAccountBuilder<A, B>> extends AbstractAccountBuilder<A, B> {
     }
 
 }

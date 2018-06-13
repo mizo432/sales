@@ -3,7 +3,7 @@ package org.venuspj.sales.application.contract.additionalDetail;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.venuspj.sales.core.model.additionalDetail.AdditionalDetailMock;
+import org.venuspj.sales.core.model.materializedClaim.details.additionalDetail.AdditionalDetailMock;
 
 public class PostingAdditionalDetailOutputPortMockTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(PostingAdditionalDetailOutputPortMockTest.class);

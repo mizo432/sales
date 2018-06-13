@@ -1,6 +1,6 @@
 package org.venuspj.sales.core.model.partnerManagement.chargeGroup;
 
-import org.venuspj.sales.core.model.partnerManagement.partner.PartnerIdentifiers;
+import org.venuspj.sales.core.model.partnerManagement.customer.CustomerIdentifiers;
 
 import java.util.Collection;
 import java.util.Map;
@@ -23,13 +23,13 @@ public class ChargeGroups {
 
     }
 
-    public PartnerIdentifiers getPartnerIdentifiers() {
-        return new PartnerIdentifiers(map
+    public CustomerIdentifiers getPartnerIdentifiers() {
+        return CustomerIdentifiers.of(map
                 .values()
                 .stream()
-                .map(ChargeGroup::getPartnerIdentifier)
+                .map(ChargeGroup::getCustomerIdentifier)
                 .collect(Collectors.toSet()));
-        
+
     }
 
 }

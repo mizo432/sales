@@ -1,5 +1,7 @@
 package org.venuspj.sales.core.model.event.accounting;
 
+import org.venuspj.sales.account.fundamentals.whenNoticed.WhenNoticed;
+import org.venuspj.sales.core.fundamentals.whenOccurred.WhenOccurred;
 import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTimeValue;
 
 import java.util.Set;
@@ -8,26 +10,36 @@ import static org.venuspj.util.collect.Sets2.newHashSet;
 
 
 public abstract class AccountingEvent {
-    private AccountingEvent event;
-    private RecordDateTimeValue whenOccurred;
-    private RecordDateTimeValue whenNoticed;
-    private Set<AccountingEntry> resultingEntries = newHashSet();
+    private EventType event;
+    private WhenOccurred whenOccurred;
+    private WhenNoticed whenNoticed;
+    protected Set<AbstractAccountingEntry> resultingEntries = newHashSet();
 
-    protected AccountingEvent(AccountingEvent event,
+    protected AccountingEvent(EventType event,
                               RecordDateTimeValue whenOccurred,
                               RecordDateTimeValue whenNoticed) {
         this.event = event;
-        this.whenOccurred = whenOccurred;
-        this.whenNoticed = whenNoticed;
+        this.whenOccurred = WhenOccurred.of(whenNoticed);
+        this.whenNoticed = WhenNoticed.of(whenNoticed);
 
     }
 
-    public RecordDateTimeValue getWhenNoticed() {
+    public WhenNoticed getWhenNoticed() {
         return whenNoticed;
 
     }
 
-    public void addResultingEntry(AccountingEntry entry) {
+    public WhenOccurred getWhenOccurred() {
+        return whenOccurred;
+
+    }
+
+    public EventType getEventType() {
+        return event;
+
+    }
+
+    public void addResultingEntry(AbstractAccountingEntry entry) {
         resultingEntries.add(entry);
 
     }

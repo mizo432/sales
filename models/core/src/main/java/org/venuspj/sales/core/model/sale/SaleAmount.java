@@ -4,11 +4,10 @@ import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.amount.AmountValue;
 
 public class SaleAmount implements AmountValue {
-    private Integer value;
+    private Long value;
 
 
-
-    SaleAmount(Integer value) {
+    SaleAmount(Long value) {
         this.value = value;
 
     }
@@ -20,7 +19,7 @@ public class SaleAmount implements AmountValue {
     }
 
     @Override
-    public Integer asInteger() {
+    public Long asLong() {
         return value;
     }
 }

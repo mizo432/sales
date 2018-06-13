@@ -10,7 +10,7 @@ public class Fee implements AmountValue {
     }
 
     @Override
-    public Integer asInteger() {
+    public Long asLong() {
         return null;
     }
 

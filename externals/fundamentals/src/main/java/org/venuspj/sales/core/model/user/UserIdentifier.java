@@ -18,4 +18,9 @@ public class UserIdentifier {
                 .defaultConfig()
                 .toString();
     }
+
+    public Integer asInteger(){
+        return value;
+
+    }
 }

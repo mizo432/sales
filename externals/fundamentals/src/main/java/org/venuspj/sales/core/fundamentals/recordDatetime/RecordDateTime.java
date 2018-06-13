@@ -1,6 +1,7 @@
 package org.venuspj.sales.core.fundamentals.recordDatetime;
 
 import com.google.common.collect.ComparisonChain;
+import org.venuspj.sales.core.fundamentals.recordDate.DateValue;
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;
 
 import java.time.LocalDateTime;
@@ -8,18 +9,22 @@ import java.time.Month;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 
-import static org.venuspj.util.objects2.Objects2.isNull;
-import static org.venuspj.util.objects2.Objects2.nonNull;
+import static org.venuspj.util.objects2.Objects2.*;
 
-public class RecordDateTime implements Comparable<RecordDateTime> {
+public class RecordDateTime implements Comparable<RecordDateTime>, DateValue {
     private LocalDateTime value;
 
     public RecordDateTime() {
 
     }
 
-    public RecordDateTime(LocalDateTime aValue) {
-        value = aValue;
+    RecordDateTime(LocalDateTime value) {
+        this.value = value;
+
+    }
+
+    public static RecordDateTime of(LocalDateTime value) {
+        return new RecordDateTime(value);
     }
 
     public String asText() {
@@ -28,11 +33,11 @@ public class RecordDateTime implements Comparable<RecordDateTime> {
 
     public RecordYearMonth recordYearMonth() {
         if (!isPresent()) {
-            return new RecordYearMonth(null);
+            return new RecordYearMonth();
         }
         int year = value.getYear();
         Month month = value.getMonth();
-        return new RecordYearMonth(YearMonth.of(year, month));
+        return RecordYearMonth.of(YearMonth.of(year, month));
     }
 
     public boolean isPresent() {
@@ -41,6 +46,22 @@ public class RecordDateTime implements Comparable<RecordDateTime> {
 
     public LocalDateTime asLocalDateTime() {
         return value;
+
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof RecordDateTime &&
+                sameValueAs((RecordDateTime) obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return hash(value);
+    }
+
+    public boolean sameValueAs(RecordDateTime other) {
+        return equal(value, other.value);
 
     }
 
@@ -55,5 +76,10 @@ public class RecordDateTime implements Comparable<RecordDateTime> {
                 .compare(value, o.asLocalDateTime())
                 .result();
 
+    }
+
+    @Override
+    public RecordDateTimeValue atEndOfDay() {
+        return null;
     }
 }

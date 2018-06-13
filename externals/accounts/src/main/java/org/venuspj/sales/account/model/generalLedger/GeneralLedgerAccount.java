@@ -1,6 +1,6 @@
 package org.venuspj.sales.account.model.generalLedger;
 
-import org.venuspj.sales.account.model.Account;
+import org.venuspj.sales.account.model.acountEntry.AccountEntry;
 
-public interface GeneralLedgerAccount extends Account {
+public interface GeneralLedgerAccount extends AccountEntry {
 }

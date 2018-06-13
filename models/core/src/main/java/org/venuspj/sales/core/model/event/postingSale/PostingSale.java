@@ -1,34 +1,57 @@
 package org.venuspj.sales.core.model.event.postingSale;
 
-import org.venuspj.sales.account.model.Tax;
+import org.venuspj.sales.account.fundamentals.whenNoticed.WhenNoticed;
+import org.venuspj.sales.account.model.acount.Tax;
+import org.venuspj.sales.core.fundamentals.event.Event;
+import org.venuspj.sales.core.model.event.accounting.AccountingEvent;
+import org.venuspj.sales.core.model.event.accounting.EventType;
+import org.venuspj.sales.core.model.event.accounting.ServiceAgreement;
+import org.venuspj.sales.core.model.partnerManagement.chargeGroup.ChargeGroup;
 
 /**
  * アクティビティ売上を記帳する
  */
-public class PostingSale {
+public class PostingSale extends AccountingEvent {
 
     private ChargeGroup chargeGroup;
 
-    private Moment moment;
+    private Event moment;
 
-    private Custody custody;
+    private ServiceAgreement serviceAgreement;
+
 
     // 借方
-    /** 売上(EC) */
+    /**
+     * 売上(EC)
+     */
     private Sale sale;
 
     private Tax tax;
 
     // 貸方
-    /** 売掛金 */
+    /**
+     * 売掛金
+     */
     private Receivable receivable;
 
-    /** 預り金 */
+    /**
+     * 預り金
+     */
     private Deposit deposit;
 
-
-    public void post(){
+    protected PostingSale(Event event, WhenNoticed whenNoticed, ServiceAgreement serviceAgreement, ChargeGroup chargeGroup) {
+        super(EventType.POSTING_SALE, event.whenOccurred(), whenNoticed);
+        this.serviceAgreement = serviceAgreement;
+        this.moment = event;
+        this.chargeGroup = chargeGroup;
 
     }
+
+    public void post() {
+        serviceAgreement
+                .getPostingRule(getEventType(), getWhenNoticed())
+                .process(this);
+    }
+
 
 }
