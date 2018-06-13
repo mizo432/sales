@@ -1,8 +1,11 @@
 package org.venuspj.sales.core.model.sale;
 
-import org.venuspj.sales.core.fundamentals.values.StringValue;
 
-public class SaleCaption implements StringValue {
+import org.venuspj.ddd.model.value.StringValue;
+
+import static org.venuspj.util.objects2.Objects2.equal;
+
+public class SaleCaption implements StringValue<SaleCaption> {
     private String value;
 
     public SaleCaption() {
@@ -26,4 +29,8 @@ public class SaleCaption implements StringValue {
     }
 
 
+    @Override
+    public boolean sameValueAs(SaleCaption other) {
+        return equal(value, other.value);
+    }
 }

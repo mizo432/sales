@@ -3,9 +3,10 @@ package org.venuspj.sales.core.fundamentals.titleName;
 import org.venuspj.sales.core.fundamentals.name.Name;
 import org.venuspj.sales.core.fundamentals.name.NameValue;
 
+import static org.venuspj.util.objects2.Objects2.equal;
 import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
-public class TitleName implements NameValue {
+public class TitleName implements NameValue<TitleName> {
     private final String value;
 
     public TitleName() {
@@ -40,5 +41,10 @@ public class TitleName implements NameValue {
 
     public static TitleName of(String value) {
         return new TitleName(value);
+    }
+
+    @Override
+    public boolean sameValueAs(TitleName other) {
+        return equal(value, other.value);
     }
 }

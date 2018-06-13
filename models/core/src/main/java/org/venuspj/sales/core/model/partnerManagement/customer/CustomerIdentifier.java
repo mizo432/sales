@@ -2,13 +2,11 @@ package org.venuspj.sales.core.model.partnerManagement.customer;
 
 import org.venuspj.ddd.model.entity.AbstractEntityIdentifier;
 import org.venuspj.ddd.model.entity.EntityIdentifier;
-import org.venuspj.sales.core.fundamentals.values.LongValue;
+import org.venuspj.ddd.model.value.LongValue;
 
-import static org.venuspj.util.objects2.Objects2.equal;
-import static org.venuspj.util.objects2.Objects2.hash;
-import static org.venuspj.util.objects2.Objects2.nonNull;
+import static org.venuspj.util.objects2.Objects2.*;
 
-public class CustomerIdentifier extends AbstractEntityIdentifier<Customer> implements LongValue {
+public class CustomerIdentifier extends AbstractEntityIdentifier<Customer> {
 
     private Long value;
 
@@ -43,8 +41,13 @@ public class CustomerIdentifier extends AbstractEntityIdentifier<Customer> imple
 
     }
 
-    @Override
+    public boolean sameValueAs(CustomerIdentifier other) {
+        return false;
+    }
+
     public Long asLong() {
         return value;
     }
+
+
 }

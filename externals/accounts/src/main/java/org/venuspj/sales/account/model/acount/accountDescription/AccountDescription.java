@@ -3,7 +3,9 @@ package org.venuspj.sales.account.model.acount.accountDescription;
 import org.venuspj.sales.core.fundamentals.description.Description;
 import org.venuspj.sales.core.fundamentals.description.DescriptionValue;
 
-public class AccountDescription implements DescriptionValue {
+import static org.venuspj.util.objects2.Objects2.equal;
+
+public class AccountDescription implements DescriptionValue<AccountDescription> {
     private final String value;
 
     AccountDescription(String value) {
@@ -24,5 +26,10 @@ public class AccountDescription implements DescriptionValue {
     @Override
     public Description asDescription() {
         return Description.of(value);
+    }
+
+    @Override
+    public boolean sameValueAs(AccountDescription other) {
+        return equal(value, other.value);
     }
 }

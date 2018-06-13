@@ -1,11 +1,12 @@
 package org.venuspj.sales.core.fundamentals.description;
 
 
-import org.venuspj.sales.core.fundamentals.values.StringValue;
+import org.venuspj.ddd.model.value.StringValue;
 
+import static org.venuspj.util.objects2.Objects2.equal;
 import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
-public class Description implements StringValue {
+public class Description implements StringValue<Description> {
     String value;
 
     public Description() {
@@ -36,5 +37,10 @@ public class Description implements StringValue {
 
     public static Description empty() {
         return new Description();
+    }
+
+    @Override
+    public boolean sameValueAs(Description other) {
+        return equal(value, other.value);
     }
 }

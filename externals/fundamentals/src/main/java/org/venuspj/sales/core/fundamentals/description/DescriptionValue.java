@@ -1,8 +1,9 @@
 package org.venuspj.sales.core.fundamentals.description;
 
-import org.venuspj.sales.core.fundamentals.values.StringValue;
+import org.venuspj.ddd.model.value.StringValue;
 
-public interface DescriptionValue extends StringValue {
+public interface DescriptionValue<D extends DescriptionValue<D>> extends StringValue<D> {
 
     Description asDescription();
+
 }

@@ -1,10 +1,11 @@
 package org.venuspj.sales.core.fundamentals.name;
 
-import org.venuspj.sales.core.fundamentals.values.StringValue;
+
+import org.venuspj.ddd.model.value.StringValue;
 
 import static org.venuspj.util.objects2.Objects2.toStringHelper;
 
-public class Name implements StringValue {
+public class Name implements StringValue<Name> {
     private final String value;
 
     public Name() {
@@ -36,4 +37,13 @@ public class Name implements StringValue {
 
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Name && sameValueAs((Name) obj);
+    }
+
+    @Override
+    public boolean sameValueAs(Name other) {
+        return false;
+    }
 }

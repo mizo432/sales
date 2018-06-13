@@ -1,11 +1,13 @@
 package org.venuspj.sales.core.fundamentals.amount;
 
+import org.venuspj.ddd.model.value.LongValue;
+
 import static org.venuspj.util.objects2.Objects2.equal;
 import static org.venuspj.util.objects2.Objects2.hash;
 
 /**
  */
-public class Amount {
+public class Amount implements LongValue<Amount> {
     Long value;
 
     public Amount() {
@@ -43,7 +45,20 @@ public class Amount {
         return value < other.value;
     }
 
+    @Override
     public Long asLong() {
+        return value;
+
+    }
+
+    @Override
+    public String asText() {
+        return value.toString();
+
+    }
+
+    @Override
+    public Long getValue() {
         return value;
 
     }
@@ -53,7 +68,8 @@ public class Amount {
         return obj instanceof Amount && sameValueAs((Amount) obj);
     }
 
-    private boolean sameValueAs(Amount that) {
+    @Override
+    public boolean sameValueAs(Amount that) {
         return equal(value, that.value);
     }
 
