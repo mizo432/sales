@@ -39,6 +39,11 @@ public class TitleName implements NameValue<TitleName> {
 
     }
 
+    @Override
+    public String getValue() {
+        return value;
+    }
+
     public static TitleName of(String value) {
         return new TitleName(value);
     }

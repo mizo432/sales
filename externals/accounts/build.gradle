@@ -9,7 +9,8 @@ repositories {
 dependencies {
     compile group: 'org.slf4j', name: 'slf4j-api', version: "${slf4jVersion}"
     compile project(":fundamentals")
-    compile group: 'org.venuspj', name : 'venus-ddd', version: "${venusDddVersion}"
+    compile project(":fragment")
+    compile group: 'org.venuspj', name: 'venus-ddd', version: "${venusDddVersion}"
     testRuntime group: 'ch.qos.logback', name: 'logback-core', version: "${logbackVersion}"
     testRuntime group: 'ch.qos.logback', name: 'logback-classic', version: "${logbackVersion}"
 }

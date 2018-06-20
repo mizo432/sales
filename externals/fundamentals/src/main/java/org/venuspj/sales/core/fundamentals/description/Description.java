@@ -35,6 +35,11 @@ public class Description implements StringValue<Description> {
         return value;
     }
 
+    @Override
+    public String getValue() {
+        return value;
+    }
+
     public static Description empty() {
         return new Description();
     }

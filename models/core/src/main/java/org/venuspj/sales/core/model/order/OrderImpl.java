@@ -2,8 +2,6 @@ package org.venuspj.sales.core.model.order;
 
 
 import org.venuspj.ddd.model.entity.AbstractEntity;
-import org.venuspj.ddd.model.entity.Entity;
-import org.venuspj.ddd.model.entity.EntityBuilder;
 import org.venuspj.sales.core.fundamentals.event.Event;
 
 import static org.venuspj.util.objects2.Objects2.nonNull;
@@ -12,7 +10,7 @@ import static org.venuspj.util.objects2.Objects2.nonNull;
  * 受注
  * #MomentInterval
  */
-public class OrderImpl extends AbstractEntity<Order> implements Order, Entity<Order> {
+public class OrderImpl extends AbstractEntity<Order, OrderIdentifier> implements Order {
     Event event = new Event();
 
     public OrderImpl() {
@@ -25,6 +23,7 @@ public class OrderImpl extends AbstractEntity<Order> implements Order, Entity<Or
 
     }
 
+    @Override
     public Event getEvent() {
         return event;
     }
@@ -33,9 +32,8 @@ public class OrderImpl extends AbstractEntity<Order> implements Order, Entity<Or
         return new OrderBuilder();
     }
 
-    public static class OrderBuilder extends EntityBuilder<Order, OrderBuilder> {
+    public static class OrderBuilder extends AbstractEntityBuilder<Order, OrderBuilder, OrderIdentifier> {
         private Event event = new Event();
-
 
         @Override
         protected void apply(Order vo, OrderBuilder builder) {
@@ -53,8 +51,9 @@ public class OrderImpl extends AbstractEntity<Order> implements Order, Entity<Or
         }
 
         @Override
-        protected OrderImpl createValueObject() {
-            return new OrderImpl((OrderIdentifier) identifier, event);
+        protected Order createValueObject() {
+            return new OrderImpl(identifier, event);
+
         }
 
         @Override

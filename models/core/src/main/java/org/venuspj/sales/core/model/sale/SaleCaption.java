@@ -23,6 +23,11 @@ public class SaleCaption implements StringValue<SaleCaption> {
 
     }
 
+    @Override
+    public String getValue() {
+        return value;
+    }
+
     public static SaleCaption of(String value) {
         return new SaleCaption(value);
 

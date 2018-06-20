@@ -36,11 +36,16 @@ public class Number implements IntegerValue<Number>, Comparable<Number> {
 
     @Override
     public Integer asInteger() {
-        return null;
+        return value;
     }
 
     @Override
     public String asText() {
-        return null;
+        return value.toString();
+    }
+
+    @Override
+    public Integer getValue() {
+        return value;
     }
 }

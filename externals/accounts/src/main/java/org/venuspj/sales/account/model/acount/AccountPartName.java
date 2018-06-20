@@ -25,6 +25,11 @@ public class AccountPartName implements StringValue<AccountPartName> {
 
     }
 
+    @Override
+    public String getValue() {
+        return value;
+    }
+
     public static AccountPartName of(String value) {
         return new AccountPartName(value);
 

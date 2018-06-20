@@ -24,6 +24,11 @@ public class AccountDescription implements DescriptionValue<AccountDescription> 
     }
 
     @Override
+    public String getValue() {
+        return value;
+    }
+
+    @Override
     public Description asDescription() {
         return Description.of(value);
     }

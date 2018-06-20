@@ -5,7 +5,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.venuspj.sales.application.contract.additionalDetail.*;
 import org.venuspj.sales.core.model.materializedClaim.details.additionalDetail.AdditionalDetail;
 import org.venuspj.sales.core.model.materializedClaim.details.additionalDetail.AdditionalDetailId;
 import org.venuspj.sales.core.model.materializedClaim.details.additionalDetail.AdditionalDetailRepository;

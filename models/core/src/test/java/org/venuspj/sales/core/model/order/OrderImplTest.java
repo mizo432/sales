@@ -25,11 +25,12 @@ public class OrderImplTest {
         LOGGER.debug(toStringHelper(target).defaultConfig().toString());
 
     }
+
     @Test
     public void test3() {
         Order target = OrderImpl.builder()
                 .withEvent(EventProvider.newEvent())
-                .withEntityIdentifier(OrderIdentifier.of(1))
+                .withEntityIdentifier(OrderIdentifier.of(1L))
                 .build();
 
         LOGGER.debug(toStringHelper(target).defaultConfig().toString());

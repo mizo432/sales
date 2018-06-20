@@ -1,6 +1,8 @@
 rootProject.name = 'sales'
 include 'utils'
 project(':utils').projectDir = file('./externals/utils')
+include 'fragment'
+project(':fragment').projectDir = file('./externals/fragment')
 include 'fundamentals'
 project(':fundamentals').projectDir = file('./externals/fundamentals')
 include 'accounts'

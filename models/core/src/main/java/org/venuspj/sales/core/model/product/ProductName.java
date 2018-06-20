@@ -27,6 +27,11 @@ public class ProductName implements NameValue<ProductName> {
         return value;
     }
 
+    @Override
+    public String getValue() {
+        return value;
+    }
+
     public static ProductName of(String value) {
         return new ProductName(value);
     }

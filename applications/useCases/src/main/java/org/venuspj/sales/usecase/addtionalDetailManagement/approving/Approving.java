@@ -3,7 +3,7 @@ package org.venuspj.sales.usecase.addtionalDetailManagement.approving;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.venuspj.ddd.exception.EntityNotFoundException;
-import org.venuspj.sales.application.contract.addtionalDetailManagement.approvingAdditionDetail.ApprovingAdditionDetail;
+import org.venuspj.sales.application.contract.event.addtionalDetailManagement.approvingAdditionDetail.ApprovingAdditionDetail;
 import org.venuspj.sales.core.fundamentals.event.Event;
 import org.venuspj.sales.core.fundamentals.event.EventProvider;
 import org.venuspj.sales.core.fundamentals.recordYearMonth.RecordYearMonth;

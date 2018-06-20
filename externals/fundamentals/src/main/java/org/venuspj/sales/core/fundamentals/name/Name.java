@@ -39,6 +39,11 @@ public class Name implements StringValue<Name> {
     }
 
     @Override
+    public String getValue() {
+        return value;
+    }
+
+    @Override
     public boolean equals(Object obj) {
         return obj instanceof Name && sameValueAs((Name) obj);
     }
