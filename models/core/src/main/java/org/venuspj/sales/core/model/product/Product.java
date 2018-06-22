@@ -1,8 +1,8 @@
 package org.venuspj.sales.core.model.product;
 
 import org.venuspj.ddd.model.entity.AbstractEntity;
+import org.venuspj.ddd.model.entity.Entity;
 import org.venuspj.sales.fragment.partyPlaceThing.thing.Thing;
-import org.venuspj.sales.fragment.partyPlaceThing.thing.ThingImpl;
 
 import static org.venuspj.util.objects2.Objects2.nonNull;
 
@@ -12,26 +12,13 @@ import static org.venuspj.util.objects2.Objects2.nonNull;
  * 個別の商品の場合とカタログ的な場合がある。
  * </pre>
  */
-public class Product extends AbstractEntity<Product, ProductIdentifier> {
-    private Thing thing = new ThingImpl();
+public interface Product extends Entity<Product, ProductIdentifier> {
 
-    public Product() {
+    Thing getThing();
 
-    }
+    class ProductBuilder extends AbstractEntity.AbstractEntityBuilder<Product, ProductBuilder, ProductIdentifier> {
 
-    public Product(ProductIdentifier productIdentifier, Thing thing) {
-        super(productIdentifier);
-        this.thing = thing;
-
-    }
-
-    public Thing getThing() {
-        return thing;
-
-    }
-
-    public static class ProductBuilder extends AbstractEntityBuilder<Product, ProductBuilder, ProductIdentifier> {
-        private Thing thing = new ThingImpl();
+        private Thing thing;
 
         @Override
         protected void apply(Product vo, ProductBuilder builder) {
@@ -40,17 +27,15 @@ public class Product extends AbstractEntity<Product, ProductIdentifier> {
         }
 
         public ProductBuilder withThing(Thing thing) {
-
             if (nonNull(thing))
                 addConfigurator(builder -> builder.thing = thing);
 
             return getThis();
-
         }
 
         @Override
         protected Product createValueObject() {
-            return new Product(identifier, thing);
+            return new ProductImpl(identifier, thing);
         }
 
         @Override
@@ -63,5 +48,4 @@ public class Product extends AbstractEntity<Product, ProductIdentifier> {
             return new ProductBuilder();
         }
     }
-
 }

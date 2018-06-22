@@ -1,6 +1,8 @@
 package org.venuspj.sales.core.model.product;
 
+import org.venuspj.sales.core.model.product.Product.ProductBuilder;
 import org.venuspj.sales.fragment.partyPlaceThing.thing.ThingMock;
+import org.venuspj.sales.fragment.partyPlaceThing.thing.ThingMock.ThingMockType;
 
 public class ProductMock {
     public static Product createMock(ProductMockType productMockType) {
@@ -8,13 +10,12 @@ public class ProductMock {
     }
 
     public enum ProductMockType {
-        SIMPLAE {
+        SIMPLE {
             @Override
             public Product create() {
-                return new Product
-                        .ProductBuilder()
+                return new ProductBuilder()
                         .withEntityIdentifier(ProductIdentifier.of(1L))
-                        .withThing(ThingMock.createMock(ThingMock.ThingMockType.SIMPLE))
+                        .withThing(ThingMock.createMock(ThingMockType.SIMPLE))
                         .build();
             }
         };

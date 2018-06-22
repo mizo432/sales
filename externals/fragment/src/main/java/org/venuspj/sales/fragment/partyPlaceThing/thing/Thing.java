@@ -1,23 +1,21 @@
 package org.venuspj.sales.fragment.partyPlaceThing.thing;
 
 import org.venuspj.sales.fragment.description.thing.ThingDescription;
-import org.venuspj.sales.fragment.description.thing.ThingDescriptionImpl;
 import org.venuspj.sales.fragment.partyPlaceThing.PartyPlaceThing;
-import org.venuspj.util.builder.ObjectBuilder;
 
 import static org.venuspj.util.objects2.Objects2.nonNull;
 
-public interface Thing extends PartyPlaceThing<Thing> {
+public interface Thing extends PartyPlaceThing<Thing, ThingDescription> {
 
     ThingName getName();
 
-    public class ThingBuilder extends ObjectBuilder<Thing, ThingBuilder> {
+    class ThingBuilder extends PartyPlaceThingBuilder<Thing, ThingBuilder, ThingDescription> {
 
         private ThingName name = new ThingName();
-        private ThingDescription thingDescription = new ThingDescriptionImpl();
 
         @Override
         protected void apply(Thing vo, ThingBuilder builder) {
+            super.apply(vo, builder);
             builder.withName(vo.getName());
         }
 
@@ -28,27 +26,24 @@ public interface Thing extends PartyPlaceThing<Thing> {
 
         }
 
-        public ThingBuilder withThingDescription(ThingDescription thingDescription) {
-            if (nonNull(thingDescription))
-                addConfigurator(builder -> builder.thingDescription = thingDescription);
-            return getThis();
-
-        }
-
-
         @Override
         protected Thing createValueObject() {
-            return new ThingImpl(name, thingDescription);
+            return new ThingImpl(description, name);
+
         }
 
         @Override
         protected ThingBuilder getThis() {
             return this;
+
         }
 
         @Override
         protected ThingBuilder newInstance() {
             return new ThingBuilder();
+
         }
+
     }
+
 }

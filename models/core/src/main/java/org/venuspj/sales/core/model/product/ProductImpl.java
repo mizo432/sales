@@ -13,9 +13,6 @@ import static org.venuspj.util.objects2.Objects2.nonNull;
  * </pre>
  */
 public class ProductImpl extends AbstractEntity<Product, ProductIdentifier> implements Product {
-    public Thing getThing() {
-        return thing;
-    }
 
     private Thing thing = new ThingImpl();
 
@@ -29,36 +26,9 @@ public class ProductImpl extends AbstractEntity<Product, ProductIdentifier> impl
 
     }
 
-    public static class ProductBuilder extends AbstractEntity.AbstractEntityBuilder<Product, ProductBuilder, ProductIdentifier> {
+    public Thing getThing() {
+        return thing;
 
-        private Thing thing;
-
-        @Override
-        protected void apply(Product vo, ProductBuilder builder) {
-            super.apply(vo, builder);
-            builder.withThing(vo.getThing());
-        }
-
-        public ProductBuilder withThing(Thing thing) {
-            if (nonNull(thing))
-                addConfigurator(builder -> builder.thing = thing);
-
-            return getThis();
-        }
-
-        @Override
-        protected Product createValueObject() {
-            return new ProductImpl(identifier, thing);
-        }
-
-        @Override
-        protected ProductBuilder getThis() {
-            return this;
-        }
-
-        @Override
-        protected ProductBuilder newInstance() {
-            return new ProductBuilder();
-        }
     }
+
 }
