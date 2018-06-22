@@ -1,5 +1,7 @@
 package org.venuspj.sales.fragment.partyPlaceThing.thing;
 
+import org.venuspj.sales.fragment.description.thing.ThingDescription;
+import org.venuspj.sales.fragment.description.thing.ThingDescriptionImpl;
 import org.venuspj.sales.fragment.partyPlaceThing.PartyPlaceThing;
 import org.venuspj.util.builder.ObjectBuilder;
 
@@ -9,9 +11,10 @@ public interface Thing extends PartyPlaceThing<Thing> {
 
     ThingName getName();
 
-    public static class ThingBuilder extends ObjectBuilder<Thing, ThingBuilder> {
+    public class ThingBuilder extends ObjectBuilder<Thing, ThingBuilder> {
 
-        private ThingName name;
+        private ThingName name = new ThingName();
+        private ThingDescription thingDescription = new ThingDescriptionImpl();
 
         @Override
         protected void apply(Thing vo, ThingBuilder builder) {
@@ -25,10 +28,17 @@ public interface Thing extends PartyPlaceThing<Thing> {
 
         }
 
+        public ThingBuilder withThingDescription(ThingDescription thingDescription) {
+            if (nonNull(thingDescription))
+                addConfigurator(builder -> builder.thingDescription = thingDescription);
+            return getThis();
+
+        }
+
 
         @Override
         protected Thing createValueObject() {
-            return new ThingImpl(name);
+            return new ThingImpl(name, thingDescription);
         }
 
         @Override
