@@ -1,13 +1,13 @@
 package org.venuspj.sales.fragment.description.thing;
 
 import org.venuspj.sales.fragment.description.Description;
+import org.venuspj.sales.fragment.partyPlaceThing.thing.Thing;
 import org.venuspj.util.builder.ObjectBuilder;
 
 /**
  * 物詳細
  */
-public interface ThingDescription extends Description<ThingDescription> {
-
+public interface ThingDescription extends Description<Thing, ThingDescription> {
 
     class ThingDescriptionBuilder extends ObjectBuilder<ThingDescription, ThingDescriptionBuilder> {
 

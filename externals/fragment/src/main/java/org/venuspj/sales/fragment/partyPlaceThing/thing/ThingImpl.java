@@ -1,29 +1,26 @@
 package org.venuspj.sales.fragment.partyPlaceThing.thing;
 
 import org.venuspj.sales.fragment.description.thing.ThingDescription;
-import org.venuspj.sales.fragment.description.thing.ThingDescriptionImpl;
+import org.venuspj.sales.fragment.partyPlaceThing.AbstractPartyPlaceThing;
 
-public class ThingImpl implements Thing {
-    private ThingDescription thingDescription = new ThingDescriptionImpl();
+public class ThingImpl
+        extends AbstractPartyPlaceThing<Thing, ThingDescription> implements Thing {
+
     private ThingName name;
 
     public ThingImpl() {
 
     }
 
-    ThingImpl(ThingName name, ThingDescription thingDescription) {
+    ThingImpl(ThingDescription thingDescription, ThingName name) {
+        super(thingDescription);
         this.name = name;
-        this.thingDescription = thingDescription;
 
     }
 
     @Override
     public ThingName getName() {
         return name;
-    }
-
-    public ThingDescription getThingDescription() {
-        return thingDescription;
     }
 
 }
