@@ -113,6 +113,7 @@ subprojects {
         // 失敗しても後続の処理を継続させる
         ignoreFailures = true
         sourceSets = [sourceSets.main]
+        toolVersion = "6.5.0"
     }
 
     tasks.withType(Pmd) {
@@ -152,7 +153,8 @@ subprojects {
     }
 
     jacoco {
-        toolVersion = '0.7.5.201505241946'
+        toolVersion = '0.8.1'
+//        toolVersion = '0.7.5.201505241946'
     }
 
     jacocoTestReport {
