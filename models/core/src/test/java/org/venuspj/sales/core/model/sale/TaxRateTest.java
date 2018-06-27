@@ -12,9 +12,9 @@ public class TaxRateTest {
     public void asPercentage() {
         TaxRate target = TaxRate.of(Double.valueOf(1.0));
         Percentage actual = target.asPercentage();
-        assertThat(actual)
+        assertThat(actual.toString())
                 .isNotNull()
-                .isEqualTo(Percentage.of(1.0));
+                .isEqualTo(Percentage.of(1.0).toString());
 
     }
 

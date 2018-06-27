@@ -3,6 +3,7 @@ package org.venuspj.sales.core.model.materializedClaim.details;
 import org.venuspj.sales.account.model.acount.Tax;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.recordDate.RecordDate;
+import org.venuspj.sales.core.fundamentals.summary.Summary;
 import org.venuspj.sales.core.model.materializedClaim.invoice.InvoiceIdentifier;
 import org.venuspj.sales.core.model.statementOfSettlements.StatementAmount;
 

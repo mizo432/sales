@@ -54,7 +54,7 @@ subprojects {
         findbugsAnnotationsVersion = '3.0.1'
         venusUtilsVersion = '1.0.+'
         venusArchitectureVersion = '0.0.+'
-        venusDddVersion = '0.0.14'
+        venusDddVersion = '0.0.15'
 
         // build paramaters
         defaultEncoding = 'UTF-8'
