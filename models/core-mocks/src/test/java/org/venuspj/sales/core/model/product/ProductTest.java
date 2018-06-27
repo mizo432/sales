@@ -8,7 +8,7 @@ public class ProductTest {
 
     @Test
     public void test() {
-        Product target = ProductMock.createMock(ProductMock.ProductMockType.SIMPLAE);
+        Product target = ProductMock.createMock(ProductMock.ProductMockType.SIMPLE);
         System.out.println(toStringHelper(target).defaultConfig().toString());
 
     }

@@ -8,7 +8,7 @@ public class ProductMock {
     }
 
     public enum ProductMockType {
-        SIMPLAE {
+        SIMPLE {
             @Override
             public Product create() {
                 return new Product

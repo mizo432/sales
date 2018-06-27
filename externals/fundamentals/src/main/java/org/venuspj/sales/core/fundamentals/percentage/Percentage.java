@@ -1,9 +1,11 @@
 package org.venuspj.sales.core.fundamentals.percentage;
 
+import org.venuspj.ddd.model.value.DoubleValue;
+
 import static org.venuspj.util.objects2.Objects2.equal;
 import static org.venuspj.util.objects2.Objects2.hash;
 
-public class Percentage {
+public class Percentage implements DoubleValue {
     private Double value;
 
     public Percentage() {
@@ -38,5 +40,20 @@ public class Percentage {
 
     private boolean sameValueAs(Percentage obj) {
         return equal(value, obj.value);
+    }
+
+    @Override
+    public Double asDouble() {
+        return value;
+    }
+
+    @Override
+    public String asText() {
+        return null;
+    }
+
+    @Override
+    public Double getValue() {
+        return value;
     }
 }

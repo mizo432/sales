@@ -1,51 +1,32 @@
 package org.venuspj.sales.core.fundamentals.number;
 
-import org.venuspj.ddd.model.value.IntegerValue;
+import org.venuspj.ddd.model.value.AbstractIntegerValue;
 
-import static org.venuspj.util.objects2.Objects2.*;
+import static org.venuspj.util.objects2.Objects2.isNull;
 
-public class Number implements IntegerValue<Number>, Comparable<Number> {
-    private Integer value;
+public class Number extends
+        AbstractIntegerValue<Number> implements Comparable<Number> {
 
-    public Number(Integer aValue) {
-        value = aValue;
+    public Number() {
+        super();
+    }
+
+    protected Number(Integer value) {
+        super(value);
+    }
+
+    public static Number of(Integer value) {
+        return new Number(value);
+    }
+
+    public static Number zero() {
+        return of(0);
     }
 
     @Override
     public int compareTo(Number o) {
         if (isNull(o)) return -1;
-        return value.compareTo(o.value);
+        return getValue().compareTo(o.getValue());
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return obj instanceof Number
-                && equal(this.value, ((Number) obj).value);
-    }
-
-    @Override
-    public int hashCode() {
-        return hash(value);
-    }
-
-    @Override
-    public boolean sameValueAs(Number other) {
-        return equal(this.value, ((Number) other
-        ).value);
-    }
-
-    @Override
-    public Integer asInteger() {
-        return value;
-    }
-
-    @Override
-    public String asText() {
-        return value.toString();
-    }
-
-    @Override
-    public Integer getValue() {
-        return value;
-    }
 }

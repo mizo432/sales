@@ -54,7 +54,7 @@ public enum AccountsPart {
     AccountsPart(String partName, AccountsStatement accountStatement, Integer orderNo, DebitOrCredit sideOnPlus) {
         this.partName = AccountPartName.of(partName);
         this.accountStatement = accountStatement;
-        orderNumber = new Number(orderNo);
+        orderNumber = Number.of(orderNo);
         this.sideOnPlus = sideOnPlus;
     }
 

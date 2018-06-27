@@ -1,4 +1,6 @@
 package org.venuspj.sales.core.model.bank.branch;
 
-public class Branch {
+import org.venuspj.ddd.model.entity.AbstractEntity;
+
+public class Branch extends AbstractEntity<Branch, BranchIdentifier> {
 }

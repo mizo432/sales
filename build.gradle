@@ -54,7 +54,7 @@ subprojects {
         findbugsAnnotationsVersion = '3.0.1'
         venusUtilsVersion = '1.0.+'
         venusArchitectureVersion = '0.0.+'
-        venusDddVersion = '0.0.12'
+        venusDddVersion = '0.0.13'
 
         // build paramaters
         defaultEncoding = 'UTF-8'
@@ -171,10 +171,11 @@ subprojects {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '4.7'
+    gradleVersion = '4.8.1'
+
 }
 
-task("incrementVersionCode") << {
+task("incrementVersionCode") doLast {
     println(":incrementVersionCode - Incrementing Version Code...")
     def buildGradleFile = file("build.gradle")
     def patternVersionCode = Pattern.compile("versionCode (\\d+)")
