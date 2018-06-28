@@ -2,6 +2,9 @@ package org.venuspj.sales.core.fundamentals.percentage;
 
 import org.venuspj.ddd.model.value.AbstractDoubleValue;
 
+import java.text.DecimalFormat;
+import java.util.Locale;
+
 public abstract class AbstractPercentageValue<ASV extends AbstractPercentageValue<ASV>> extends AbstractDoubleValue<ASV> implements PercentageValue<ASV> {
 
     public AbstractPercentageValue(Double value) {
@@ -19,7 +22,8 @@ public abstract class AbstractPercentageValue<ASV extends AbstractPercentageValu
 
     @Override
     public String asText() {
-        return value.toString() + "%";
+        return DecimalFormat.getPercentInstance(Locale.JAPAN).format(value);
 
     }
+
 }

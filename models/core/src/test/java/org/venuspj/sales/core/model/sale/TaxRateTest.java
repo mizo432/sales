@@ -12,9 +12,9 @@ public class TaxRateTest {
     public void asPercentage() {
         TaxRate target = TaxRate.of(Double.valueOf(1.0));
         Percentage actual = target.asPercentage();
-        assertThat(actual.toString())
+        assertThat(actual)
                 .isNotNull()
-                .isEqualTo(Percentage.of(1.0).toString());
+                .isEqualTo(Percentage.of(1.0));
 
     }
 
@@ -31,6 +31,26 @@ public class TaxRateTest {
         assertThat(actual)
                 .isNotNull()
                 .isEqualTo(Double.valueOf(1.0));
+
+    }
+
+    @Test
+    public void asText1() {
+        TaxRate target = TaxRate.of(Double.valueOf(0.08));
+        String actual = target.asText();
+        assertThat(actual)
+                .isNotNull()
+                .isEqualTo(("8%"));
+
+    }
+
+    @Test
+    public void asText2() {
+        TaxRate target = TaxRate.of(Double.valueOf(0.085));
+        String actual = target.asText();
+        assertThat(actual)
+                .isNotNull()
+                .isEqualTo(("8%"));
 
     }
 
