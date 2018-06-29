@@ -22,7 +22,7 @@ public class Amount implements LongValue<Amount> {
         return new Amount(0L);
     }
 
-    public static Amount yen(Long value) {
+    public static Amount yens(Long value) {
         return new Amount(value);
 
     }

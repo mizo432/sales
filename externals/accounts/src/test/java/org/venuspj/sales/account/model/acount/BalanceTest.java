@@ -13,7 +13,7 @@ public class BalanceTest {
         Amount actual = target.asAmount();
 
         assertThat(actual)
-                .isEqualTo(Amount.yen(10L));
+                .isEqualTo(Amount.yens(10L));
     }
 
     @Test

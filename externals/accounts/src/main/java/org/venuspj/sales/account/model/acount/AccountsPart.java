@@ -1,6 +1,5 @@
 package org.venuspj.sales.account.model.acount;
 
-import org.venuspj.sales.core.fundamentals.amount.AbstractAmountValue;
 import org.venuspj.sales.core.fundamentals.amount.AmountValue;
 import org.venuspj.sales.core.fundamentals.number.Number;
 
@@ -59,7 +58,7 @@ public enum AccountsPart {
         this.sideOnPlus = sideOnPlus;
     }
 
-    public DebitOrCredit whichDebitOrCredit(AmountValue<AbstractAmountValue<AVV>> amountValue) {
+    public DebitOrCredit whichDebitOrCredit(AmountValue<?> amountValue) {
         if (sideOnPlus == DebitOrCredit.CREDIT)
             return amountValue.asAmount().isPositive() ? DebitOrCredit.CREDIT : DebitOrCredit.DEBIT;
 

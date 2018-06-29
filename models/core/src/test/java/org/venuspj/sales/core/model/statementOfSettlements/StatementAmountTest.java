@@ -31,7 +31,7 @@ public class StatementAmountTest {
         Amount actual = target.asAmount();
         assertThat(actual)
                 .isNotNull()
-                .isEqualTo(Amount.yen(3L));
+                .isEqualTo(Amount.yens(3L));
     }
 
     @Test
@@ -40,7 +40,7 @@ public class StatementAmountTest {
         Amount actual = target.asAmount();
         assertThat(actual)
                 .isNotNull()
-                .isEqualTo(Amount.yen(3L));
+                .isEqualTo(Amount.yens(3L));
     }
 
 

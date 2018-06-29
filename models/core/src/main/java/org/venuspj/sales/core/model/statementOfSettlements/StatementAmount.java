@@ -6,15 +6,15 @@ import org.venuspj.sales.core.fundamentals.amount.AmountValue;
 
 import static org.venuspj.util.objects2.Objects2.isNull;
 
-public class StatementAmount implements AmountValue<AbstractAmountValue<AVV>> {
-    private Long value;
+public class StatementAmount extends AbstractAmountValue<StatementAmount> {
 
     public StatementAmount() {
+        super();
 
     }
 
     private StatementAmount(Long value) {
-        this.value = value;
+        super(value);
 
     }
 
@@ -28,14 +28,14 @@ public class StatementAmount implements AmountValue<AbstractAmountValue<AVV>> {
 
     }
 
-    public static StatementAmount of(AmountValue<AbstractAmountValue<AVV>> amountValue) {
+    public static StatementAmount of(AmountValue<?> amountValue) {
         return new StatementAmount(amountValue.asLong());
 
     }
 
     @Override
     public Amount asAmount() {
-        return isNull(value) || value > 0L ? Amount.yen(value) : Amount.yen(-value);
+        return isNull(value) || value > 0L ? Amount.yens(value) : Amount.yens(-value);
 
     }
 

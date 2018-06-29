@@ -13,7 +13,7 @@ public class AbstractAmountValue<AVV extends AbstractAmountValue<AVV>> extends A
 
     @Override
     public Amount asAmount() {
-        return Amount.yen(value);
+        return Amount.yens(value);
     }
 
     @Override

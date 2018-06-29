@@ -2,24 +2,19 @@ package org.venuspj.sales.account.model.acount;
 
 import org.venuspj.sales.core.fundamentals.amount.AbstractAmountValue;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
-import org.venuspj.sales.core.fundamentals.amount.AmountValue;
-
-import static org.venuspj.util.objects2.Objects2.equal;
-import static org.venuspj.util.objects2.Objects2.hash;
 
 /**
  * 会計金額.
  */
-public class AccountAmount implements AmountValue<AbstractAmountValue<AVV>> {
-
-    Long value;
+public class AccountAmount extends AbstractAmountValue<AccountAmount> {
 
     public AccountAmount() {
+        super();
 
     }
 
     AccountAmount(Long value) {
-        this.value = value;
+        super(value);
 
     }
 
@@ -29,7 +24,7 @@ public class AccountAmount implements AmountValue<AbstractAmountValue<AVV>> {
 
     @Override
     public Amount asAmount() {
-        return Amount.yen(value);
+        return Amount.yens(value);
     }
 
     @Override
@@ -40,19 +35,6 @@ public class AccountAmount implements AmountValue<AbstractAmountValue<AVV>> {
     public static AccountAmount yen(Long value) {
         return new AccountAmount(value);
 
-    }
-    @Override
-    public boolean equals(Object obj) {
-        return obj instanceof AccountAmount && sameValueAs((AccountAmount) obj);
-    }
-
-    private boolean sameValueAs(AccountAmount that) {
-        return equal(value, that.value);
-    }
-
-    @Override
-    public int hashCode() {
-        return hash(value);
     }
 
 }

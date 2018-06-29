@@ -6,7 +6,7 @@ import org.venuspj.sales.core.fundamentals.recordDatetime.RecordDateTime;
 import org.venuspj.sales.core.fundamentals.whenOccurred.WhenOccurred;
 
 public class PostingLimitAuthorization {
-    private Amount limit = Amount.yen(Long.MAX_VALUE);
+    private Amount limit = Amount.yens(Long.MAX_VALUE);
     private Range<RecordDateTime> interval = Range.all();
 
     public PostingLimitAuthorization() {

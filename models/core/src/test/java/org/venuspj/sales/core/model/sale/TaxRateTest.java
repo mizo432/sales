@@ -25,9 +25,9 @@ public class TaxRateTest {
     }
 
     @Test
-    public void asValue() {
+    public void getValue() {
         TaxRate target = TaxRate.of(Double.valueOf(1.0));
-        Double actual = target.asValue();
+        Double actual = target.getValue();
         assertThat(actual)
                 .isNotNull()
                 .isEqualTo(Double.valueOf(1.0));

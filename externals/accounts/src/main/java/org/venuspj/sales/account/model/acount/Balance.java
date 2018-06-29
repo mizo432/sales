@@ -2,17 +2,16 @@ package org.venuspj.sales.account.model.acount;
 
 import org.venuspj.sales.core.fundamentals.amount.AbstractAmountValue;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
-import org.venuspj.sales.core.fundamentals.amount.AmountValue;
 
-public class Balance implements AmountValue<AbstractAmountValue<AVV>> {
-    private Long value;
+public class Balance extends AbstractAmountValue<Balance> {
 
     public Balance() {
+        super();
 
     }
 
     Balance(Long value) {
-        this.value = value;
+        super(value);
 
     }
 
@@ -26,7 +25,7 @@ public class Balance implements AmountValue<AbstractAmountValue<AVV>> {
 
     @Override
     public Amount asAmount() {
-        return Amount.yen(value);
+        return Amount.yens(value);
     }
 
     @Override

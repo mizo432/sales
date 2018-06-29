@@ -35,7 +35,7 @@ public class StatementDetails implements ListValue<StatementDetail> {
     public Amount getTotalAmountAndTax() {
         Long totalAmountAndTax = totalTax().asLong() + totalAmount().asLong();
         // TODO atdk
-        return Amount.yen(totalAmountAndTax);
+        return Amount.yens(totalAmountAndTax);
     }
 
     public Amount totalAmount() {
@@ -45,7 +45,7 @@ public class StatementDetails implements ListValue<StatementDetail> {
             totalAmount += statementDetail.getAmount().asLong();
         }
 
-        return Amount.yen(totalAmount);
+        return Amount.yens(totalAmount);
     }
 
     @Override

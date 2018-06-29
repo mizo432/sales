@@ -25,7 +25,7 @@ public class Payments {
                 .mapToLong(payment -> payment.getPaymentAmount().asLong())
                 .sum();
 
-        return Amount.yen(total);
+        return Amount.yens(total);
 
     }
 }
