@@ -1,5 +1,6 @@
 package org.venuspj.sales.account.model.acount;
 
+import org.venuspj.sales.core.fundamentals.amount.AbstractAmountValue;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.amount.AmountValue;
 
@@ -7,7 +8,7 @@ import static java.util.Objects.isNull;
 import static org.venuspj.util.objects2.Objects2.equal;
 import static org.venuspj.util.objects2.Objects2.hash;
 
-public class Tax implements AmountValue {
+public class Tax implements AmountValue<AbstractAmountValue<AVV>> {
     private Long value;
 
     public Tax(Long aValue) {

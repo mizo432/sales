@@ -29,8 +29,14 @@ public class TaxRate extends AbstractPercentageValue<TaxRate> {
 
     }
 
-    public Double asValue() {
-        return value;
 
+    @Override
+    public Double asDouble() {
+        return value;
+    }
+
+    @Override
+    public Double getValue() {
+        return value;
     }
 }

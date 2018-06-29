@@ -17,8 +17,8 @@ public class PostingAdditionalDetailController implements PostingAdditionalDetai
     PostingAdditionalDetail postingAdditionalDetail;
 
     @Autowired
-    public PostingAdditionalDetailController(PostingAdditionalDetail aPostingAdditionalDetail) {
-        postingAdditionalDetail = aPostingAdditionalDetail;
+    public PostingAdditionalDetailController(PostingAdditionalDetail postingAdditionalDetail) {
+        this.postingAdditionalDetail = postingAdditionalDetail;
 
     }
 
@@ -42,8 +42,8 @@ public class PostingAdditionalDetailController implements PostingAdditionalDetai
             AdditionalDetail additionalDetail;
 
             @Override
-            public void setAdditionalDetail(AdditionalDetail anAdditionalDetail) {
-                additionalDetail = anAdditionalDetail;
+            public void setAdditionalDetail(AdditionalDetail additionalDetail) {
+                this.additionalDetail = additionalDetail;
             }
         };
         postingAdditionalDetail.start(this, presenter);

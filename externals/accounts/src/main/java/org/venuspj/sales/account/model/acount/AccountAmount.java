@@ -1,5 +1,6 @@
 package org.venuspj.sales.account.model.acount;
 
+import org.venuspj.sales.core.fundamentals.amount.AbstractAmountValue;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.amount.AmountValue;
 
@@ -9,7 +10,7 @@ import static org.venuspj.util.objects2.Objects2.hash;
 /**
  * 会計金額.
  */
-public class AccountAmount implements AmountValue {
+public class AccountAmount implements AmountValue<AbstractAmountValue<AVV>> {
 
     Long value;
 

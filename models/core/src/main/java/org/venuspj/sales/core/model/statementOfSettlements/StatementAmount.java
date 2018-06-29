@@ -1,11 +1,12 @@
 package org.venuspj.sales.core.model.statementOfSettlements;
 
+import org.venuspj.sales.core.fundamentals.amount.AbstractAmountValue;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.amount.AmountValue;
 
 import static org.venuspj.util.objects2.Objects2.isNull;
 
-public class StatementAmount implements AmountValue {
+public class StatementAmount implements AmountValue<AbstractAmountValue<AVV>> {
     private Long value;
 
     public StatementAmount() {
@@ -27,7 +28,7 @@ public class StatementAmount implements AmountValue {
 
     }
 
-    public static StatementAmount of(AmountValue amountValue) {
+    public static StatementAmount of(AmountValue<AbstractAmountValue<AVV>> amountValue) {
         return new StatementAmount(amountValue.asLong());
 
     }

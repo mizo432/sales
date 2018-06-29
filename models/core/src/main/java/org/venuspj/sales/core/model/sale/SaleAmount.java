@@ -1,25 +1,22 @@
 package org.venuspj.sales.core.model.sale;
 
-import org.venuspj.sales.core.fundamentals.amount.Amount;
+import org.venuspj.sales.core.fundamentals.amount.AbstractAmountValue;
 import org.venuspj.sales.core.fundamentals.amount.AmountValue;
 
-public class SaleAmount implements AmountValue {
-    private Long value;
+public class SaleAmount extends AbstractAmountValue<SaleAmount> implements AmountValue<SaleAmount> {
 
+    SaleAmount() {
+        super();
+
+    }
 
     SaleAmount(Long value) {
-        this.value = value;
+        super(value);
 
     }
 
-    @Override
-    public Amount asAmount() {
-        return new Amount(value);
-
+    SaleAmount yeans(Long value) {
+        return new SaleAmount(this.value);
     }
 
-    @Override
-    public Long asLong() {
-        return value;
-    }
 }

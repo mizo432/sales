@@ -1,9 +1,10 @@
 package org.venuspj.sales.account.model.payment;
 
+import org.venuspj.sales.core.fundamentals.amount.AbstractAmountValue;
 import org.venuspj.sales.core.fundamentals.amount.Amount;
 import org.venuspj.sales.core.fundamentals.amount.AmountValue;
 
-public class PaymentAmount implements AmountValue {
+public class PaymentAmount implements AmountValue<AbstractAmountValue<AVV>> {
     private Long value;
 
     PaymentAmount() {
